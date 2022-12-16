@@ -15,5 +15,4 @@ services:
       - '5000:8000'
     volumes:
       - 'log_volume:/home/node/log'
-      extra_hosts:
-        - 'dockerhost:172.50.1.1'
+
