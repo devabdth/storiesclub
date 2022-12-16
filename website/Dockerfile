@@ -1,12 +1,8 @@
-FROM python:3.8
 
-COPY nginx.conf /etc/nginx
+FROM python:3.6-slim
+COPY . /deploy/
+WORKDIR /deploy/
+RUN pip3 install --no-cache-dir -r requirements.txt
+EXPOSE 80
+ENTRYPOINT ["python", "app_y.py"]
 
-Copy . /srv/storiesclub
-WORKDIR /srv/storiesclub
-
-Run pip3 install -r requirements.txt --src /usr/local/src
-RUN pip3 install uwsgi
-
-
-CMD service nginx start && uwsgi --ini uwsgi.ini
