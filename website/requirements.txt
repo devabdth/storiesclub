@@ -4,6 +4,3 @@ Flask-Session==0.4.0
 Jinja2==3.0.3
 Pillow==6.1.0
 pipenv==2022.1.8
-pymongo==4.2.0
-qrcode==7.3.1
-requests==2.22.0
