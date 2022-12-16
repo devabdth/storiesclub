@@ -4,5 +4,5 @@ COPY . /deploy/
 WORKDIR /deploy/
 RUN pip3 install --no-cache-dir -r requirements.txt
 EXPOSE 80
-ENTRYPOINT ["python", "app_y.py"]
+ENTRYPOINT ["python", "app.py"]
 
