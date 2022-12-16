@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --main-color: #6b469c;
+  --accent-color: #eee7ce;
+  --main-bg-color: #fefbe3;
+}
+@media screen and (max-width: 999px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  body {
+    background-color: var(--main-bg-color);
+  }
+  header {
+    background-color: var(--main-color);
+    padding: 0 5%;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 997;
+    transition: 500ms ease;
+  }
+
+  #logo {
+    background-image: url(./images/logo-white-128.png);
+    background-size: contain;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    margin-right: 12px;
+  }
+
+  #logo-accent {
+    background-image: url(./images/logo-accent-128.png);
+    background-size: contain;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    margin-right: 12px;
+  }
+
+  header > div {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header > div > a {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 900;
+    font-family: "Agency FB";
+    letter-spacing: 2px;
+  }
+
+  a.active_tab {
+    color: var(--accentColor);
+    font-weight: 500;
+  }
+
+  a.active_tab:hover {
+    color: var(--accentColor);
+  }
+
+  header nav a {
+    display: none;
+  }
+
+  header nav a:hover {
+    display: none;
+    color: #fff;
+  }
+
+  #drawer {
+    z-index: 999;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    right: -70%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 12px 8px;
+    transition: 750ms ease;
+    overflow-y: scroll;
+  }
+
+  #drawer > nav {
+    width: 100%;
+  }
+
+  #drawer-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    z-index: 998;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: 500ms ease;
+  }
+
+  #drawer a.active_tab:hover {
+    color: var(--accentColor);
+  }
+
+  #drawer a.active_tab {
+    color: var(--accentColor);
+    font-weight: 500;
+  }
+
+  #drawer nav {
+    flex-direction: column;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+  }
+
+  #drawer nav a {
+    color: #999;
+    font-weight: 500;
+    font-family: "Quicksand";
+    font-size: 1em;
+    margin: 8px 0;
+    transition: 500ms ease;
+  }
+
+  #drawer nav a:hover {
+    color: #fff;
+  }
+
+  #drawer-header {
+    width: 100%;
+    height: 10%;
+    justify-content: end;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+  }
+
+  #drawer-icon {
+    width: 64px;
+    height: 64px;
+    font-family: "Quicksand";
+    font-size: 2em;
+    color: white;
+    background-color: transparent;
+    border: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #drawer-header > div {
+    width: 32px;
+    height: 32px;
+    color: white;
+    font-weight: 900;
+    font-family: "Quicksand";
+    font-size: 2em;
+  }
+
+  #footer-social-media-icons {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-media-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 12px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  #drawer-instagram {
+    background-image: url(./icons/instagram.png);
+  }
+  #drawer-facebook {
+    background-image: url(./icons/facebook.png);
+  }
+  #drawer-linkedin {
+    background-image: url(./icons/linkedin.png);
+  }
+
+  #footer-social-instagram {
+    background-image: url(./icons/instagram.png);
+  }
+  #footer-social-facebook {
+    background-image: url(./icons/facebook.png);
+  }
+  #footer-social-linkedin {
+    background-image: url(./icons/linkedin.png);
+  }
+
+  #footer-logo {
+    min-width: 128px;
+    min-height: 128px;
+    background-image: url(./images/logo-white-128.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  #toast {
+    position: fixed;
+    bottom: 12px;
+    right: 24px;
+    background-color: var(--main-bg-color);
+    box-shadow: 0 0 30px 1px #000;
+    padding: 16px 32px;
+    border: 4px var(--main-color) solid;
+    border-radius: 12px;
+    display: none;
+    flex-direction: row;
+  }
+
+  #toast-text {
+    font-weight: 100;
+    font-size: 0.75em;
+    font-family: "Quicksand";
+    color: var(--main-color);
+  }
+
+  footer {
+    background-color: var(--main-color);
+    width: 100%;
+    height: 90vh;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  footer > div {
+    width: 100%;
+    height: 100%;
+    padding: 5% 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  #info {
+    align-items: start;
+    justify-content: center;
+  }
+
+  .footer-tab {
+    color: var(--main-bg-color);
+    font-size: 1em;
+    font-weight: 500;
+    transition: 500ms;
+    opacity: 0.5;
+    padding: 0 6px;
+  }
+
+  .footer-tab:hover {
+    opacity: 0.9;
+  }
+
+  .footer-contact-info {
+    color: var(--main-bg-color);
+    font-weight: 200;
+    font-size: 1em;
+    font-family: "Poppins";
+  }
+
+  #footer-logo {
+    width: 128px;
+    height: 128px;
+    background-image: url(./images/logo-white-128.png);
+    background-size: contain;
+    background-position: center;
+  }
+
+  #footer-social-media-icons {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .footer-social-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 12px;
+    background-size: contain;
+    background-position: center;
+  }
+
+  #footer-social-instagram {
+    background-image: url(./icons/instagram.png);
+  }
+  #footer-social-facebook {
+    background-image: url(./icons/facebook.png);
+  }
+  #footer-social-linkedin {
+    background-image: url(./icons/linkedin.png);
+  }
+}

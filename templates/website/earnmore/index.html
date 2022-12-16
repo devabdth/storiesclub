@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StoriesClub - {{content.tabs[lang]["earnMore"]}}</title>
+
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='website/global/styles/computer.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='website/global/styles/smallDevices.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='website/earnmore/styles/computer.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='website/earnmore/styles/smallDevices.css')}}"
+    />
+    <script src="{{url_for('static', filename='website/global/scripts/main.js')}}"></script>
+    <script src="{{url_for('static', filename='website/earnmore/scripts/main.js')}}"></script>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{url_for('static', filename='./website/global/styles/images/logo-accent.ico')}}"
+    />
+    <meta name="description" content="{{header_desc}}" />
+    <meta name="keywords" content="{{keywords}}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160017708320181"
+     crossorigin="anonymous"></script>
+  </head>
+  <body>
+        <header>
+      <div>
+        <a href="/"><div id="logo-accent"></div></a>
+        <a href="/">StoriesClub</a>
+      </div>
+      <nav style="flex-direction: row">
+        {% if lang == "en" %}
+        <a style="font-family: 'Poppins'" class="header-tab" href="/"
+          >{{content.tabs[lang]["home"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="header-tab" href="/about"
+          >{{content.tabs[lang]["about"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="header-tab active-tab" href="/earnMore"
+          >{{content.tabs[lang]["earnMore"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="header-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="header-tab" href="/videos"
+          >{{content.tabs[lang]["videos"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="header-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
+        >
+        {% endif %} 
+        {% if lang == "ar" %}
+        <a style="font-family: 'Cairo'" class="header-tab" href="/"
+          >{{content.tabs[lang]["home"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="header-tab" href="/about"
+          >{{content.tabs[lang]["about"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="header-tab active-tab" href="/earnMore"
+          >{{content.tabs[lang]["earnMore"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="header-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="header-tab" href="/videos"
+          >{{content.tabs[lang]["videos"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="header-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
+        >
+        {% endif %}  
+        <div class="options">
+          <button class="options-btn">></button>
+          <div class="options-content">
+            {% if loggedin %}
+              {% if lang == "ar" %}
+              <a style="font-family: 'Cairo'" class="header-tab" href="/profile/">{{content.tabs[lang]["profile"]}}</a>
+              <button onclick="logout('{{contact_info["url"]}}');" style="font-family: 'Cairo'; color: red;" class="lang-btn" href="./?lang=ar">{{content.auth[lang]["logout"]}}</button>
+              {% else %}
+              <a style="font-family: 'Poppins'" class="header-tab" href="/profile/">{{content.tabs[lang]["profile"]}}</a>
+              <button onclick="logout('{{contact_info["url"]}}');" style="font-family: 'Poppins'; color: red;" class="lang-btn" href="./?lang=ar">{{content.auth[lang]["logout"]}}</button>
+              {% endif %}
+            {% else %}
+              <a style="font-family: 'Cairo'" class="header-tab" href="/login/">{{content.tabs[lang]["login"]}}</a>
+              <a style="font-family: 'Cairo'" class="header-tab" href="/signup/">{{content.tabs[lang]["signup"]}}</a>
+            {% endif %}
+            <div class="horizontal-divider"><div></div></div>
+            {% if lang == 'en' %}
+              <button onclick="changeLang('{{contact_info['url']}}', 'ar');" style="font-family: 'Cairo'" class="lang-btn" href="./?lang=ar">العربية</button>
+            {% else %}
+              <button onclick="changeLang('{{contact_info['url']}}', 'en');" style="font-family: 'Poppins'" class="lang-btn" href="./?lang=en">English</button>
+            {% endif %}            
+          </div>
+        </div>
+
+      </nav>
+    </header>
+    {% if not loggedin %}
+      <section id="better-exp-tip">
+        <div>
+          <button onclick="closeToolTip();">x</button>
+        </div>
+        {% if lang == "ar" %}
+        <p style="font-family: 'Cairo';">{{content.global_[lang]["earnMoreBetterExpTip"]}}</p>
+        <a href="../login" style="font-family: 'Cairo';" class="main-white-button">{{content.tabs[lang]["login"]}}</a>
+        {% else %}
+        <p style="font-family: 'Poppins';">{{content.global_[lang]["earnMoreBetterExpTip"]}}</p>
+        <a href="../login" style="font-family: 'Poppins';" class="main-white-button">{{content.tabs[lang]["login"]}}</a>
+        {% endif %}
+
+      </section>
+    {% endif %}
+    <section id="profit">
+      <div class="horizontal-ad">Ad Space</div>
+      <div class="horizontal-ad">Ad Space</div>
+      <div class="horizontal-ad">Ad Space</div>
+      <div class="horizontal-ad">Ad Space</div>
+      <div id="logo-container">
+        <div class="vertical-ad">Ad Space</div>
+        <div id="content">
+          <div id="logo"></div>
+          {% if lang == "ar" %}
+          <h2 style="font-family: 'Cairo';">{{content.global_[lang]["storiesclub"]}}</h2>
+          {% else %}
+          <h2 style="font-family: 'Raleway';">{{content.global_[lang]["storiesclub"]}}</h2>
+          {% endif %}
+          <p id="current-time">00:00:00</p>
+        </div>
+        <div class="vertical-ad">Ad Space</div>
+      </div>
+      <div class="horizontal-ad">Ad Space</div>
+      <div class="horizontal-ad">Ad Space</div>
+      <div class="horizontal-ad">Ad Space</div>
+      <div class="horizontal-ad">Ad Space</div>
+    </section>
+
+    <footer>
+      <div>
+        <div id="footer-logo"></div>
+        <p class="footer-contact-info">{{contact_info["phone"]}}</p>
+        <p class="footer-contact-info">{{contact_info["email"]}}</p>
+        <p class="footer-contact-info">{{contact_info["address"]}}</p>
+        <div id="footer-social-media-icons">
+          <a
+            href='{{contact_info["facebook"]}}'
+            class="footer-social-icon"
+            id="footer-social-facebook"
+            target="_blank"
+          ></a>
+          <a
+            href='{{contact_info["instagram"]}}'
+            class="footer-social-icon"
+            id="footer-social-instagram"
+            target="_blank"
+          ></a>
+          <a
+            href='{{contact_info["linkedin"]}}'
+            class="footer-social-icon"
+            id="footer-social-linkedin"
+            target="_blank"
+          ></a>
+        </div>
+      </div>
+      <div>
+        {% if lang == "en" %}
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/about"
+          >{{content.tabs[lang]["about"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/earnMore"
+          >{{content.tabs[lang]["earnMore"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/videos"
+          >{{content.tabs[lang]["videos"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
+        >
+        {% if loggedin %}
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/profile/"
+          >{{content.tabs[lang]["profile"]}}</a
+        >
+        {% else %}
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/login/"
+          >{{content.tabs[lang]["login"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/signup/"
+          >{{content.tabs[lang]["signup"]}}</a
+        >
+        {% endif %} {% endif %} {% if lang == "ar" %}
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/about"
+          >{{content.tabs[lang]["about"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/earnMore"
+          >{{content.tabs[lang]["earnMore"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/videos"
+          >{{content.tabs[lang]["videos"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
+        >
+        {% if loggedin %}
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/profile/"
+          >{{content.tabs[lang]["profile"]}}</a
+        >
+        {% else %}
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/login/"
+          >{{content.tabs[lang]["login"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/signup/"
+          >{{content.tabs[lang]["signup"]}}</a
+        >
+        {% endif %} {% endif %}
+      </div>
+      <div></div>
+    </footer>
+
+
+    <div id="drawer-overlay" onclick="closeDrawer()"></div>
+    <div id="drawer">
+      <div id="drawer-header">
+        <button id="drawer-icon" onclick="closeDrawer();">x</button>
+      </div>
+      <div id="footer-logo"></div>
+      {% if lang == "en" %}
+        <nav style="align-items: start">
+      {% else %}
+        <nav style="align-items: end">
+      {% endif %}
+        {% if lang == "en" %}
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/"
+          >{{content.tabs[lang]["home"]}}</a
+        >
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/about"
+          >{{content.tabs[lang]["about"]}}</a
+        >
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/earnMore"
+          >{{content.tabs[lang]["earnMore"]}}</a
+        >
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
+        >
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/videos"
+          >{{content.tabs[lang]["videos"]}}</a
+        >
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
+        >
+        <div class="vertical-divider"></div>
+        {% if loggedin %}
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/profile/"
+          >{{content.tabs[lang]["profile"]}}</a
+        >
+        {% else %}
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/login/"
+          >{{content.tabs[lang]["login"]}}</a
+        >
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/signup/"
+          >{{content.tabs[lang]["signup"]}}</a
+        >
+        {% endif %} {% endif %} {% if lang == "ar" %}
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/"
+          >{{content.tabs[lang]["home"]}}</a
+        >
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/about"
+          >{{content.tabs[lang]["about"]}}</a
+        >
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/earnMore"
+          >{{content.tabs[lang]["earnMore"]}}</a
+        >
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
+        >
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/videos"
+          >{{content.tabs[lang]["videos"]}}</a
+        >
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
+        >
+        {% if loggedin %}
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/profile/"
+          >{{content.tabs[lang]["profile"]}}</a
+        >
+        {% else %}
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/login/"
+          >{{content.tabs[lang]["login"]}}</a
+        >
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/signup/"
+          >{{content.tabs[lang]["signup"]}}</a
+        >
+        {% endif %} {% endif %}  {% if lang == 'en' %}
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab"
+          >ar</a
+        >
+        {% endif %} {% if lang == 'ar' %}
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="./?lang=en"
+          >en</a
+        >
+        {% endif %}
+      </nav>
+      <div
+        style="
+          justify-content: space-between;
+          width: 70%;
+          margin-top: 10%;
+          height: 64px;
+          flex-direction: row;
+          display: flex;
+          align-items: center;
+        "
+      >
+        <a
+          class="social-media-icon"
+          href="{{contact_info['facebook']}}"
+          id="drawer-facebook"
+        ></a>
+        <a
+          class="social-media-icon"
+          href="{{contact_info['linkedin']}}"
+          id="drawer-linkedin"
+        ></a>
+        <a
+          class="social-media-icon"
+          href="{{contact_info['instagram']}}"
+          id="drawer-instagram"
+        ></a>
+      </div>
+    </div>
+    <div id="toast">
+      <p id="toast-text">This is a Toast</p>
+    </div>
+  </body>
+</html>
+
+
+        

@@ -1,0 +1,6 @@
+Flask==2.0.3
+Flask-Caching==1.10.1
+Flask-Session==0.3.2
+Flask-SocketIO==4.3.1
+pipenv==2020.11.15
+requests==2.25.1
