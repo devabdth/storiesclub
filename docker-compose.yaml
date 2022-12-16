@@ -7,7 +7,7 @@ volumes:
 
 services:
   website:
-    build: Website
+    build: website
     restart: always
     env_file:
       - .docker.env
