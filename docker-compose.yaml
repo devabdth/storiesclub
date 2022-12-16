@@ -10,7 +10,7 @@ services:
     build: website
     restart: always
     env_file:
-      - .docker.env
+      - website/.docker.env
     ports:
       - '5000:8000'
     volumes:
