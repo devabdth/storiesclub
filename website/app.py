@@ -12,8 +12,5 @@ app: Flask = Flask(
 )
 setup: Setup = Setup(app= app, config=config)
 
-
-app.run(
-    debug= config.is_debug_mode,
-    port= config.port
-)
+if __name__ == "__main__":
+    app.run()
