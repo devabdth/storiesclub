@@ -14,7 +14,7 @@ class Config():
         self.debug_mode_token = "DEBUG"
         self.production_mode_token = "PROD"
 
-        self.port = os.environ.get("PORT") or 5000
+        self.port = os.environ.get("PORT") or 3030
         self.mode = os.environ.get("MODE") or self.debug_mode_token
         self.auth_key = os.environ.get("AUTH_KEY") or "1234567890"
         self.url = os.environ.get("URL") or "http://127.0.0.1:5000"
