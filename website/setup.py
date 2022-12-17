@@ -30,8 +30,8 @@ from routers.website.about.router import AboutRouter
 
 
 class Setup:
-    def __init__(self, website: Flask, config):
-        self.website = website
+    def __init__(self, app: Flask, config):
+        self.website = app
         self.config = config
 
         self.website_routers()
