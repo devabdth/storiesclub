@@ -57,8 +57,29 @@ class SignUpProcessRouter:
                     random.randint(0, 9),
                 )
                 print(code)
-
                 session["CurrentEmailConfirmationCode"] = code
+
+                try:
+                    import smtplib
+                    from email.mime.text import MIMEText
+                    recipent= session.get('currentUserEmail', None) 
+                    if recipent == None:
+                        return self.app.response_class(status=500)
+
+                    msg: MIMEText= MIMEText("Welcome to StoriesClub! Your verfication code is: {}".format(code))
+                    msg['Subject']= "Verify your Email"
+                    msg['To']= recipent
+                    msg['from']= self.config.email_model_email
+
+                    server= smtplib.SMTP_SSL("smtp.zoho.com", 465)
+                    server.login(self.config.email_model_email, self.config.email_model_access_key)
+
+                    server.sendmail(self.config.email_model_email, [recipent], msg.as_string())
+                    server.quit()
+                except Exception as e:
+                    print(e)
+                    return self.app.response_class(status= 500)
+
                 return self.app.response_class(status=200)
 
             except Exception as e:

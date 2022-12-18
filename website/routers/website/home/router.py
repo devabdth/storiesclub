@@ -15,6 +15,7 @@ class HomeRouter:
         def website_home_index():
             self.config.website_content.load()
             lang = session.get("lang", "ar")
+            import os
             return render_template(
                 'website/home/index.html',
                 header_desc=self.config.header_desc,

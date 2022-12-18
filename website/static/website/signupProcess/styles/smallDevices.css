@@ -3,10 +3,245 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
-    --main-color: #6b469c;
-    --accent-color: #eee7ce;
+  --main-color: #6b469c;
+  --accent-color: #eee7ce;
   --main-color-variant: #6b469c92;
-    --main-bg-color: #fefbe3;
+  --main-bg-color: #fefbe3;
 }
-@media screen and (max-width: 999px) {}
+
+@media screen and (max-width: 999px) {
+
+  #confirm-email {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 10vh 0;
+  }
+
+  #confirm-email > #form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    box-shadow: 0 0 30px 1px #999;
+    padding: 12px 24px;
+    border-radius: 12px;
+  }
+
+  #confirm-email > #form > h3 {
+    color: var(--main-color);
+    font-size: 2em;
+    font-weight: 900;
+  }
+
+  #confirm-email > #form > p {
+    color: var(--accent-color);
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  #email-confirmation-code {
+    width: 60%;
+    height: 15vh;
+    display: flex;
+    letter-spacing: 16px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    font-size: 5em;
+    color: var(--main-color);
+  }
+
+  .number-code > div {
+      display: flex;
+  } 
+
+  .number-code >  input:not(:last-child) {
+      margin-right: calc(var(--spacing) * 2);
+  }
+
+  #inputs {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+    
+  input.code-input {
+    font-size: 1.5em;
+    width: 3em;
+    height: 3em;
+    text-align: center;
+    flex: 1 0 1em;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    margin: 0 4px;
+  }
+
+  input.code-input:active ,
+  input.code-input:focus {
+    border: none;
+    outline: none;
+  }
+
+  #send-code-again, #change-email {
+    font-size: 0.75em;
+    color: var(--accent-color);
+    text-decoration: underline;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  #complete-profile {
+    width: 100%;
+    min-height: 60vh;
+    max-height: 600vh;
+    display: none;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    margin: 10vh 0;
+    padding: 0 16px;
+  }
+
+  #complete-profile > input {
+    width: 100%;
+  }
+
+  #complete-profile > #header {
+    position: relative;
+    width: 100%;
+    height: 35vh;
+    display: flex;
+  }
+
+  #complete-profile > #header > #import-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-color: #666;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--main-bg-color);
+    display: flex;
+    font-size: 2em;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  #complete-profile > #header > #import-asset {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 40%;
+    height: 40%;
+    border: 2px var(--main-bg-color) solid;
+    background-color: #666;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--main-bg-color);
+    display: flex;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+  .cities-dropbtn, .genders-dropbtn {
+    background-color: var(--main-bg-color);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 30px 1px #999;
+    border-radius: 12px;
+    width:  100%;
+    height:  8vh;
+    justify-content: start;
+    align-items: center;
+    display: flex;
+    transition: 500ms ease;
+    margin-bottom: 8vh;
+  }
+
+
+#city-search, #gender-search {
+    width:  100%;
+    height:  7vh;
+    display:  flex;
+    padding:  4px 8px;
+    outline: none;
+    border: none;
+    transition: 500ms ease;
+    font-size: 1.25em;
+    font-weight: 500;
+    font-family: 'Cairo';
+    color:  var(--main-color);
+    background-color: transparent;
+}
+
+.cities-dropdown, .genders-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.genders-dropdown-content, .cities-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--main-bg-color);
+  min-width: 70%;
+  max-height: 50vh;
+  overflow: auto;
+  border: 1px solid var(--main-color);
+  z-index: 1;
+  box-shadow: 0 0 30px 1px #999;
+  border-radius: 4px;
+  bottom: -80%;
+}
+
+.genders-dropdown-content {
+  bottom: -75%;
+}
+
+.genders-dropdown-content button, .cities-dropdown-content button {
+  color: var(--main-color);
+  font-weight: 300;
+  padding: 12px 16px;
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  align-items: center;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.genders-dropdown-content button:hover, .cities-dropdown-content button:hover {
+  background-color: var(--main-color-variant);
+}
+
+.show {
+  display: block;
+}
+
+}
             

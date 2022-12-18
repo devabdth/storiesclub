@@ -1,1 +1,7 @@
-flask_session
+db/assets/
+flask_session/
+website/flask_session/
+db/covers/
+assets/
+covers/
+website/venv/

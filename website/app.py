@@ -13,4 +13,6 @@ app: Flask = Flask(
 setup: Setup = Setup(app= app, config=config)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(
+        debug= True
+    )

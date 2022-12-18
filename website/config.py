@@ -22,7 +22,7 @@ class Config():
             "DB_URL") or "mongodb+srv://website:cqoS01gP7RzULu9v@storiesclub.twg2b.mongodb.net/storiesclub?retryWrites=true&w=majority"
 
         self.email_model_email = os.environ.get(
-            "EMAIL_MODEL_EMAIL") or "noreply@storiesclub.net"
+            "EMAIL_MODEL_EMAIL") or "no.reply@storiesclub.net"
         self.email_model_access_key = os.environ.get(
             "EMAIL_MODEL_ACCESS_KEY") or "27102021-Athena-Backend-Mailing@StroiesClub.Password@Athena Digital Solutions"
         # TODO

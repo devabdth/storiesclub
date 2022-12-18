@@ -111,7 +111,6 @@ class UsersHelper:
 
     def get_user_cover(self, _id):
         for ext in self.supported_exts:
-            print(os.path.abspath(os.path.join(os.path.dirname(__file__), "./covers/users/{}.{}".format(_id, ext))))
             if os.path.exists(os.path.abspath(os.path.join(os.path.dirname(__file__), "./covers/users/{}.{}".format(_id, ext)))):
                 return os.path.abspath(os.path.join(os.path.dirname(__file__), "./covers/users/{}.{}".format(_id, ext)))
 
