@@ -133,7 +133,7 @@
           {% if lang == "ar" %}
           <button
             class="main-button"
-			onclick="formValidation({{content.toast_content}}, '{{contact_info["url"]}}', '{{lang}}');"
+			onclick="formValidation({{content.toast_content | safe}}, '{{contact_info["url"]}}', '{{lang}}');"
             style="width: 60%; border-radius: 50px; font-family: 'Cairo'"
           >
             {{content.auth[lang]["login"]}}
@@ -143,7 +143,7 @@
           >
           {% else %}
           <button
-          onclick="formValidation({{content.toast_content}}, '{{contact_info["url"]}}', '{{lang}}');"
+          onclick="formValidation({{content.toast_content | safe}}, '{{contact_info["url"]}}', '{{lang}}');"
           class="main-button"
             style="width: 60%; border-radius: 50px; font-family: 'Poppins'"
           >

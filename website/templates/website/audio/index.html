@@ -142,15 +142,15 @@
       <div id="user" style="justify-content: space-between">
         {% if current_user != None and followed %}
         {% if lang == 'ar' %}
-          <button style="cursor: pointer; font-family: 'Cairo';" class="main-button" onclick="unfollow({{content.toast_content}}, '{{lang}}', '{{audio['publisher']}}');">{{content.global_[lang]["unfollow"]}}</button>
+          <button style="cursor: pointer; font-family: 'Cairo';" class="main-button" onclick="unfollow({{content.toast_content | safe}}, '{{lang}}', '{{audio['publisher']}}');">{{content.global_[lang]["unfollow"]}}</button>
         {% else %}
-          <button style="cursor: pointer; font-family: 'Cairo';" class="main-button" onclick="unfollow({{content.toast_content}}, '{{lang}}', '{{audio['publisher']}}');">{{content.global_[lang]["unfollow"]}}</button>
+          <button style="cursor: pointer; font-family: 'Cairo';" class="main-button" onclick="unfollow({{content.toast_content | safe}}, '{{lang}}', '{{audio['publisher']}}');">{{content.global_[lang]["unfollow"]}}</button>
         {% endif %}
         {% else %}
         {% if lang == 'ar' %}
-          <button style="cursor: pointer; font-size: 0.75em; font-family: 'Cairo';" class="main-button" onclick="follow({{content.toast_content}}, '{{lang}}', '{{audio['publisher']}}');">{{content.global_[lang]["follow"]}}</button>
+          <button style="cursor: pointer; font-size: 0.75em; font-family: 'Cairo';" class="main-button" onclick="follow({{content.toast_content | safe}}, '{{lang}}', '{{audio['publisher']}}');">{{content.global_[lang]["follow"]}}</button>
         {% else %}
-          <button style="cursor: pointer; font-size: 0.75em; font-family: 'Cairo';" class="main-button" onclick="follow({{content.toast_content}}, '{{lang}}', '{{audio['publisher']}}');">{{content.global_[lang]["follow"]}}</button>
+          <button style="cursor: pointer; font-size: 0.75em; font-family: 'Cairo';" class="main-button" onclick="follow({{content.toast_content | safe}}, '{{lang}}', '{{audio['publisher']}}');">{{content.global_[lang]["follow"]}}</button>
         {% endif %}
         {% endif %}
         <div id="content">
