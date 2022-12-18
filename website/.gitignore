@@ -5,3 +5,4 @@ db/covers/
 assets/
 covers/
 website/venv/
+__pycache__
