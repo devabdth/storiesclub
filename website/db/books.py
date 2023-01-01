@@ -22,6 +22,21 @@ class BooksHelper:
 
         self.books = list(self.books_collection.find())
 
+
+    def find_books_on_condition(self, params) -> list:
+        return list(self.books_collection.find({
+            "name": {
+                "$regex": (params["name"] if "name" in params.keys() else "")
+            },
+            "id": {
+                "$regex": (params["id"] if "id" in params.keys() else "")
+            },
+            "category": (params["category"] if "category" in params.keys() else None)
+        }))
+
+
+
+
     def get_all_books(self, fetch_by_trending: bool = False):
         try:
             if fetch_by_trending:

@@ -83,7 +83,7 @@
 
   label {
     color: #888;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 300;
   }
 
@@ -104,7 +104,7 @@
     letter-spacing: 2px;
   }
   #signup-content > p {
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 300;
     color: var(--main-color);
   }

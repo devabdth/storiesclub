@@ -1,4 +1,3 @@
-
 const showToast = (props) => {
     const toastDiv = document.getElementById("toast");
     const toastText = document.getElementById("toast-text");
@@ -17,7 +16,7 @@ const showToast = (props) => {
 
 
 
-const formValidation = async (toastContent, lang) => {
+const formValidation = async (lang) => {
     const url = window.location.href;
 
     const email = document.getElementById("email");

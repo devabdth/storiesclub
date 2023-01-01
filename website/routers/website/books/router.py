@@ -101,9 +101,12 @@ class BooksRouter:
 
             try:
                 book_id = dict(request.values)['id']
-                self.config.db.books.delete_book_by_id(book_id)
-                
-                return self.app.response_class(status=200)
+                res= self.config.db.books.delete_book_by_id(book_id)
+                if res == 1:
+                    return self.app.response_class(status=200)
+
+
+                return self.app.response_class(status=500)
             except Exception as e:
                 print(e)
                 return self.app.response_class(status=500)

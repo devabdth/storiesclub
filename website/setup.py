@@ -28,6 +28,14 @@ from routers.website.home.router import HomeRouter
 from routers.website.about.router import AboutRouter
 
 
+# Admin Routers
+from routers.admin.users.router import UsersAdminRouter
+from routers.admin.books.router import BooksAdminRouter
+from routers.admin.audios.router import AudiosAdminRouter
+from routers.admin.videos.router import VideosAdminRouter
+from routers.admin.content.router import ContentAdminRouter
+
+
 
 class Setup:
     def __init__(self, app: Flask, config):
@@ -44,6 +52,7 @@ class Setup:
         Session(self.website)
 
     def website_routers(self):
+        pass
         HomeRouter(app=self.website, config=self.config)
         AboutRouter(app=self.website, config=self.config)
         LoginRouter(app=self.website, config=self.config)
@@ -68,4 +77,11 @@ class Setup:
         ProfileRouter(app=self.website, config=self.config)
 
         EarnMoreRouter(app=self.website, config=self.config)
+
+
+        UsersAdminRouter(app= self.website, config= self.config)
+        BooksAdminRouter(app= self.website, config= self.config)
+        AudiosAdminRouter(app= self.website, config= self.config)
+        VideosAdminRouter(app= self.website, config= self.config)
+        # ContentAdminRouter(app= self.website, config= self.config)
 

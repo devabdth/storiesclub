@@ -2,16 +2,16 @@
   "header": {
     "tabs": {
       "ar": {
-        "home": "الرئيسية",
-        "about": "حول",
-        "earnMore": "إربح المزيد",
+        "home": "الصفحة الرئيسية",
+        "about": "نبذة عنا",
+        "earnMore": "اربح أكثر",
         "books": "الكتب",
-        "videos": "مقاطع الفيديوهات",
-        "audios": "مقاطع الصوت",
-        "suppliers": "مقدمين الخدمات",
-        "profile": "الحساب",
-        "login": "تسجيل الدخول",
-        "signup": "تسجيل الإشتراك"
+        "videos": "مقاطع الفيديو",
+        "audios": "المقاطع الصوتية",
+        "suppliers": "مقدمو الخدمات",
+        "profile": "الصفحة الشخصية",
+        "login": "تسجيل دخول",
+        "signup": "التسجيل"
       },
       "en": {
         "home": "Home",
@@ -40,13 +40,15 @@
       "WannaDoubleUpProfit": "Earn more now!"
     },
     "ar": {
-      "msg": "دلوقتي صانع المحتوي والمُشاهد بيكسب!",
-      "main": "كيف تعمل",
-      "second": "إبدأ الأن",
-      "welcome": "مرحباً بعودتك، ",
-      "publish": "انشر الأن!",
-      "wannaJoin": "تريد أن تنضم لمجموعة من صناع المُحتوي الرائعين",
-      "wannaJoinButton": "إنضم الأن"
+      "msg": "الصانع والمشاهد يمكنهم الربح الآن!",
+      "main": "كيف يعمل",
+      "second": "ابدأ الآن",
+      "welcome": "أهلاً بك من جديد, ",
+      "publish": "انشر الآن!",
+      "wannaJoin": "ترغب في الانضمام إلى الصناع المشرقين!",
+      "wannaJoinButton": "انضم الآن!",
+      "wannaDoubleUpProfitMsg": "ترغب في مضاعفة الأرباح وجني المال أسرع!",
+      "WannaDoubleUpProfit": "اربح أكثر الآن!"
     }
   },
   "global": {
@@ -87,27 +89,54 @@
       "notVideosPublished": "You have not published any videos yet!- Click here to publish!",
       "notBooksPublished": "You have not published any books yet!- Click here to publish!",
       "notAudiosPublished": "You have not published any audios yet!- Click here to publish!",
-      "confirm": "Confirm", 
+      "confirm": "Confirm",
       "cancel": "Cancel",
       "deleteMsg": "Are you sure, you want to delete",
       "earnMoreBetterExpTip": "For better experience in Earn More Program you might need to login to StoriesClub first, as all the ads you'll show here can't be recorded to your balance!",
       "showAll": "Show all!"
     },
     "ar": {
-      "storiesclub": "ستوريز كلوب",
-      "loginStreak": "تسجيل الدخول المتتالي",
-      "trendingBooks": "الكتب الرائجة",
-      "trendingBooksMsg": "هذه الكتب حازت علي إستحسان مجتمعنا!",
-      "trendingAudios": "مقاطع الصوت الرائجة",
-      "trendingAudiosMsg": "مقاطع الصوت هذه حازت علي إستحسان مجتمعنا!",
-      "trendingVideos": "الفيديوهات الرائجة",
-      "trendingVideosMsg": "هذه الفيديوهات حازت علي إستحسان مجتمعنا!",
+      "storiesclub": "ستوريزكلوب",
+      "loginStreak": "مرحلة تسجيل الدخول",
+      "loginStreakMsg": "تسلسل الأيام التي سجلت الدخول فيها إلى ستوريزكلوب",
+      "trendingBooks": "الكتب الأكثر رواجاً",
+      "trendingBooksMsg": "هذه الكتب الأكثر إعجاباً في مجتمعنا",
+      "trendingAudios": "المقاطع الصوتية الأكثر رواجاً",
+      "trendingAudiosMsg": "هذه المقاطع الصوتية الأكثر إعجاباً في مجتمعنا",
+      "trendingVideos": "مقاطع الفيديو الأكثر رواجاً",
+      "trendingVideosMsg": "هذه مقاطع الفيديو الأكثر إعجاباً في مجتمعنا",
       "or": "أو",
-      "search": "بحث",
-      "share": "مشاركة",
+      "search": "البحث",
+      "share": "المشاركة",
       "follow": "متابعة",
       "unfollow": "إلغاء المتابعة",
-      "followers": "متابع"
+      "followers": "المتابعون",
+      "normalUser": "المستخدم",
+      "supplier": "مقدمو الخدمات",
+      "ph": "دار النشر",
+      "overview": "نبذةعامة",
+      "wallet": "المحفظة",
+      "walletMsg": "الربح الذي حققته منذ آخر طلب سحب قمت بتقديمه",
+      "posts": "المنشورات",
+      "YourPosts": "المحتوى الذي شاركته مع العالم!",
+      "title": "العنوان",
+      "category": "الفئة",
+      "views": "المشاهدات",
+      "yourTotalViews": "المشاهدات التي جمعتها من خلال منشوراتك",
+      "totalViews": "المشاهدات الكلية",
+      "likers": "المعجبون",
+      "actions": "التفاعلات",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "show": "عرض",
+      "notVideosPublished": "لم تقم بنشر أي فيديوهات! انقر هنا للنشر!",
+      "notBooksPublished": "لم تقم بنشر أي كتب! انقر هنا للنشر!",
+      "notAudiosPublished": "لم تقم بنشر أي مقاطع صوتية! انقر هنا للنشر!",
+      "confirm": "تأكيد", 
+      "cancel": "إلغاء",
+      "deleteMsg": "أنت متأكد من أنك ترغب في الحذف؟",
+      "earnMoreBetterExpTip": "للحصول على تجربة أفضل في برنامج كسب المزيد قد تحتاج إلى تسجيل الدخول إلى ستوريزكلوب أولاً حيث لا يمكن تسجيل جميع الإعلانات التي ستعرضها هنا في رصيدك!",
+      "showAll": "عرض الكل!"
     }
   },
   "auth": {
@@ -131,65 +160,23 @@
       "changeEmail": "Change Email"
     },
     "ar": {
-      "email": "البريد الإلكتروني",
-      "phone": "الهاتف",
+      "email": "البريد الاكتروني",
+      "phone": "لهاتف",
       "username": "اسم المستخدم",
       "password": "كلمة المرور",
-      "repassword": "إعادة كلمة المرور",
+      "repassword": "تأكيد كلمة المرور",
       "login": "تسجيل الدخول",
-      "signup": "تسجيل الإشتراك",
+      "logout": "تسجيل الخروج",
+      "signup": "التسجيل",
       "forgetPassword": "نسيت كلمة المرور؟",
       "rememberMe": "تذكرني",
-      "newUserMessage": "ليس لديك حساب؟ سجل الإشتراك الأن",
-      "existingUserMessage": "لديك حساب بالفعل؟ سجل دخول الأن",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus nibh, sagittis a ante eu, luctus fringilla est. Aliquam pulvinar justo iaculis lorem pretium elementum. In mauris quam, porttitor nec venenatis in, vulputate non arcu. Aliquam ac iaculis nisl. Morbi sit amet ante justo. Donec lectus erat, molestie at gravida in, convallis a massa. Aenean rutrum vel ligula consequat convallis. Suspendisse nec leo leo. Donec non mi nec eros consequat facilisis. In condimentum et libero ut hendrerit. Nullam scelerisque mauris ac nunc ultricies, eget tincidunt sapien ullamcorper."
-    }
-  },
-  "toastContent": {
-    "en": {
-      "notValidUsername": "Please, Enter your email!",
-      "notValidEmail": "Please, Enter a valid email!",
-      "notValidPassword": "Please, Enter a valid password!",
-      "loading": "Loading",
-      "userNotFound": "No users were found. You may want to Sign Up",
-      "userExists": "User already exists. You may want to Login!",
-      "tryLater": "Please, Try again later!",
-      "passwordMissmatched": "Please, Enter the right password!",
-      "repasswordNotMatched": "Passwords not matched",
-      "fieldEmpty": "This field can't be empty",
-      "tryAgainLater": "Please, Try again Later!", 
-      "noFilesSelected": "No files Selcted!",
-      "fileSelcted": "File Selected Successfully!", 
-      "notValidBookTitle": "Enter a valid book title!",
-      "notValidBookDesc": "Enter a valid Book Description!",
-      "notValidBookDepositNumber": "Enter a valid Book Deposit Number!",
-      "notValidBookISBN": "Enter a valid Book ISBN!",
-      "notValidBookCategory": "Enter a valid Category!",
-      "notValidBookCover": "Please, Pick up a cover file!",
-      "notValidBookAsset": "Please, Pick up the book you want to publih!",
-      "notValidName": "Please, Enter a valid name!",
-      "notValidBio": "Please, Tell us more about yourself!",
-      "notValidPhoneNumber": "Please, Enter your phone number!",
-      "notValidCity": "Please, Select your city!",
-      "notValidGender": "Please, Select you gender!"
-    },
-    "ar": {
-      "notValidUsername": "أدخل البريد الإلكتروني الخاص بك",
-      "notValidEmail": "أدخل بريد إلكتروني صحيح",
-      "notValidPassword": "أدخل كلمة مرور صحيح",
-      "loading": "جاري التحميل",
-      "userNotFound": "لا يوجد مستخدمين بنفس البيانات، ربما ترغب في تسجيل الإشتراك",
-      "passwordMissmatched": "كلمة المرور غير صحيحة",
-      "repasswordNotMatched": "كلمتي المرور غير متوافقين",
-      "fieldEmpty": "هذا الحقل لا يجب أن يكون فارغاً",
-      "tryAgainLater": "أعد المحاولة في وقت لاحق",
-      "notValidBookTitle": "",
-      "notValidBookDesc": "",
-      "notValidBookDepositNumber": "Number!",
-      "notValidBookISBN": "",
-      "notValidBookCategory": "",
-      "notValidBookCover": "",
-      "notValidBookAsset": ""
+      "newUserMessage": "ليس لديك حساب؟ سجّل الآن!",
+      "existingUserMessage": "ألديك حساب بالفعل؟ سجل دخولك الآن!",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus nibh, sagittis a ante eu, luctus fringilla est. Aliquam pulvinar justo iaculis lorem pretium elementum. In mauris quam, porttitor nec venenatis in, vulputate non arcu. Aliquam ac iaculis nisl. Morbi sit amet ante justo. Donec lectus erat, molestie at gravida in, convallis a massa. Aenean rutrum vel ligula consequat convallis. Suspendisse nec leo leo. Donec non mi nec eros consequat facilisis. In condimentum et libero ut hendrerit. Nullam scelerisque mauris ac nunc ultricies, eget tincidunt sapien ullamcorper.",
+      "confirmEmail": "أكّد حسابك",
+      "confirmEmailMsg": "أدخل الكود الذي تم إرساله إلى بريدك الالكتروني",
+      "sendCodeAgain": "أرسل كود التأكيد مرة أخرى",
+      "changeEmail": "تغيير البريدالالكتروني"
     }
   },
   "books": {
@@ -202,7 +189,16 @@
       "read": "Read",
       "page": "Page"
     },
-    "ar": {}
+    "ar": {
+      "books": "الكتب",
+      "yourBooks": "!الكتب المنشورة التي شاركتها مع العالم",
+      "booksEntry": "إلى الذين يتنفسون الورق",
+      "searchHint": "ابحث باسم الكتاب، باسم المؤلف، باسم دار النشر، وغيره...",
+      "wantToRead": "ترغب في قراءة هذا الكتاب؟",
+      "read": "القراءة",
+      "page": "الصفحة"
+
+    }
   },
   "audios": {
     "en": {
@@ -214,8 +210,12 @@
       "wantToListen": "Want to listen to this audio?"
     },
     "ar": {
-      "listen": "إستماع",
-      "wantToListen": "تريد الإستماع إلي هذا المقطع الصوتي"
+      "audios": "الصوتيات",
+      "yourAudios": "مقاطع الصوتيات التي شاركتها مع العالم!",
+      "audiosEntry": "إلى الذين يحبون مداعبة أذنهم!",
+      "searchHint": "ابحث باسم المقطع الصوتي، باسم المؤلف، باسم دار النشر، وغيره...",
+      "listen": "الاستماع",
+      "wantToListen": "ترغب في سماع هذا المقطع الصوتي؟"
     }
   },
   "videos": {
@@ -228,10 +228,14 @@
       "wantToWatch": "Want to watch to this video?"
     },
     "ar": {
-      "listen": "إستماع",
-      "wantToListen": "تريد الإستماع إلي هذا المقطع الصوتي"
+      "videos": "مقاطع الفيديو",
+      "yourVideos": "مقاطع الفيديو التي شاركتها مع العالم!",
+      "videosEntry": "إلى الذين يحبون مداعبة أذنهم!",
+      "searchHint": "ابحث باسم المقطع، باسم المؤلف، باسم دار النشر، وغيره...",
+      "watch": "المشاهدة",
+      "wantToWatch": "ترغب في رؤية هذا المقطع؟"
     }
-  }, 
+  },
   "publish": {
     "en": {
       "publish": "Publish",
@@ -239,13 +243,28 @@
       "title": "Title",
       "desc": "Description",
       "depositNumber": "Deposit Number (Optional)",
-      "ISBN": "ISBN / Global Deposit Number (Optional)", 
+      "ISBN": "ISBN / Global Deposit Number (Optional)",
       "cover": "Cover Image",
       "book": "Book File",
       "asset": "Asset",
       "selectFile": "Select File",
-      "submit": "Submit", 
+      "submit": "Submit",
       "pickCategory": "Pick a category..."
+    },
+    "ar": {
+      "publish": "النشر",
+      "publishMsg": "أظهر للعالم موهبتك في صنع الأشياء!",
+      "title": "العنوان",
+      "desc": "الوصف",
+      "depositNumber": "رقم الإيداع (اختياري)",
+      "ISBN": "رقم الإيداع العالمي (اختياري)", 
+      "cover": "صورة الغلاف",
+      "book": "ملف الكتاب",
+      "asset": "المدّخر",
+      "selectFile": "اختيار ملف",
+      "submit": "إرسال", 
+      "pickCategory": "اختر الفئة ..."
+
     }
   },
   "users": {
@@ -266,7 +285,23 @@
       "preferNotToSay": "Prefer not to say",
       "pickGender": "Pick your gender..."
     },
-    "ar": {}
+    "ar": {
+      "name": "الاسم",
+      "bio": "نبذة تعريفية",
+      "birth": "تاريخ الميلاد",
+      "email": "البريد الاكتروني",
+      "password": "كلمة السر",
+      "phoneNumber": "رقم الهاتف",
+      "gender": "النوع",
+      "city": "المدينة",
+      "verified": "موثّق",
+      "profilePicture": "صورة الصفحة الشخصية",
+      "pickCity": "اخنر المدينة...",
+      "male": "ذكر",
+      "female": "أنثى",
+      "preferNotToSay": "أفضّل عدم القول",
+      "pickGender": "اختر النوع..."
+    }
   },
   "cities": {
     "en": {
@@ -299,39 +334,48 @@
       "suez": "Suez"
     },
     "ar": {
-        "alex": "Ø§ÙØ£Ø³ÙÙØ¯Ø±ÙØ©",
-        "aswan": "Ø£Ø³ÙØ§Ù",
-        "asyut": "Ø£Ø³ÙÙØ·",
-        "behira": "Ø§ÙØ¨Ø­ÙØ±Ø©",
-        "beni_suef": "Ø¨ÙÙ Ø³ÙÙÙ",
-        "cairo": "Ø§ÙÙØ§ÙØ±Ø©",
-        "dakahlia": "Ø§ÙØ¯ÙÙÙÙØ©",
-        "damietta": "Ø¯ÙÙØ§Ø·",
-        "faiyum": "Ø§ÙÙÙÙÙ",
-        "gharbia": "Ø§ÙØºØ±Ø¨ÙØ©",
-        "giza": "Ø§ÙØ¬ÙØ²Ø©",
-        "ismailia": "Ø§ÙØ¥Ø³ÙØ§Ø¹ÙÙÙØ©",
-        "kafr_sheikh": "ÙÙØ± Ø§ÙØ´ÙØ®",
-        "luxor": "Ø§ÙØ£ÙØµØ±",
-        "matruh": "ÙØ·Ø±ÙØ­",
-        "minya": "Ø§ÙÙÙÙØ§",
-        "monufia": "Ø§ÙÙÙÙÙÙØ©",
-        "wadi_geded": "Ø§ÙÙØ§Ø¯Ù Ø§ÙØ¬Ø¯ÙØ¯",
-        "north_sinai": "Ø´ÙØ§Ù Ø³ÙÙØ§Ø¡",
-        "port_said": "Ø¨ÙØ±Ø³Ø¹ÙØ¯",
-        "qalyubia": "Ø§ÙÙÙÙÙØ¨ÙØ©",
-        "qena": "ÙÙØ§",
-        "red_sea": "Ø§ÙØ¨Ø­Ø± Ø§ÙØ£Ø­ÙØ±",
-        "sharqia": "Ø§ÙØ´Ø±ÙÙØ©",
-        "sohag": "Ø³ÙÙØ§Ø¬",
-        "south_sinai": "Ø¬ÙÙØ¨ Ø³ÙÙØ§Ø¡",
-        "suez": "Ø§ÙØ³ÙÙØ³"
+      "alex": "الاسكندرية",
+      "aswan": "أسوان",
+      "asyut": "أسيوط",
+      "behira": "البحيرة",
+      "beni_suef": "بني سويف",
+      "cairo": "القاهرة",
+      "dakahlia": "الدقهلية",
+      "damietta": "دمياط",
+      "faiyum": "الفيوم",
+      "gharbia": "الغربية",
+      "giza": "الجيزة",
+      "ismailia": "الاسماعيلية",
+      "kafr_sheikh": "كفر الشيخ",
+      "luxor": "الأقصر",
+      "matruh": "مرسى مطروح",
+      "minya": "المنيا",
+      "monufia": "المنوفية",
+      "wadi_geded": "الوادي الجديد",
+      "north_sinai": "شمال سيناء",
+      "port_said": "بور سعيد ",
+      "qalyubia": "القليوبية",
+      "qena": "قنا",
+      "red_sea": "البحر الأحمر",
+      "sharqia": "الشرقية",
+      "sohag": "سوهاج",
+      "south_sinai": "جنوب سيناء",
+      "suez": "السويس"
     }
   },
   "about": {
     "en": {
-      "about": "About"
+      "about": "About",
+      "usersDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus nibh, sagittis a ante eu, luctus fringilla est. Aliquam pulvinar justo iaculis lorem pretium elementum. In mauris quam, porttitor nec venenatis in, vulputate non arcu. Aliquam ac iaculis nisl. Morbi sit amet ante justo. Donec lectus erat, molestie at gravida in, convallis a massa. Aenean rutrum vel ligula consequat convallis. Suspendisse nec leo leo. Donec non mi nec eros consequat facilisis. In condimentum et libero ut hendrerit. Nullam scelerisque mauris ac nunc ultricies, eget tincidunt sapien ullamcorper.",
+      "publishersDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus nibh, sagittis a ante eu, luctus fringilla est. Aliquam pulvinar justo iaculis lorem pretium elementum. In mauris quam, porttitor nec venenatis in, vulputate non arcu. Aliquam ac iaculis nisl. Morbi sit amet ante justo. Donec lectus erat, molestie at gravida in, convallis a massa. Aenean rutrum vel ligula consequat convallis. Suspendisse nec leo leo. Donec non mi nec eros consequat facilisis. In condimentum et libero ut hendrerit. Nullam scelerisque mauris ac nunc ultricies, eget tincidunt sapien ullamcorper.",
+      "publishingHousesDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus nibh, sagittis a ante eu, luctus fringilla est. Aliquam pulvinar justo iaculis lorem pretium elementum. In mauris quam, porttitor nec venenatis in, vulputate non arcu. Aliquam ac iaculis nisl. Morbi sit amet ante justo. Donec lectus erat, molestie at gravida in, convallis a massa. Aenean rutrum vel ligula consequat convallis. Suspendisse nec leo leo. Donec non mi nec eros consequat facilisis. In condimentum et libero ut hendrerit. Nullam scelerisque mauris ac nunc ultricies, eget tincidunt sapien ullamcorper.",
+      "suppliersDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus nibh, sagittis a ante eu, luctus fringilla est. Aliquam pulvinar justo iaculis lorem pretium elementum. In mauris quam, porttitor nec venenatis in, vulputate non arcu. Aliquam ac iaculis nisl. Morbi sit amet ante justo. Donec lectus erat, molestie at gravida in, convallis a massa. Aenean rutrum vel ligula consequat convallis. Suspendisse nec leo leo. Donec non mi nec eros consequat facilisis. In condimentum et libero ut hendrerit. Nullam scelerisque mauris ac nunc ultricies, eget tincidunt sapien ullamcorper."
     },
-    "ar": {}
+    "ar": {
+      "usersDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus nibh, sagittis a ante eu, luctus fringilla est. Aliquam pulvinar justo iaculis lorem pretium elementum. In mauris quam, porttitor nec venenatis in, vulputate non arcu. Aliquam ac iaculis nisl. Morbi sit amet ante justo. Donec lectus erat, molestie at gravida in, convallis a massa. Aenean rutrum vel ligula consequat convallis. Suspendisse nec leo leo. Donec non mi nec eros consequat facilisis. In condimentum et libero ut hendrerit. Nullam scelerisque mauris ac nunc ultricies, eget tincidunt sapien ullamcorper.",
+      "publishersDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus nibh, sagittis a ante eu, luctus fringilla est. Aliquam pulvinar justo iaculis lorem pretium elementum. In mauris quam, porttitor nec venenatis in, vulputate non arcu. Aliquam ac iaculis nisl. Morbi sit amet ante justo. Donec lectus erat, molestie at gravida in, convallis a massa. Aenean rutrum vel ligula consequat convallis. Suspendisse nec leo leo. Donec non mi nec eros consequat facilisis. In condimentum et libero ut hendrerit. Nullam scelerisque mauris ac nunc ultricies, eget tincidunt sapien ullamcorper.",
+      "publishingHousesDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus nibh, sagittis a ante eu, luctus fringilla est. Aliquam pulvinar justo iaculis lorem pretium elementum. In mauris quam, porttitor nec venenatis in, vulputate non arcu. Aliquam ac iaculis nisl. Morbi sit amet ante justo. Donec lectus erat, molestie at gravida in, convallis a massa. Aenean rutrum vel ligula consequat convallis. Suspendisse nec leo leo. Donec non mi nec eros consequat facilisis. In condimentum et libero ut hendrerit. Nullam scelerisque mauris ac nunc ultricies, eget tincidunt sapien ullamcorper.",
+      "suppliersDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus nibh, sagittis a ante eu, luctus fringilla est. Aliquam pulvinar justo iaculis lorem pretium elementum. In mauris quam, porttitor nec venenatis in, vulputate non arcu. Aliquam ac iaculis nisl. Morbi sit amet ante justo. Donec lectus erat, molestie at gravida in, convallis a massa. Aenean rutrum vel ligula consequat convallis. Suspendisse nec leo leo. Donec non mi nec eros consequat facilisis. In condimentum et libero ut hendrerit. Nullam scelerisque mauris ac nunc ultricies, eget tincidunt sapien ullamcorper."
+    }
   }
 }

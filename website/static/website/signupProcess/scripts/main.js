@@ -57,7 +57,7 @@ const StageOneSubmit = async () => {
   });
 }
 
-const sendCodeAgain = async (toastContent, lang) => {
+const sendCodeAgain = async (lang) => {
   const res = await fetch('http://127.0.0.1:5000/sendCodeAgain/', {
     method: 'get'
   });
@@ -202,7 +202,7 @@ const chooseGender = (genderText, gender, lang) => {
 }
 
 
-const compleProfileSubmit = async (toastContent, lang) => {
+const compleProfileSubmit = async (lang) => {
   const nameField = document.getElementById('name');
   const bioField = document.getElementById('bio');
   const citiesBtn = document.getElementById('cities-dropbtn');

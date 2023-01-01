@@ -1,15 +1,2 @@
-id,name,shotBio
-0,First Category,تصنيف,This is a short bio,وصف التصنيف
-1,Second Category,تصنيف,This is a short bio,وصف التصنيف
-2,Third Category,تصنيف,This is a short bio,وصف التصنيف
-3,Forth Category,تصنيف,This is a short bio,وصف التصنيف
-5,Fifth Category,تصنيف,This is a short bio,وصف التصنيف
-6,Sixth Category,تصنيف,This is a short bio,وصف التصنيف
-7,Seventh Category,تصنيف,This is a short bio,وصف التصنيف
-8,Eighth Category,تصنيف,This is a short bio,وصف التصنيف
-9,Ninth Category,تصنيف,This is a short bio,وصف التصنيف
-10,Tenth Category,تصنيف,This is a short bio,وصف التصنيف
-11,Eleventh Category,تصنيف,This is a short bio,وصف التصنيف
-12,Twelveth Category,تصنيف,This is a short bio,وصف التصنيف
-14,Therteenth Category,تصنيف,This is a short bio,وصف التصنيف
-15,Fourtenth Category,تصنيف,This is a short bio,وصف التصنيف
+id,englishName,arabicName,englishShortBio,arabicShortBio
+0,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف

@@ -124,7 +124,7 @@
           {% if lang == "ar" %}
           <button
             class="main-button"
-			onclick="formValidation({{content.toast_content | safe}}, '{{lang}}');"
+			onclick='formValidation("{{lang}}");'
             style="width: 60%; border-radius: 50px; font-family: 'Cairo'"
           >
             {{content.auth[lang]["signup"]}}
@@ -134,7 +134,7 @@
           >
           {% else %}
           <button
-			onclick="formValidation({{content.toast_content | safe}}, '{{lang}}');"
+			onclick='formValidation("{{lang}}");'
             class="main-button"
             style="width: 60%; border-radius: 50px; font-family: 'Poppins'"
           >

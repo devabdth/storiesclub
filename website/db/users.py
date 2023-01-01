@@ -35,6 +35,18 @@ class UsersHelper:
         
         self.users = list(self.users_collection.find())
 
+    def find_users_on_condition(self, params) -> list:
+        return list(self.users_collection.find({
+            "name": {
+                "$regex": (params["name"] if "name" in params.keys() else "")
+            },
+            "email": {
+                "$regex": (params["email"] if "email" in params.keys() else "")
+            },
+        }))
+
+
+
     def get_user_by_email(self, email: str) -> dict:
         try:
             user = self.users_collection.find({'email': email})
@@ -121,12 +133,6 @@ class UsersHelper:
                 return os.path.abspath(os.path.join(os.path.dirname(__file__), "./assets/users/{}.{}".format(_id, ext)))
 
     def get_user_posts(self, _id):
-        print({
-            "audios": AudiosHelper(self.db_url).get_audios_by_user_id(_id),
-            "videos": VideosHelper(self.db_url).get_videos_by_user_id(_id),
-            "books": BooksHelper(self.db_url).get_books_by_user_id(_id),
-        }
-)
         return {
             "audios": AudiosHelper(self.db_url).get_audios_by_user_id(_id),
             "videos": VideosHelper(self.db_url).get_videos_by_user_id(_id),

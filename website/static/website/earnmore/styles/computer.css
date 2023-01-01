@@ -38,13 +38,13 @@
     background: none;
     border: none;
     font-weight: 100;
-    font-size: 1.5em;
+    font-size: 1.25em;
     color: var(--main-bg-color);
     cursor: pointer;
   }
 
   #better-exp-tip > p {
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 200;
     color: var(--main-bg-color);
     text-align: center;

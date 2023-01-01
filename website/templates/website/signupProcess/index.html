@@ -77,12 +77,12 @@
           {% if lang == "ar" %}
             <h3 style="font-family: 'Cairo">{{content.auth[lang]["confirmEmail"]}}</h3>
             <p style="font-family: 'Cairo">{{content.auth[lang]["confirmEmailMsg"]}}</p>
-            <button id="change-email" onclick="changeEmail({{content.toast_content | safe}}, '{{lang}}');" style="font-family: 'Cairo';">{{content.auth[lang]["changeEmail"]}} ({{current_user_email}})</button>
+            <button id="change-email" onclick="changeEmail('{{lang}}');" style="font-family: 'Cairo';">{{content.auth[lang]["changeEmail"]}} ({{current_user_email}})</button>
 
           {% else %}
             <h3 style="font-family: 'Raleway';">{{content.auth[lang]["confirmEmail"]}}</h3>
             <p style="font-family: 'Poppins';">{{content.auth[lang]["confirmEmailMsg"]}}</p>
-            <button id="change-email" onclick="changeEmail({{content.toast_content | safe}}, '{{lang}}');" style="font-family: 'Poppins';">{{content.auth[lang]["changeEmail"]}} ({{current_user_email}})</button>
+            <button id="change-email" onclick="changeEmail('{{lang}}');" style="font-family: 'Poppins';">{{content.auth[lang]["changeEmail"]}} ({{current_user_email}})</button>
           {% endif %}
           <div id="inputs">
             <input name='code' id="digit-one" class='code-input'/>
@@ -91,11 +91,11 @@
             <input name='code' id="digit-four" class='code-input'/>
           </div>
         {% if lang == "ar" %}
-          <button style="font-family: 'Cairo';" onclick="StageOneSubmit({{content.toast_content | safe}}, '{{lang}}');"  id="stage-one-submit" class="main-button">{{content.publish[lang]["submit"]}}</button>
-          <button id="send-code-again" onclick="sendCodeAgain({{content.toast_content | safe}}, '{{lang}}');" style="font-family: 'Cairo';">{{content.auth[lang]["sendCodeAgain"]}}</button>
+          <button style="font-family: 'Cairo';" onclick="StageOneSubmit('{{lang}}');"  id="stage-one-submit" class="main-button">{{content.publish[lang]["submit"]}}</button>
+          <button id="send-code-again" onclick="sendCodeAgain('{{lang}}');" style="font-family: 'Cairo';">{{content.auth[lang]["sendCodeAgain"]}}</button>
         {% else %}
-          <button style="font-family: 'Poppins';" onclick="StageOneSubmit({{content.toast_content | safe}}, '{{lang}}');" class="main-button">{{content.publish[lang]["submit"]}}</button>
-          <button id="send-code-again" onclick="sendCodeAgain({{content.toast_content | safe}}, '{{lang}}');" style="font-family: 'Poppins';">{{content.auth[lang]["sendCodeAgain"]}}</button>
+          <button style="font-family: 'Poppins';" onclick="StageOneSubmit('{{lang}}');" class="main-button">{{content.publish[lang]["submit"]}}</button>
+          <button id="send-code-again" onclick="sendCodeAgain('{{lang}}');" style="font-family: 'Poppins';">{{content.auth[lang]["sendCodeAgain"]}}</button>
         {% endif %}
       </div>
       <div class="vertical-ad">Ad Space</div>
@@ -136,9 +136,9 @@
       </div>
 
         {% if lang == "ar" %}
-          <button class="main-button" style="font-family: 'Cairo';" onclick="compleProfileSubmit({{content.toast_content | safe}}, '{{lang}}');">{{content.publish[lang]["submit"]}}</button>
+          <button class="main-button" style="font-family: 'Cairo';" onclick="compleProfileSubmit('{{lang}}');">{{content.publish[lang]["submit"]}}</button>
         {% else %}
-          <button class="main-button" style="font-family: 'Poppins';" onclick="compleProfileSubmit({{content.toast_content | safe}}, '{{lang}}');">{{content.publish[lang]["submit"]}}</button>
+          <button class="main-button" style="font-family: 'Poppins';" onclick="compleProfileSubmit('{{lang}}');">{{content.publish[lang]["submit"]}}</button>
         {% endif %}
 
     </section>

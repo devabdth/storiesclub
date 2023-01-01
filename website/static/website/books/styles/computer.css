@@ -72,7 +72,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     row-gap: 5vh;
-    column-gap: 8px;
+    column-gap: 6px;
   }
 
   #books {

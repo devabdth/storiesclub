@@ -14,7 +14,6 @@ class WebsiteContent:
         self.entry = self.data["entry"]
         self.global_ = self.data["global"]
         self.auth = self.data["auth"]
-        self.toast_content = self.data["toastContent"]
         self.books = self.data["books"]
         self.audios = self.data["audios"]
         self.videos = self.data["videos"]

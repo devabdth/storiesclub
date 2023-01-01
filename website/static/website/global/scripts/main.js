@@ -160,3 +160,52 @@ const logout = async (url) => {
         window.open(`${url}/home/`, '_self');
     }
 }
+
+
+const toastContent = {
+    "en": {
+      "notValidUsername": "Please, Enter your email!",
+      "notValidEmail": "Please, Enter a valid email!",
+      "notValidPassword": "Please, Enter a valid password!",
+      "loading": "Loading",
+      "userNotFound": "No users were found. You may want to Sign Up",
+      "userExists": "User already exists. You may want to Login!",
+      "tryLater": "Please, Try again later!",
+      "passwordMissmatched": "Please, Enter the right password!",
+      "repasswordNotMatched": "Passwords not matched",
+      "fieldEmpty": "This field can't be empty",
+      "tryAgainLater": "Please, Try again Later!", 
+      "noFilesSelected": "No files Selcted!",
+      "fileSelcted": "File Selected Successfully!", 
+      "notValidBookTitle": "Enter a valid book title!",
+      "notValidBookDesc": "Enter a valid Book Description!",
+      "notValidBookDepositNumber": "Enter a valid Book Deposit Number!",
+      "notValidBookISBN": "Enter a valid Book ISBN!",
+      "notValidBookCategory": "Enter a valid Category!",
+      "notValidBookCover": "Please, Pick up a cover file!",
+      "notValidBookAsset": "Please, Pick up the book you want to publih!",
+      "notValidName": "Please, Enter a valid name!",
+      "notValidBio": "Please, Tell us more about yourself!",
+      "notValidPhoneNumber": "Please, Enter your phone number!",
+      "notValidCity": "Please, Select your city!",
+      "notValidGender": "Please, Select you gender!"
+    },
+    "ar": {
+      "notValidUsername": "أدخل البريد الإلكتروني الخاص بك",
+      "notValidEmail": "أدخل بريد إلكتروني صحيح",
+      "notValidPassword": "أدخل كلمة مرور صحيح",
+      "loading": "جاري التحميل",
+      "userNotFound": "لا يوجد مستخدمين بنفس البيانات، ربما ترغب في تسجيل الإشتراك",
+      "passwordMissmatched": "كلمة المرور غير صحيحة",
+      "repasswordNotMatched": "كلمتي المرور غير متوافقين",
+      "fieldEmpty": "هذا الحقل لا يجب أن يكون فارغاً",
+      "tryAgainLater": "أعد المحاولة في وقت لاحق",
+      "notValidBookTitle": "",
+      "notValidBookDesc": "",
+      "notValidBookDepositNumber": "Number!",
+      "notValidBookISBN": "",
+      "notValidBookCategory": "",
+      "notValidBookCover": "",
+      "notValidBookAsset": ""
+    }
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StoriesClub - Profile</title>
+    <title>StoriesClub - About</title>
 
     <link
       rel="stylesheet"
@@ -130,6 +130,42 @@
           <h2 style="font-family: 'Raleway';">{{content.about[lang]["about"]}}</h2>
         {% endif %}
       </div>
+    </section>
+    <section class="about-section" id="users" onclick="toggleUsersSection()">
+      {% if lang == 'ar' %}
+        <h3 style="font-family: 'Cairo';">Users</h3>
+        <p style="font-family: 'Cairo';" id="users-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      {% else %}
+        <h3 style="font-family: 'Raleway';">Users</h3>
+        <p style="font-family: 'Poppins';" id="users-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      {% endif %}
+    </section>    
+    <section class="about-section" id="creators" onclick="toggleCreatorsSection()">
+      {% if lang == 'ar' %}
+        <h3 style="font-family: 'Cairo';">Creators</h3>
+        <p style="font-family: 'Cairo';" id="creators-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      {% else %}
+        <h3 style="font-family: 'Raleway';">Creators</h3>
+        <p style="font-family: 'Poppins';" id="creators-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      {% endif %}
+    </section>    
+    <section class="about-section" id="publish-houses" onclick="togglePublishingHousesSection()">
+      {% if lang == 'ar' %}
+        <h3 style="font-family: 'Cairo';">Publishing Houses</h3>
+        <p style="font-family: 'Cairo';" id="publish-houses-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      {% else %}
+        <h3 style="font-family: 'Raleway';">Publishing Houses</h3>
+        <p style="font-family: 'Poppins';" id="publish-houses-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      {% endif %}
+    </section>    
+    <section class="about-section" id="suppliers" onclick="toggleSuppliersSection()">
+      {% if lang == 'ar' %}
+        <h3 style="font-family: 'Cairo';">Suppliers</h3>
+        <p style="font-family: 'Cairo';" id="suppliers-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      {% else %}
+        <h3 style="font-family: 'Raleway';">Suppliers</h3>
+        <p style="font-family: 'Raleway';" id="suppliers-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      {% endif %}
     </section>
     <footer>
       <div>

@@ -82,7 +82,7 @@ class Config():
             "publisher": "62bc82f7a3bf2b70f4c8341f",
             "depositNumber": "",
             "ph": "",
-            "category": 28,
+            "category": 0,
             "views": 86,
             "isin": 0,
             "publishingDate": "1656521642473",

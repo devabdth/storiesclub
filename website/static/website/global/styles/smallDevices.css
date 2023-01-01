@@ -38,8 +38,8 @@
     background-image: url(./images/logo-white-128.png);
     background-size: contain;
     background-position: center;
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     margin-right: 12px;
   }
 
@@ -47,8 +47,8 @@
     background-image: url(./images/logo-accent-128.png);
     background-size: contain;
     background-position: center;
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     margin-right: 12px;
   }
 
@@ -88,8 +88,8 @@
   .options-btn {
   color: var(--main-color);
   background-color: transparent;
-  padding: 16px;
-  font-size: 1em;
+  padding: 12px;
+  font-size: 0.9em;
   border: none;
   cursor: pointer;
   transform: rotate(90deg);
@@ -106,21 +106,21 @@
   position: absolute;
   background-color: var(--main-bg-color);
   border: none;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
   z-index: 1;
   border-radius: 12px;
 }
 
 .options-content a, .options-content button {
   color: black;
-  padding: 12px 16px;
+  padding: 12px 12px;
   text-decoration: none;
   display: block;
   width:  15vh;
   border-radius: 12px;
   text-align:  start;
   color: var(--main-color);
-  font-size: 1em;
+  font-size: 0.9em;
 
 }
 
@@ -150,7 +150,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
-    padding: 12px 8px;
+    padding: 12px 6px;
     transition: 750ms ease;
     overflow-y: scroll;
   }
@@ -191,8 +191,8 @@
     color: #999;
     font-weight: 500;
     font-family: "Quicksand";
-    font-size: 1em;
-    margin: 8px 0;
+    font-size: 0.9em;
+    margin: 6px 0;
     transition: 500ms ease;
   }
 
@@ -239,8 +239,8 @@
   }
 
   .social-media-icon {
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     margin: 0 12px;
     background-size: contain;
     background-position: center;
@@ -268,8 +268,8 @@
   }
 
   #footer-logo {
-    min-width: 128px;
-    min-height: 128px;
+    min-width: 126px;
+    min-height: 126px;
     background-image: url(./images/logo-white-128.png);
     background-size: contain;
     background-position: center;
@@ -282,7 +282,7 @@
     right: 24px;
     background-color: var(--main-bg-color);
     box-shadow: 0 0 30px 1px #000;
-    padding: 16px 32px;
+    padding: 12px 32px;
     border: 4px var(--main-color) solid;
     border-radius: 12px;
     display: none;
@@ -324,7 +324,7 @@
 
   .footer-tab {
     color: var(--main-bg-color);
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 500;
     transition: 500ms;
     opacity: 0.5;
@@ -338,13 +338,13 @@
   .footer-contact-info {
     color: var(--main-bg-color);
     font-weight: 200;
-    font-size: 1em;
+    font-size: 0.9em;
     font-family: "Poppins";
   }
 
   #footer-logo {
-    width: 128px;
-    height: 128px;
+    width: 126px;
+    height: 126px;
     background-image: url(./images/logo-white-128.png);
     background-size: contain;
     background-position: center;
@@ -359,8 +359,8 @@
   }
 
   .footer-social-icon {
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     margin: 0 12px;
     background-size: contain;
     background-position: center;
@@ -381,7 +381,7 @@
     background-color: transparent;
     border: 1px rgba(0, 0, 0, 0.5) solid;
     font-weight: 300;
-    font-size: 1em;
+    font-size: 0.9em;
     padding: 12px 24px;
     border-radius: 12px;
     margin: 12px 0;
@@ -394,7 +394,7 @@
     min-height: 15vh;
     display:  flex;
     border: 2px #888 solid;
-    padding:  16px 8px;
+    padding:  12px 6px;
     margin: 24px 0;
     border-radius: 12px;
     outline: none;
@@ -413,7 +413,7 @@
     height:  8vh;
     display:  flex;
     border: 2px #888 solid;
-    padding:  4px 8px;
+    padding:  4px 6px;
     margin: 24px 0;
     border-radius: 12px;
     outline: none;
@@ -431,7 +431,7 @@
 
   .main-button {
     font-weight: 300;
-    font-size: 1.5em;
+    font-size: 1.25em;
     background-color: var(--main-color);
     padding: 12px 24px;
     border-radius: 12px;
@@ -447,14 +447,14 @@
 
   .shadow-button {
     font-weight: 300;
-    font-size: 1.5em;
+    font-size: 1.25em;
     color: var(--main-color);
     padding: 12px 24px;
   }
 
   .main-white-button {
     font-weight: 300;
-    font-size: 1.5em;
+    font-size: 1.25em;
     background-color: var(--main-bg-color);
     padding: 12px 24px;
     border-radius: 12px;
@@ -470,7 +470,7 @@
 
   .shadow-white-button {
     font-weight: 300;
-    font-size: 1.5em;
+    font-size: 1.25em;
     color: var(--main-bg-color);
     padding: 12px 24px;
   }
