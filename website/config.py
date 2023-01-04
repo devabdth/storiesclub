@@ -24,7 +24,7 @@ class Config():
         self.email_model_email = os.environ.get(
             "EMAIL_MODEL_EMAIL") or "no.reply@storiesclub.net"
         self.email_model_access_key = os.environ.get(
-            "EMAIL_MODEL_ACCESS_KEY") or "27102021-Athena-Backend-Mailing@StroiesClub.Password@Athena Digital Solutions"
+            "EMAIL_MODEL_ACCESS_KEY") or "2892022-CUBERS-MAILING-AUTH-KEY@StroiesClub.Password@Cubers IO Inc."
         # TODO
         self.header_desc = os.environ.get("HEADER_DESC") or """"""
         # TODO
