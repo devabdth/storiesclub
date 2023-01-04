@@ -59,7 +59,9 @@ const StageOneSubmit = async () => {
 
 const sendCodeAgain = async (lang) => {
   const res = await fetch('http://127.0.0.1:5000/sendCodeAgain/', {
-    method: 'get'
+    method: 'get', 
+    headers: { 'Access-Control-Allow-Origin': '*' }
+
   });
 
   if (res.status === 200) {
@@ -82,7 +84,8 @@ const sendCodeAgain = async (lang) => {
 
 const changeEmail = async () => {
   const res = await fetch('../changeEmail', {
-    method: "get"
+    method: "get",
+    headers: { 'Access-Control-Allow-Origin': '*' }
   })
   window.location.replace('./');
   window.open('../signup', '_self');
