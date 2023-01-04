@@ -58,7 +58,7 @@ const StageOneSubmit = async () => {
 }
 
 const sendCodeAgain = async (lang) => {
-  const res = await fetch('http://127.0.0.1:5000/sendCodeAgain/', {
+  const res = await fetch('https://storiesclub.net/sendCodeAgain/', {
     method: 'get', 
     headers: { 'Access-Control-Allow-Origin': '*' }
 
@@ -313,7 +313,7 @@ const compleProfileSubmit = async (lang) => {
       }
     }
 
-    coverXhr.open('post', `http://127.0.0.1:5000/users/?mode=covers`)
+    coverXhr.open('post', `https://storiesclub.net/users/?mode=covers`)
     coverXhr.send(coverData);
 
 
@@ -337,7 +337,7 @@ const compleProfileSubmit = async (lang) => {
       }
       window.open('../', '_self');
     }
-    assetXhr.open('post', `http://127.0.0.1:5000/users/?mode=assets`)
+    assetXhr.open('post', `https://storiesclub.net/users/?mode=assets`)
     assetXhr.send(assetData);
   });
 }
