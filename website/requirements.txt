@@ -9,14 +9,10 @@ Flask-Session==0.4.0
 importlib-metadata==4.11.2
 itsdangerous==2.1.0
 Jinja2==3.0.3
-arkupSafe==2.1.0
-matplotlib==3.5.3
 pymongo==4.2.0
 python-dateutil==2.8.2
 qrcode==7.3.1
 six==1.16.0
-tk==1.0
-typing-extensions==4.1.1
 urllib3==1.25.3
 virtualenv==20.13.2
 virtualenv-clone==0.5.7
