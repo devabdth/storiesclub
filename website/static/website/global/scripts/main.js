@@ -41,7 +41,7 @@ const onCategoryTabbed = (categoryId) => {
     }
 }
 
-const postPageSearch = (toastContent, lang) => {
+const postPageSearch = (lang) => {
     const search = document.getElementById("search");
 
     if (search.value.trim().length === 0) {

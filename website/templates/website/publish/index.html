@@ -185,7 +185,7 @@
         {% endif %}
 
         <div style="padding: 0 30%;">
-          <button class="main-button" id="books-fragment-submit" onclick="booksFragmentSubmit({{content.toast_content | safe}}, '{{lang}}');">{{content.publish[lang]["submit"]}}</button>
+          <button class="main-button" id="books-fragment-submit" onclick="booksFragmentSubmit('{{lang}}');">{{content.publish[lang]["submit"]}}</button>
         </div>
       </div>
 
@@ -224,7 +224,7 @@
         {% endif %}
 
         <div style="padding: 0 30%;">
-          <button class="main-button" id="audios-fragment-submit" onclick="audiosFragmentSubmit({{content.toast_content | safe}}, '{{lang}}');">{{content.publish[lang]["submit"]}}</button>
+          <button class="main-button" id="audios-fragment-submit" onclick="audiosFragmentSubmit('{{lang}}');">{{content.publish[lang]["submit"]}}</button>
         </div>
       </div>
       <div class="fragment" id="videos-fragment">
@@ -261,7 +261,7 @@
         {% endif %}
 
         <div style="padding: 0 30%;">
-          <button class="main-button" id="videos-fragment-submit" onclick="videosFragmentSubmit({{content.toast_content | safe}}, '{{lang}}');">{{content.publish[lang]["submit"]}}</button>
+          <button class="main-button" id="videos-fragment-submit" onclick="videosFragmentSubmit('{{lang}}');">{{content.publish[lang]["submit"]}}</button>
         </div>
       </div>
 

@@ -139,7 +139,7 @@
         {% else %}
         <input class="single-line-field" id="search" placeholder="{{content.books[lang]['searchHint']}}">
         {% endif %}
-        <button onclick="postPageSearch({{content.toast_content | safe}}, '{{lang}}')" class="main-button">{{content.global_[lang]["search"]}}</button>
+        <button onclick="postPageSearch('{{lang}}')" class="main-button">{{content.global_[lang]["search"]}}</button>
       </div>
 
       <div id="categories">
