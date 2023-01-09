@@ -124,14 +124,29 @@
     </header>
 
     <section id="entry">
-      <div class="color-overlay">
+      <div class="content">
+          {% if lang == "ar" %}
+          <h2><span style="font-family: 'Cairo';" >{{content.audios[lang]["audiosEntry"]}}<br></span>{{content.audios[lang]["audios"]}}</h2>
+          {% else %}
+          <h2><span style="font-family: 'Poppins';" >{{content.audios[lang]["audiosEntry"]}}<br></span>{{content.audios[lang]["audios"]}}</h2>
+          {% endif %}
+          <div>
+       </div>
+       <div style="flex-direction: row; display: flex; justify-content: start; align-items: center;">
         {% if lang == "ar" %}
-        <h3 style="font-family: 'Cairo'">{{content.audios[lang]["audios"]}}<br><span>{{content.audios[lang]["audiosEntry"]}}</span></h3>
+         <a style="font-family: 'Cairo';" class="main-button" href="#audios">{{content.audios[lang]['listen']}}</a>
+         <a style="font-family: 'Cairo';" class="shadow-button" href="#classifications">{{content.global_[lang]['search']}}</a>
         {% else %}
-        <h3 style="font-family: 'Raleway'">{{content.audios[lang]["audios"]}}<br><span style="font-family: 'Poppins'">{{content.audios[lang]["audiosEntry"]}}</span></h3>
+         <a style="font-family: 'Raleway';" class="main-button" href="#audios">{{content.audios[lang]['listen']}}</a>
+         <a style="font-family: 'Raleway';" class="shadow-button" href="#classifications">{{content.global_[lang]['search']}}</a>
         {% endif %}
+       </div>
+      </div>
+      <div id="entry-img">
+        <div id="icon"></div>
       </div>
     </section>
+
     <section id="classifications">
       <div id="search-container">
         {% if token != None%}

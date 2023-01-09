@@ -17,7 +17,7 @@ const showToast = (props) => {
 
 
 
-const formValidation = async (toastContent, url, lang) => {
+const formValidation = async (url, lang) => {
 
 	const username = document.getElementById("username");
 	const password = document.getElementById("password");

@@ -210,6 +210,7 @@
     background-image: url(./images/logo-white-128.png);
     background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
   }
 
   #footer-social-media-icons {

@@ -123,12 +123,17 @@
       </nav>
     </header>
     <section id="entry">
-      <div>
-        {% if lang == 'ar' %}
-          <h2 style="font-family: 'Cairo';">{{content.about[lang]["about"]}}</h2>
-        {% else %}
-          <h2 style="font-family: 'Raleway';">{{content.about[lang]["about"]}}</h2>
-        {% endif %}
+      <div class="content">
+          {% if lang == "ar" %}
+          <h2><span style="font-family: 'Cairo';" >{{content.about[lang]["aboutEntry"]}}<br></span>{{content.about[lang]["about"]}}</h2>
+          {% else %}
+          <h2><span style="font-family: 'Poppins';" >{{content.about[lang]["aboutEntry"]}}<br></span>{{content.about[lang]["about"]}}</h2>
+          {% endif %}
+          <div>
+       </div>
+      </div>
+      <div id="entry-img">
+        <div id="icon"></div>
       </div>
     </section>
     <section class="about-section" id="users" onclick="toggleUsersSection()">

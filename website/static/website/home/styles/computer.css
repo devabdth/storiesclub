@@ -14,7 +14,9 @@
     align-items: center;
     display: flex;
     width: 100%;
+    min-height: 100vh;
     height: 100vh;
+    max-height: 120vh;
     padding-left: 5vw;
   }
 
