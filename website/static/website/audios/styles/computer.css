@@ -60,14 +60,14 @@
 
   h2 {
     color: var(--main-color);
-    font-size: 6em;
+    font-size: 4em;
     font-weight: 700;
     font-family: "Raleway";
   }
 
   h2 > span {
     opacity: 0.75;
-    font-size: 0.2em;
+    font-size: 0.5em;
     font-weight: 300;
   }
 
