@@ -31,6 +31,14 @@
 		body {
 			background-color: var(--main-bg-color);
 		}
+
+		#facebook {
+			background: url("{{url_for('static', filename='facebook-colored.png')}}");
+		}
+
+		#instagram {
+			background: url("{{url_for('static', filename='instagram-colored.png')}}");
+		}
 		@media screen and (min-width: 999px){
 			#entry {
 				width: 100%;
@@ -39,7 +47,7 @@
 				flex-direction: column;
 				align-items: center;
 				justify-content: space-between;
-				padding: 10% 0;
+				padding: 7.5% 0;
 			}
 
 			#logo {
@@ -50,6 +58,26 @@
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: contain;
+			}
+
+			#social-media-icons {
+				width: 40%;
+				height: 64px;
+				align-items: center;
+				justify-content: center;
+				gap: 12px;
+				flex-direction: row;
+				display: flex;
+			}
+
+			#social-media-icons div {
+				width: 48px;
+				height: 48px;
+				display: flex;
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+				cursor: pointer;
 			}
 		}
 		@media screen and (max-width: 999px){
@@ -72,6 +100,26 @@
 				background-position: center;
 				background-size: contain;
 			}
+
+			#social-media-icons {
+				width: 80%;
+				height: 64px;
+				align-items: center;
+				justify-content: center;
+				gap: 12px;
+				flex-direction: row;
+				display: flex;
+			}
+
+			#social-media-icons div {
+				width: 48px;
+				height: 48px;
+				display: flex;
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+				cursor: pointer;
+			}
 		}
 
 	</style>
@@ -79,6 +127,10 @@
 		<div id="logo"></div>
 		<h3 style="font-family: 'Raleway';">StoriesClub is coming to you soon!</h3>
 		<h3 style="font-family: 'Cairo'; direction: rtl;">ستوريزكلوب قادم لكم قريباً!</h3>
+		<div id="social-media-icons">
+			<div id="facebook" onclick="window.open('https://facebook.com/storiesclubplatform')"></div>
+			<div id="instagram" onclick="window.open('https://instagram.com/storiesclubplatform')"></div>
+		</div>
 	</section>
 
 </body>
