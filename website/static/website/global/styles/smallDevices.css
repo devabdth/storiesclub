@@ -44,12 +44,15 @@
   }
 
   #logo-accent {
-    background-image: url(./images/logo-accent-128.png);
+    background-image: url(./images/logo-white-128.png);
     background-size: contain;
     background-position: center;
     width: 46px;
     height: 46px;
     margin-right: 12px;
+  }
+  header nav {
+    display: none;
   }
 
   header > div {
@@ -137,6 +140,14 @@
 }
 
 
+#drawer-btn {
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: 'Raleway';
+  color: white;
+}
+
+
   #drawer {
     z-index: 999;
     width: 70%;
@@ -187,7 +198,7 @@
     align-items: start;
   }
 
-  #drawer nav a {
+  #drawer nav a, #drawer nav button {
     color: #999;
     font-weight: 500;
     font-family: "Quicksand";
@@ -473,6 +484,276 @@
     font-size: 1.25em;
     color: var(--main-bg-color);
     padding: 12px 24px;
+  }
+
+  .book-card {
+    background-image: url(./images/books-placeholder.webp);
+    background-size: cover;
+    background-position: center;
+    min-width: 286px;
+    min-height: 70vh;
+    background-color: var(--main-color);
+    margin: 32px 12px;
+    border-radius: 12px;
+    transition: 500ms ease;
+    position: relative;
+  }
+
+  .book-card:hover {
+    transform: scale(1.1);
+    border: 6px var(--main-color) solid;
+  }
+
+  .book-card-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    position: absolute;
+  }
+
+  .book-card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    border-radius: 12px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 6px 12px;
+  }
+
+  .audio-card {
+    background-image: url(./images/audios-placeholder.jpg);
+    background-size: cover;
+    background-position: center;
+    min-width: 286px;
+    min-height: 70vh;
+    background-color: var(--main-color);
+    margin: 32px 12px;
+    border-radius: 12px;
+    transition: 500ms ease;
+    position: relative;
+  }
+
+  .audio-card:hover {
+    transform: scale(1.1);
+    border: 6px var(--main-color) solid;
+  }
+
+  .audio-card-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    position: absolute;
+  }
+
+  .audio-card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    border-radius: 12px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 6px 12px;
+  }
+
+  .video-card {
+    background-image: url(./images/videos-placeholder.webp);
+    background-size: cover;
+    background-position: center;
+    min-width: 286px;
+    min-height: 70vh;
+    background-color: var(--main-color);
+    margin: 32px 12px;
+    border-radius: 12px;
+    transition: 500ms ease;
+    position: relative;
+  }
+
+  .video-card:hover {
+    transform: scale(1.1);
+    border: 6px var(--main-color) solid;
+  }
+
+  .video-card-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    position: absolute;
+  }
+
+  .video-card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    border-radius: 12px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 6px 12px;
+  }
+
+  .card-category {
+    background-color: var(--main-color-variant);
+    padding: 6px 12px;
+    margin: 12px 0;
+    height: 3.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+  }
+
+  .card-category > p {
+    font-weight: 200;
+    color: var(--main-bg-color);
+    font-size: 0.9em;
+  }
+
+  .card-category-icon-white {
+    width: 12px;
+    height: 12px;
+    background-image: url(./icons/category-white.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 12px;
+  }
+
+  .card-category-icon {
+    width: 12px;
+    height: 12px;
+    background-image: url(./icons/category.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 12px;
+  }
+
+  .book-card-content > h4 {
+    width: 100%;
+    font-size: 2em;
+    font-weight: 500;
+    color: var(--main-bg-color);
+  }
+
+  .book-card-content > p {
+    width: 100%;
+    font-size: 0.7em;
+    font-weight: 100;
+    color: var(--main-bg-color);
+    opacity: 0.85;
+  }
+
+  .audio-card-content > h4 {
+    width: 100%;
+    font-size: 2em;
+    font-weight: 500;
+    color: var(--main-bg-color);
+  }
+
+  .audio-card-content > p {
+    width: 100%;
+    font-size: 0.7em;
+    font-weight: 100;
+    color: var(--main-bg-color);
+    opacity: 0.85;
+  }
+
+  .video-card-content > h4 {
+    width: 100%;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--main-bg-color);
+  }
+
+  .video-card-content > p {
+    width: 100%;
+    font-size: 0.5em;
+    font-weight: 100;
+    color: var(--main-bg-color);
+    opacity: 0.85;
+  }
+
+  .card-adoption-detials {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .card-adoption-detial {
+    color: var(--main-bg-color);
+    font-size: em;
+    font-family: "Poppins";
+    font-weight: 100;
+  }
+
+  .card-adoption-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 12px;
+  }
+
+  
+  #active-category-card {
+    border: 6px var(--main-color) solid;
+  }
+  .category-card {
+    min-width: 30%;
+    min-height: 10vh;
+    border-radius: 12px;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 500ms ease;
+    border: none;
+  }
+
+  .category-card > div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: end;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 12px;
+    padding: 6px 12px;
+  }
+
+  .category-card > div > h4 {
+    font-weight: 300;
+    font-size: 1.25em;
+    color: var(--accent-color);
+  }
+  .category-card > div > p {
+    font-weight: 100;
+    font-size: 0.75em;
+    color: var(--accent-color);
+    opacity: 0.75;
+  }
+
+  .category-card:hover {
+    transform: scale(1.025);
   }
 
 

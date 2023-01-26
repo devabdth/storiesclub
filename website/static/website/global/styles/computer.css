@@ -163,6 +163,10 @@
   background-color: var(--main-bg-color);
 }
 
+header #drawer-btn {
+  display: none;
+}
+
 
   footer {
     background-color: var(--main-color);
@@ -876,7 +880,7 @@
     top: 0;
     right: 0;
     transition: 500ms ease;
-    display: ;
+    display: none;
   }
 
 

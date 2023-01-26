@@ -75,19 +75,8 @@
         <a style="font-family: 'Poppins'" class="header-tab" href="/audios"
           >{{content.tabs[lang]["audios"]}}</a
         >
-        <div class="vertical-divider"></div>
-        {% if loggedin %}
-        <a style="font-family: 'Poppins'" class="header-tab" href="/profile/"
-          >{{content.tabs[lang]["profile"]}}</a
-        >
-        {% else %}
-        <a style="font-family: 'Poppins'" class="header-tab" href="/login/"
-          >{{content.tabs[lang]["login"]}}</a
-        >
-        <a style="font-family: 'Poppins'" class="header-tab" href="/signup/"
-          >{{content.tabs[lang]["signup"]}}</a
-        >
-        {% endif %} {% endif %} {% if lang == "ar" %}
+        {% endif %} 
+        {% if lang == "ar" %}
         <a style="font-family: 'Cairo'" class="header-tab" href="/"
           >{{content.tabs[lang]["home"]}}</a
         >
@@ -106,27 +95,33 @@
         <a style="font-family: 'Cairo'" class="header-tab" href="/audios"
           >{{content.tabs[lang]["audios"]}}</a
         >
-        {% if loggedin %}
-        <a style="font-family: 'Cairo'" class="header-tab" href="/profile/"
-          >{{content.tabs[lang]["profile"]}}</a
-        >
-        {% else %}
-        <a style="font-family: 'Cairo'" class="header-tab" href="/login/"
-          >{{content.tabs[lang]["login"]}}</a
-        >
-        <a style="font-family: 'Cairo'" class="header-tab" href="/signup/"
-          >{{content.tabs[lang]["signup"]}}</a
-        >
-        {% endif %} {% endif %}  {% if lang == 'en' %}
-        <button onclick="changeLang('{{contact_info['url']}}', 'ar');" style="font-family: 'Cairo'" class="lang-btn" href="./?lang=ar"
-          >ar</button
-        >
-        {% endif %} {% if lang == 'ar' %}
-        <button onclick="changeLang('{{contact_info['url']}}', 'en');" style="font-family: 'Cairo'" class="lang-btn" href="./?lang=en"
-          >en</button
-        >
-        {% endif %}
+        {% endif %}  
+        <div class="options">
+          <button class="options-btn">></button>
+          <div class="options-content">
+            {% if loggedin %}
+              {% if lang == "ar" %}
+              <a style="font-family: 'Cairo'" class="header-tab active-tab" href="/profile/">{{content.tabs[lang]["profile"]}}</a>
+              <button onclick="logout('{{contact_info["url"]}}');" style="font-family: 'Cairo'; color: red;" class="lang-btn" href="./?lang=ar">{{content.auth[lang]["logout"]}}</button>
+              {% else %}
+              <a style="font-family: 'Poppins'" class="header-tab active-tab" href="/profile/">{{content.tabs[lang]["profile"]}}</a>
+              <button onclick="logout('{{contact_info["url"]}}');" style="font-family: 'Poppins'; color: red;" class="lang-btn" href="./?lang=ar">{{content.auth[lang]["logout"]}}</button>
+              {% endif %}
+            {% else %}
+              <a style="font-family: 'Cairo'" class="header-tab" href="/login/">{{content.tabs[lang]["login"]}}</a>
+              <a style="font-family: 'Cairo'" class="header-tab" href="/signup/">{{content.tabs[lang]["signup"]}}</a>
+            {% endif %}
+            <div class="horizontal-divider"><div></div></div>
+            {% if lang == 'en' %}
+              <button onclick="changeLang('{{contact_info['url']}}', 'ar');" style="font-family: 'Cairo'" class="lang-btn" href="./?lang=ar">العربية</button>
+            {% else %}
+              <button onclick="changeLang('{{contact_info['url']}}', 'en');" style="font-family: 'Poppins'" class="lang-btn" href="./?lang=en">English</button>
+            {% endif %}            
+          </div>
+        </div>
+        
       </nav>
+      <div id="drawer-btn" onclick="openDrawer();">=</div>
     </header>
     <section id="entry">
       <div class="color-overlay">
@@ -354,8 +349,6 @@
       </div>
       <div></div>
     </footer>
-
-
     <div id="drawer-overlay" onclick="closeDrawer()"></div>
     <div id="drawer">
       <div id="drawer-header">
@@ -428,15 +421,12 @@
         <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/signup/"
           >{{content.tabs[lang]["signup"]}}</a
         >
-        {% endif %} {% endif %}  {% if lang == 'en' %}
-        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="./?lang=ar"
-          >ar</a
-        >
-        {% endif %} {% if lang == 'ar' %}
-        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="./?lang=en"
-          >en</a
-        >
-        {% endif %}
+        {% endif %} {% endif %}
+        {% if lang == 'en' %}
+         <button class="header-tab" onclick="changeLang('{{contact_info['url']}}', 'ar');" style="font-family: 'Cairo'" class="lang-btn" href="./?lang=ar">العربية</button>
+        {% else %}
+         <button class="header-tab" onclick="changeLang('{{contact_info['url']}}', 'en');" style="font-family: 'Poppins'" class="lang-btn" href="./?lang=en">English</button>
+        {% endif %}   
       </nav>
       <div
         style="
@@ -465,8 +455,7 @@
           id="drawer-instagram"
         ></a>
       </div>
-    </div>
-		<div id="toast">
+    </div>		<div id="toast">
 			<p id="toast-text">This is a Toast</p>
 		</div>
 

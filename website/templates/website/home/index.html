@@ -117,15 +117,12 @@
             {% endif %}            
           </div>
         </div>
-
+        
       </nav>
+      <div id="drawer-btn" onclick="openDrawer();">=</div>
     </header>
 	{% if loggedin %}
-    {% if lang == 'ar' %}
-		<section id="logged-entry" style="flex-direction: row-reverse;">
-      {% else %}
-      <section id="logged-entry" style="flex-direction: row;">
-        {% endif %}
+      <section id="logged-entry">
         {% if lang == 'ar' %}
         <div style="align-items: end;">
         {% else %}
@@ -136,7 +133,7 @@
       {% else %}
       <h3 style="font-family: 'Raleway';">{{content.entry[lang]["welcome"]}}
       {% endif %}
-        <br><span>{{user["name"].split(' ')[0]}}!</span>
+        <br><span>{{user["name"][:10]}}..!</span>
       </h3>
       <div>
         {% if lang == 'ar' %}
@@ -565,15 +562,12 @@
         <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/signup/"
           >{{content.tabs[lang]["signup"]}}</a
         >
-        {% endif %} {% endif %}  {% if lang == 'en' %}
-        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="./?lang=ar"
-          >ar</a
-        >
-        {% endif %} {% if lang == 'ar' %}
-        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="./?lang=en"
-          >en</a
-        >
-        {% endif %}
+        {% endif %} {% endif %}
+        {% if lang == 'en' %}
+         <button class="header-tab" onclick="changeLang('{{contact_info['url']}}', 'ar');" style="font-family: 'Cairo'" class="lang-btn" href="./?lang=ar">العربية</button>
+        {% else %}
+         <button class="header-tab" onclick="changeLang('{{contact_info['url']}}', 'en');" style="font-family: 'Poppins'" class="lang-btn" href="./?lang=en">English</button>
+        {% endif %}   
       </nav>
       <div
         style="

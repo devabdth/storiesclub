@@ -57,7 +57,7 @@
       </div>
       <nav style="flex-direction: row">
         {% if lang == "en" %}
-        <a style="font-family: 'Poppins'" class="header-tab" href="/"
+        <a style="font-family: 'Poppins'" class="header-tab active-tab" href="/"
           >{{content.tabs[lang]["home"]}}</a
         >
         <a style="font-family: 'Poppins'" class="header-tab" href="/about"
@@ -77,7 +77,7 @@
         >
         {% endif %} 
         {% if lang == "ar" %}
-        <a style="font-family: 'Cairo'" class="header-tab" href="/"
+        <a style="font-family: 'Cairo'" class="header-tab active-tab" href="/"
           >{{content.tabs[lang]["home"]}}</a
         >
         <a style="font-family: 'Cairo'" class="header-tab" href="/about"
@@ -119,8 +119,9 @@
             {% endif %}            
           </div>
         </div>
-
+        
       </nav>
+      <div id="drawer-btn" onclick="openDrawer();">=</div>
     </header>
     <section id="entry" style="background-image: url('../../user/cover/{{user_data["_id"]}}');">
       <div id="entry-color-overlay">

@@ -50,7 +50,7 @@
      crossorigin="anonymous"></script>
   </head>
   <body>
-       <header>
+    <header>
       <div>
         <a href="/"><div id="logo-accent"></div></a>
         <a href="/">StoriesClub</a>
@@ -119,8 +119,9 @@
             {% endif %}            
           </div>
         </div>
-
+        
       </nav>
+      <div id="drawer-btn" onclick="openDrawer();">=</div>
     </header>
 
     <section id="entry">
@@ -340,8 +341,8 @@
         <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/earnMore"
           >{{content.tabs[lang]["earnMore"]}}</a
         >
-        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/audios"
-          >{{content.tabs[lang]["audios"]}}</a
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
         >
         <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/videos"
           >{{content.tabs[lang]["videos"]}}</a
@@ -371,8 +372,8 @@
         <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/earnMore"
           >{{content.tabs[lang]["earnMore"]}}</a
         >
-        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/audios"
-          >{{content.tabs[lang]["audios"]}}</a
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
         >
         <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/videos"
           >{{content.tabs[lang]["videos"]}}</a
@@ -391,15 +392,12 @@
         <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/signup/"
           >{{content.tabs[lang]["signup"]}}</a
         >
-        {% endif %} {% endif %}  {% if lang == 'en' %}
-        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="./?lang=ar"
-          >ar</a
-        >
-        {% endif %} {% if lang == 'ar' %}
-        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="./?lang=en"
-          >en</a
-        >
-        {% endif %}
+        {% endif %} {% endif %}
+        {% if lang == 'en' %}
+         <button class="header-tab" onclick="changeLang('{{contact_info['url']}}', 'ar');" style="font-family: 'Cairo'" class="lang-btn" href="./?lang=ar">العربية</button>
+        {% else %}
+         <button class="header-tab" onclick="changeLang('{{contact_info['url']}}', 'en');" style="font-family: 'Poppins'" class="lang-btn" href="./?lang=en">English</button>
+        {% endif %}   
       </nav>
       <div
         style="

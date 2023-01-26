@@ -7,8 +7,12 @@ from content.website import WebsiteContent
 
 from db import DatabaseHelper
 
+from dotenv import load_dotenv
+
 
 class Config():
+
+    load_dotenv()
 
     def __init__(self):
         self.debug_mode_token = "DEBUG"
@@ -18,8 +22,9 @@ class Config():
         self.mode = os.environ.get("MODE") or self.debug_mode_token
         self.auth_key = os.environ.get("AUTH_KEY") or "1234567890"
         self.url = os.environ.get("URL") or "http://127.0.0.1:5000"
-        self.db_url = os.environ.get(
-            "DB_URL") or "mongodb+srv://website:cqoS01gP7RzULu9v@storiesclub.twg2b.mongodb.net/storiesclub?retryWrites=true&w=majority"
+        self.db_url= "mongodb://localhost/storiesclub"
+        #self.db_url = os.environ.get(
+            #"DB_URL") or "mongodb+srv://website:cqoS01gP7RzULu9v@storiesclub.twg2b.mongodb.net/storiesclub?retryWrites=true&w=majority"
 
         self.email_model_email = os.environ.get(
             "EMAIL_MODEL_EMAIL") or "no.reply@storiesclub.net"

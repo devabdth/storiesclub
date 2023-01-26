@@ -113,7 +113,7 @@ const deletePost = (mode, post, baseUrl) => {
             });
 
         if (res.status === 200) {
-            window.open('.', '_self');
+            window.open('./', '_self');
         }
 
     })

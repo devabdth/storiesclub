@@ -8,5 +8,98 @@
   --main-color-variant: #6b469c92;
     --main-bg-color: #fefbe3;
 }
-@media screen and (max-width: 999px) {}
+
+@media screen and (max-width: 999px) {
+  #better-exp-tip {
+    width: 90%;
+    max-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px;
+    background-color: var(--main-color);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-radius: 12px 12px 0px 0px;
+  }
+
+  #better-exp-tip > div {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    width: 100%;
+    margin: 12px 0;
+  }
+
+  #better-exp-tip > div > button {
+    background-color: transparent;
+    background: none;
+    border: none;
+    font-weight: 100;
+    font-size: 1.25em;
+    color: var(--main-bg-color);
+    cursor: pointer;
+  }
+
+  #better-exp-tip > p {
+    font-size: 0.9em;
+    font-weight: 200;
+    color: var(--main-bg-color);
+    text-align: center;
+    margin: 12px;
+  }
+
+  .horizontal-ad {
+    height: 30vh;
+    margin: 10vh 0;
+  }
+
+  #profit {
+    max-height: 500vh;
+    width: 100%;
+    padding: 15vh 0;
+  }
+
+  #logo-container {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  #content {
+    width:  100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 5% 5%;
+  }
+
+  #logo {
+    width: 60%;
+    height: 30vh;
+    background-repeat: no-repeat;
+  }
+
+  #content > h2 {
+    font-weight: 900;
+    color: var(--main-color);
+    font-size: 2em;
+    text-align: center;
+  }
+
+  #current-time {
+    font-size: 1em;
+    font-weight: 300;
+    font-family: 'Poppins';
+    color: var(--main-color-variant);
+
+  }
+}
             

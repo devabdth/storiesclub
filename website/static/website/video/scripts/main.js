@@ -1,4 +1,4 @@
-const follow = async (toastContent, lang, userId) => {
+const follow = async (lang, userId) => {
 	toast({
 		msg: toastContent[lang]["loading"],
 		toastColor: '6b469c',
@@ -33,10 +33,10 @@ const follow = async (toastContent, lang, userId) => {
 		return;
 	}
 
-	window.open('.', '_self');
+	window.open(window.location.href, '_self');
 }
 
-const unfollow = async (toastContent, lang, userId) => {
+const unfollow = async (lang, userId) => {
 	toast({
 		msg: toastContent[lang]["loading"],
 		toastColor: '6b469c',
@@ -71,7 +71,7 @@ const unfollow = async (toastContent, lang, userId) => {
 		return;
 	}
 
-	window.open('.', '_self');
+	window.open(window.location.href, '_self');
 }
 
 const togglePlay = (video) => {

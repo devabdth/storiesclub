@@ -5,8 +5,318 @@
 :root {
     --main-color: #6b469c;
     --accent-color: #eee7ce;
-  --main-color-variant: #6b469c92;
+    --main-color-variant: #6b469c92;
     --main-bg-color: #fefbe3;
 }
-@media screen and (max-width: 999px) {}
+
+@media screen and (max-width: 999px) {
+    #entry {
+    width: 100%;
+    height: 45vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./images/entry.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .color-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 800;
+    color: var(--accent-color);
+  }
+
+  h3 > span {
+    font-size: 0.25em;
+    font-weight: 100;
+    opacity: 0.5;
+  }
+
+  #fragments-controller {
+    display: flex;
+    width:  100%;
+    height:  20vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+  }
+
+  .fragment-btn {
+    color:  var(--main-color);
+    font-size:  1em;
+    font-weight: 500;
+    padding: 6px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  .fragment {
+    width:  100%;
+    padding:  8px 16px;
+    max-height: 500vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .publish-single-line-field {
+    width:  100%;
+    max-height:  10vh;
+    display:  flex;
+    border: 2px #888 solid;
+    padding:  4px 6px;
+    margin: 24px 0;
+    border-radius: 12px;
+    outline: none;
+    transition: 500ms ease;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Cairo';
+    color:  var(--main-color);
+    background-color: transparent;
+  }
+
+  .publish-single-line-field:active, .publish-single-line-field:focus {
+    border: 4px var(--main-color) solid;
+  }
+
+  .publish-multi-line-field {
+    width:  100%;
+    max-height:  80vh;
+    min-height: 8vh;
+    display:  flex;
+    border: 2px #888 solid;
+    padding:  12px 6px;
+    margin: 24px 0;
+    border-radius: 12px;
+    outline: none;
+    content: attr(data-replicated-value);
+    resize: vertical;
+    transition: 500ms ease;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Cairo';
+    color:  var(--main-color);
+    background-color: transparent;
+  }
+
+  .publish-multi-line-field:active, .publish-multi-line-field:focus {
+    border:  4px var(--main-color) solid;
+  }
+
+  #books-fragment-submit {
+    width:  100%;
+    height:  8vh;
+    padding:  0 16px;
+    margin:  10vh 0;
+  }
+
+  #audios-fragment-submit {
+    width:  100%;
+    height:  10vh;
+    padding:  0 30%;
+    margin:  10vh 0;
+  }
+
+  #videos-fragment-submit {
+    width:  100%;
+    height:  10vh;
+    padding:  0 30%;
+    margin:  10vh 0;
+  }
+
+  .file-upload-container {
+    width:  100%;
+    height:  10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:  12px 0;
+    border-radius: 12px;
+    transition: 500ms ease;
+  }
+
+  .picked-file-name {
+    color:  var(--main-color);
+    font-family: 'Cairo';
+    font-size:  1.0.9em;
+    font-weight: 500;
+  }
+
+  .file-upload-title{
+    color:  var(--main-color);
+    font-size:  0.9em;
+    font-weight: 200;
+  }
+
+  .dropbtn {
+    background-color: var(--main-bg-color);
+    padding: 12px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 30px 1px #999;
+    border-radius: 12px;
+    width:  100%;
+    height:  8vh;
+    justify-content: start;
+    align-items: center;
+    display: flex;
+    transition: 500ms ease;
+  }
+
+
+#category-search {
+    width:  100%;
+    height:  7vh;
+    display:  flex;
+    padding:  4px 6px;
+    outline: none;
+    border: none;
+    transition: 500ms ease;
+    font-size: 1.25em;
+    font-weight: 500;
+    font-family: 'Cairo';
+    color:  var(--main-color);
+    background-color: transparent;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--main-bg-color);
+  min-width: 70%;
+  max-height: 50vh;
+  overflow: auto;
+  border: 1px solid var(--main-color);
+  z-index: 1;
+  box-shadow: 0 0 30px 1px #999;
+  border-radius: 4px;
+}
+
+.dropdown-content button {
+  color: var(--main-color);
+  padding: 12px 12px;
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  align-items: center;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content button:hover {
+  background-color: var(--main-color-variant);
+}
+
+.show {
+  display: block;
+}
+
+  #upload-dialog-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: 500ms ease;
+    display: none;
+  }
+
+  #upload-dialog {
+    z-index: 1001;
+    width: 80%;
+    height: 50vh;
+    background-color: var(--main-bg-color);
+    border-radius: 12px;
+    position: fixed;
+    right: 10%;
+    top: 20vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    transition: 750ms ease;
+    display: none;
+  }
+
+  #upload-dialog-stage-number {
+    color:  var(--main-color);
+    font-size: 3em;
+    font-weight: 500;
+    font-family: 'Raleway';
+    border: 6px var(--main-color) solid;
+    border-radius: 50%;
+    padding: 24px 32px 32px 32px ;
+    margin: 24px 0;
+  }
+
+  #upload-dialog-stage-number span {
+    color:  var(--main-color);
+    font-size: 0.5em;
+    font-weight: 100;
+    font-family: 'Raleway';
+  }
+
+  #upload-dialog-stage {
+    color:  var(--main-color);
+    font-size: 2em;
+    font-weight: 900;
+    font-family: 'Poppins';
+  }
+
+  #upload-esitated-time {
+    color:  #111;
+    font-size: 0.5em;
+    font-weight: 100;
+    font-family: 'Poppins';
+  }
+
+  #upload-icon {
+    width:  100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #progress-container {
+    width:  100%;
+    height: 12px;
+    border-radius: 24px;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  #progress-value {
+    width:  0;
+    height: 100%;
+    border-radius: 24px;
+    display: flex;
+    background-color: var(--main-color);
+  }
+}
             

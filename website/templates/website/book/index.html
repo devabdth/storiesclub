@@ -52,7 +52,7 @@
      crossorigin="anonymous"></script>
   </head>
   <body>
-        <header>
+    <header>
       <div>
         <a href="/"><div id="logo-accent"></div></a>
         <a href="/">StoriesClub</a>
@@ -74,8 +74,8 @@
         <a style="font-family: 'Poppins'" class="header-tab" href="/videos"
           >{{content.tabs[lang]["videos"]}}</a
         >
-        <a style="font-family: 'Poppins'" class="header-tab" href="/books"
-          >{{content.tabs[lang]["books"]}}</a
+        <a style="font-family: 'Poppins'" class="header-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
         >
         {% endif %} 
         {% if lang == "ar" %}
@@ -94,8 +94,8 @@
         <a style="font-family: 'Cairo'" class="header-tab" href="/videos"
           >{{content.tabs[lang]["videos"]}}</a
         >
-        <a style="font-family: 'Cairo'" class="header-tab" href="/books"
-          >{{content.tabs[lang]["books"]}}</a
+        <a style="font-family: 'Cairo'" class="header-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
         >
         {% endif %}  
         <div class="options">
@@ -103,10 +103,10 @@
           <div class="options-content">
             {% if loggedin %}
               {% if lang == "ar" %}
-              <a style="font-family: 'Cairo'" class="header-tab" href="/profile/">{{content.tabs[lang]["profile"]}}</a>
+              <a style="font-family: 'Cairo'" class="header-tab active-tab" href="/profile/">{{content.tabs[lang]["profile"]}}</a>
               <button onclick="logout('{{contact_info["url"]}}');" style="font-family: 'Cairo'; color: red;" class="lang-btn" href="./?lang=ar">{{content.auth[lang]["logout"]}}</button>
               {% else %}
-              <a style="font-family: 'Poppins'" class="header-tab" href="/profile/">{{content.tabs[lang]["profile"]}}</a>
+              <a style="font-family: 'Poppins'" class="header-tab active-tab" href="/profile/">{{content.tabs[lang]["profile"]}}</a>
               <button onclick="logout('{{contact_info["url"]}}');" style="font-family: 'Poppins'; color: red;" class="lang-btn" href="./?lang=ar">{{content.auth[lang]["logout"]}}</button>
               {% endif %}
             {% else %}
@@ -121,10 +121,10 @@
             {% endif %}            
           </div>
         </div>
-
+        
       </nav>
+      <div id="drawer-btn" onclick="openDrawer();">=</div>
     </header>
-
 	<section id="entry" style="background-image: url('{{contact_info["url"]}}/book/cover/{{book["_id"]}}')">
 		<div class="color-overlay">
       {% if check_if_arabic(book["title"]) %}
@@ -500,10 +500,15 @@
       zoom: 1
     };
 
-    pdfjsLib.getDocument(`../book/asset/{{book["_id"]}}`).then((pdf) => {
-      state.pdf = pdf
-      setupReader(state);
-    });
+    try {
+
+      pdfjsLib.getDocument(`{{contact_info['url']}}/book/asset/{{book["_id"]}}`).then((pdf) => {
+        state.pdf = pdf
+        setupReader(state);
+      });
+    } catch (e) {
+      console.log(e);
+    }
   </script>
 
   </body>
