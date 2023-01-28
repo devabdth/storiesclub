@@ -11,10 +11,13 @@ const follow = async (lang, userId) => {
 		{
 			method: "PATCH",
 			body: JSON.stringify({}),
-			mode: 'no-cors',
-      		cache: 'no-cache',
-    	  	credentials: 'same-origin' ,
-	      	headers: {'Content-Type': 'application/json'}
+	      mode: 'cors',
+		      cache: 'no-cache',
+		      credentials: 'same-origin' ,
+		      headers: {
+		      	'Content-Type': 'application/json',
+		      	"Access-Control-Allow-Origin": "*"
+		      }
 			
 		}
 	);
@@ -51,10 +54,13 @@ const unfollow = async (lang, userId) => {
 		{
 			method: "PATCH",
 			body: JSON.stringify({}),
-			mode: 'no-cors',
-      		cache: 'no-cache',
-    	  	credentials: 'same-origin' ,
-	      	headers: {'Content-Type': 'application/json'}
+	      mode: 'cors',
+		      cache: 'no-cache',
+		      credentials: 'same-origin' ,
+		      headers: {
+		      	'Content-Type': 'application/json',
+		      	"Access-Control-Allow-Origin": "*"
+		      }
 			
 		}
 	);

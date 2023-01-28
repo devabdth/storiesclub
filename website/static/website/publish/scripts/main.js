@@ -662,10 +662,14 @@ const uploadBook = async (props) => {
 		const res = fetch("http://127.0.0.1:5000/books/?mode=post", {
 			method: "POST",
 			body: JSON.stringify(props.payload),
-			mode: 'cors',
-      		cache: 'no-cache',
-    	  	credentials: 'same-origin' ,
-	      	headers: {'Content-Type': 'application/json'}
+				      mode: 'cors',
+		      cache: 'no-cache',
+		      credentials: 'same-origin' ,
+		      headers: {
+		      	'Content-Type': 'application/json',
+		      	"Access-Control-Allow-Origin": "*"
+		      }
+
 
 			}
 		)
@@ -790,10 +794,14 @@ const uploadAudio = async (props) => {
 		const res = fetch("http://127.0.0.1:5000/audios/?mode=post", {
 			method: "POST",
 			body: JSON.stringify(props.payload),
-			mode: 'cors',
-      		cache: 'no-cache',
-    	  	credentials: 'same-origin' ,
-	      	headers: {'Content-Type': 'application/json'}
+				      mode: 'cors',
+		      cache: 'no-cache',
+		      credentials: 'same-origin' ,
+		      headers: {
+		      	'Content-Type': 'application/json',
+		      	"Access-Control-Allow-Origin": "*"
+		      }
+
 
 			}
 		)
@@ -917,10 +925,14 @@ const uploadVideo = async (props) => {
 		const res = fetch("http://127.0.0.1:5000/videos/?mode=post", {
 			method: "POST",
 			body: JSON.stringify(props.payload),
-			mode: 'cors',
-      		cache: 'no-cache',
-    	  	credentials: 'same-origin' ,
-	      	headers: {'Content-Type': 'application/json'}
+				      mode: 'cors',
+		      cache: 'no-cache',
+		      credentials: 'same-origin' ,
+		      headers: {
+		      	'Content-Type': 'application/json',
+		      	"Access-Control-Allow-Origin": "*"
+		      }
+
 
 			}
 		)

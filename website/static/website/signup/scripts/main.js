@@ -101,10 +101,14 @@ const formValidation = async (lang) => {
         const res = await fetch('./', {
             method: "POST",
             body: JSON.stringify(payload),
-            mode: 'no-cors',
-            cache: 'no-cache',
-            credentials: 'same-origin' ,
-            headers: {'Content-Type': 'application/json'}
+                      mode: 'cors',
+              cache: 'no-cache',
+              credentials: 'same-origin' ,
+              headers: {
+                'Content-Type': 'application/json',
+                "Access-Control-Allow-Origin": "*"
+              }
+
 
         }
         );

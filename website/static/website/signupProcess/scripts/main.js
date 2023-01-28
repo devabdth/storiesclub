@@ -277,10 +277,14 @@ const compleProfileSubmit = async (lang) => {
     '../confirmSignUp/', {
       method: 'POST',
       body: JSON.stringify(payload),
-      mode: 'no-cors',
-      cache: 'no-cache',
-      credentials: 'same-origin' ,
-      headers: {'Content-Type': 'application/json'}
+              mode: 'cors',
+          cache: 'no-cache',
+          credentials: 'same-origin' ,
+          headers: {
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin": "*"
+          }
+
   }).then(response => {
     if (response.status !== 201) {
       nameField.style.borderColor = 'red';

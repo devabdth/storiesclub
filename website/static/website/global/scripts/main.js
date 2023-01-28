@@ -110,10 +110,14 @@ const deletePost = (mode, post, baseUrl) => {
             `../${mode}s/?id=${post['_id']}`,
             {
                 method: 'DELETE',
-                mode: 'no-cors',
-                cache: 'no-cache',
-                credentials: 'same-origin' ,
-                headers: {'Content-Type': 'application/json'}
+                          mode: 'cors',
+              cache: 'no-cache',
+              credentials: 'same-origin' ,
+              headers: {
+                'Content-Type': 'application/json',
+                "Access-Control-Allow-Origin": "*"
+              }
+
             },
             );
 
