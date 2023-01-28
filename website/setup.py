@@ -1,5 +1,6 @@
 from flask import Flask, session
 from flask_session import Session
+from flask_cors import CORS
 
 from routers.website.books.router import BooksRouter
 from routers.website.book.router import BookRouter
@@ -48,6 +49,8 @@ class Setup:
     def setup_session(self):
         self.website.config["SESSION_PERMANENT"] = False
         self.website.config["SESSION_TYPE"] = "filesystem"
+        self.website.config['CORS_HEADERS'] = 'Content-Type'
+        CORS(self.website, resources={r"/foo": {"origins": "*"}})
 
         Session(self.website)
 
