@@ -99,9 +99,13 @@ const formValidation = async (lang) => {
         }
         showToast({ msg: toastContent[lang]["loading"], borderColor: "#6b469c", toastColor: "#6b469c", lang: lang });
         const res = await fetch('./', {
-            method: "post",
+            method: "POST",
             body: JSON.stringify(payload),
-            headers: { "Content-Type": "application/json" },
+            mode: 'cors',
+            cache: 'no-cache',
+            credentials: 'same-origin' ,
+            headers: {'Content-Type': 'application/json'}
+
         }
         );
         // if status code == 201: return the home page;

@@ -109,8 +109,13 @@ const deletePost = (mode, post, baseUrl) => {
         const res = await fetch(
             `../${mode}s/?id=${post['_id']}`,
             {
-                method: 'delete',
-            });
+                method: 'DELETE',
+            },
+            mode: 'cors',
+            cache: 'no-cache',
+            credentials: 'same-origin' ,
+            headers: {'Content-Type': 'application/json'}
+            );
 
         if (res.status === 200) {
             window.open('./', '_self');

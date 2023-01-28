@@ -67,9 +67,13 @@ const formValidation = async (url, lang) => {
 		}
 		showToast({ msg: toastContent[lang]["loading"], borderColor: "#6b469c", toastColor: "#6b469c", lang: lang });
 		const res = await fetch(`${url}/users/login/`, {
-			method: "patch",
+			method: "PATCH",
 			body: JSON.stringify(payload),
-			headers: { "Content-Type": "application/json" },
+			mode: 'cors',
+      		cache: 'no-cache',
+    	  	credentials: 'same-origin' ,
+	      	headers: {'Content-Type': 'application/json'}
+
 		}
 		);
 		// if the status Code == 404; return user not found;

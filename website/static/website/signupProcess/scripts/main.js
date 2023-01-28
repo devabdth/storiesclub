@@ -41,7 +41,7 @@ const StageOneSubmit = async () => {
   }
 
   const res = await fetch(`./confrimCode/?code=${code}`, {
-    method: 'get'
+    method: 'GET'
   });
 
   if(res.status == 200) {
@@ -275,9 +275,12 @@ const compleProfileSubmit = async (lang) => {
 
   const res = fetch(
     '../confirmSignUp/', {
-      method: 'post',
+      method: 'POST',
       body: JSON.stringify(payload),
-      headers: { 'Content-Type': 'application/json' }
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin' ,
+      headers: {'Content-Type': 'application/json'}
   }).then(response => {
     if (response.status !== 201) {
       nameField.style.borderColor = 'red';
@@ -313,7 +316,7 @@ const compleProfileSubmit = async (lang) => {
       }
     }
 
-    coverXhr.open('post', `https://storiesclub.net/users/?mode=covers`)
+    coverXhr.open('POST', `https://storiesclub.net/users/?mode=covers`)
     coverXhr.send(coverData);
 
 
@@ -337,7 +340,7 @@ const compleProfileSubmit = async (lang) => {
       }
       window.open('../', '_self');
     }
-    assetXhr.open('post', `https://storiesclub.net/users/?mode=assets`)
+    assetXhr.open('POST', `https://storiesclub.net/users/?mode=assets`)
     assetXhr.send(assetData);
   });
 }
