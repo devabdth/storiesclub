@@ -659,16 +659,17 @@ const uploadBook = async (props) => {
 	// TODO: Upload Book
 	try {
 		let currentBookId;
-		const res = fetch("http://127.0.0.1:5000/books/?mode=post", {
+		const res = fetch("https://www.storiesclub.net/books/?mode=post", {
 			method: "POST",
 			body: JSON.stringify(props.payload),
 				      mode: 'cors',
-		      cache: 'no-cache',
-		      credentials: 'same-origin' ,
-		      headers: {
-		      	'Content-Type': 'application/json',
-		      	"Access-Control-Allow-Origin": "*"
-		      }
+          cache: 'no-cache',
+          credentials: 'same-origin' ,
+          headers: {
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin": "*"
+          }
+
 
 
 			}
@@ -717,7 +718,7 @@ const uploadBook = async (props) => {
 					uploadDialogStage.innerHTML = "Uploading Book";
 
 				}
-				coverXhr.open("POST", `http://127.0.0.1:5000/books/?mode=covers&book=${currentBookId}`);
+				coverXhr.open("POST", `https://www.storiesclub.net/books/?mode=covers&book=${currentBookId}`);
 				coverXhr.send(coverData);
 
 				var assetData = new FormData()
@@ -750,7 +751,7 @@ const uploadBook = async (props) => {
 
 
 				}
-				assetXhr.open("POST", `http://127.0.0.1:5000/books/?mode=assets&book=${currentBookId}`);
+				assetXhr.open("POST", `https://www.storiesclub.net/books/?mode=assets&book=${currentBookId}`);
 				assetXhr.send(assetData);
 		});
 
@@ -791,16 +792,17 @@ const uploadAudio = async (props) => {
 	// TODO: Upload Book
 	try {
 		let currentAudioId;
-		const res = fetch("http://127.0.0.1:5000/audios/?mode=post", {
+		const res = fetch("https://www.storiesclub.net/audios/?mode=post", {
 			method: "POST",
 			body: JSON.stringify(props.payload),
 				      mode: 'cors',
-		      cache: 'no-cache',
-		      credentials: 'same-origin' ,
-		      headers: {
-		      	'Content-Type': 'application/json',
-		      	"Access-Control-Allow-Origin": "*"
-		      }
+          cache: 'no-cache',
+          credentials: 'same-origin' ,
+          headers: {
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin": "*"
+          }
+
 
 
 			}
@@ -849,7 +851,7 @@ const uploadAudio = async (props) => {
 					uploadDialogStage.innerHTML = "Uploading Book";
 
 				}
-				coverXhr.open("POST", `http://127.0.0.1:5000/audios/?mode=covers&audio=${currentAudioId}`);
+				coverXhr.open("POST", `https://www.storiesclub.net/audios/?mode=covers&audio=${currentAudioId}`);
 				coverXhr.send(coverData);
 
 				var assetData = new FormData()
@@ -882,7 +884,7 @@ const uploadAudio = async (props) => {
 
 
 				}
-				assetXhr.open("POST", `http://127.0.0.1:5000/audios/?mode=assets&audio=${currentAudioId}`);
+				assetXhr.open("POST", `https://www.storiesclub.net/audios/?mode=assets&audio=${currentAudioId}`);
 				assetXhr.send(assetData);
 		});
 
@@ -922,16 +924,17 @@ const uploadVideo = async (props) => {
 	// TODO: Upload Book
 	try {
 		let currentVideoId;
-		const res = fetch("http://127.0.0.1:5000/videos/?mode=post", {
+		const res = fetch("https://www.storiesclub.net/videos/?mode=post", {
 			method: "POST",
 			body: JSON.stringify(props.payload),
 				      mode: 'cors',
-		      cache: 'no-cache',
-		      credentials: 'same-origin' ,
-		      headers: {
-		      	'Content-Type': 'application/json',
-		      	"Access-Control-Allow-Origin": "*"
-		      }
+          cache: 'no-cache',
+          credentials: 'same-origin' ,
+          headers: {
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin": "*"
+          }
+
 
 
 			}
@@ -980,7 +983,7 @@ const uploadVideo = async (props) => {
 					uploadDialogStage.innerHTML = "Uploading Book";
 
 				}
-				coverXhr.open("POST", `http://127.0.0.1:5000/videos/?mode=covers&video=${currentVideoId}`);
+				coverXhr.open("POST", `https://www.storiesclub.net/videos/?mode=covers&video=${currentVideoId}`);
 				coverXhr.send(coverData);
 
 				var assetData = new FormData()
@@ -1013,7 +1016,7 @@ const uploadVideo = async (props) => {
 
 
 				}
-				assetXhr.open("POST", `http://127.0.0.1:5000/videos/?mode=assets&video=${currentVideoId}`);
+				assetXhr.open("POST", `https://www.storiesclub.net/videos/?mode=assets&video=${currentVideoId}`);
 				assetXhr.send(assetData);
 		});
 

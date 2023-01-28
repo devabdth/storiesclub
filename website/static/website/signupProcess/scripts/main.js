@@ -277,7 +277,7 @@ const compleProfileSubmit = async (lang) => {
     '../confirmSignUp/', {
       method: 'POST',
       body: JSON.stringify(payload),
-              mode: 'cors',
+          mode: 'cors',
           cache: 'no-cache',
           credentials: 'same-origin' ,
           headers: {
