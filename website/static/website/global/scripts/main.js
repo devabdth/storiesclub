@@ -110,11 +110,11 @@ const deletePost = (mode, post, baseUrl) => {
             `../${mode}s/?id=${post['_id']}`,
             {
                 method: 'DELETE',
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin' ,
+                headers: {'Content-Type': 'application/json'}
             },
-            mode: 'cors',
-            cache: 'no-cache',
-            credentials: 'same-origin' ,
-            headers: {'Content-Type': 'application/json'}
             );
 
         if (res.status === 200) {
