@@ -69,7 +69,7 @@ const formValidation = async (url, lang) => {
 		const res = await fetch(`${url}/users/login/`, {
 			method: "PATCH",
 			body: JSON.stringify(payload),
-			mode: 'cors',
+			mode: 'no-cors',
       		cache: 'no-cache',
     	  	credentials: 'same-origin' ,
 	      	headers: {'Content-Type': 'application/json'}

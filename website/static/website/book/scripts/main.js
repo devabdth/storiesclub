@@ -11,7 +11,7 @@ const follow = async (lang, userId) => {
 		{
 			method: "PATCH",
 			body: JSON.stringify({}),
-			mode: 'cors',
+			mode: 'no-cors',
       		cache: 'no-cache',
     	  	credentials: 'same-origin' ,
 	      	headers: {'Content-Type': 'application/json'}
@@ -51,7 +51,7 @@ const unfollow = async (lang, userId) => {
 		{
 			method: "PATCH",
 			body: JSON.stringify({}),
-			mode: 'cors',
+			mode: 'no-cors',
       		cache: 'no-cache',
     	  	credentials: 'same-origin' ,
 	      	headers: {'Content-Type': 'application/json'}
