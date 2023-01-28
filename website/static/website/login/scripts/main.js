@@ -70,12 +70,12 @@ const formValidation = async (url, lang) => {
 			method: "PATCH",
 			body: JSON.stringify(payload),
 				      mode: 'cors',
-		      cache: 'no-cache',
-		      credentials: 'same-origin' ,
-		      headers: {
-		      	'Content-Type': 'application/json',
-		      	"Access-Control-Allow-Origin": "*"
-		      }
+          cache: 'no-cache',
+          credentials: 'same-origin' ,
+          headers: {
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin": "*"
+          }
 
 
 		}
