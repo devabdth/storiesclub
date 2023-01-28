@@ -67,9 +67,9 @@ const formValidation = async (url, lang) => {
 		}
 		showToast({ msg: toastContent[lang]["loading"], borderColor: "#6b469c", toastColor: "#6b469c", lang: lang });
 		const res = await fetch(`https://www.storiesclub.net/users/login/`, {
-			method: "PATCH",
-			body: JSON.stringify(payload),
-				      mode: 'cors',
+      method: 'PATCH',
+      body: JSON.stringify(payload),
+          mode: 'cors',
           cache: 'no-cache',
           credentials: 'same-origin' ,
           headers: {
@@ -77,8 +77,7 @@ const formValidation = async (url, lang) => {
             "Access-Control-Allow-Origin": "*"
           }
 
-
-		}
+  }
 		);
 		// if the status Code == 404; return user not found;
 		if (res.status === 404) {
