@@ -162,7 +162,7 @@ const changeLang = async (url, newLang) => {
 
 const logout = async (url) => {
     const res = await fetch('../users/logout/', {
-        method: 'patch'
+        method: 'PATCH'
     });
 
     if(res.status === 200) {
