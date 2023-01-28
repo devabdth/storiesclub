@@ -59,14 +59,14 @@ const formValidation = async (url, lang) => {
 	password.style.borderColor = "#111";
 	password.style.color = "#111";
 
-	console.log(`https://storiesclub.net/users/login/`);
+	console.log(`${url}/users/login/`);
 	try {
 		const payload = {
 			username: username.value.trim().toLowerCase(),
 			password: password.value.trim()
 		}
 		showToast({ msg: toastContent[lang]["loading"], borderColor: "#6b469c", toastColor: "#6b469c", lang: lang });
-		const res = await fetch(`https://storiesclub.net/users/login/`, {
+		const res = await fetch(`${url}/users/login/`, {
       method: 'PATCH',
       body: JSON.stringify(payload),
           mode: 'cors',
