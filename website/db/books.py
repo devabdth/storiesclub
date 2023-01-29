@@ -113,7 +113,7 @@ class BooksHelper:
 
     def get_book_cover(self, _id):
         for ext in self.cover_supported_exts:
-            path_= os.path.abspath(os.path.join(os.path.dirname(__file__), "covers\\books\\{}.{}".format(_id, ext)))
+            path_= os.path.abspath(os.path.join(os.path.dirname(__file__), "./covers/books/{}.{}".format(_id, ext)))
             print(path_)
             if os.path.exists(path_):
                 return(path_)
@@ -121,7 +121,7 @@ class BooksHelper:
 
     def get_book_asset(self, _id):
         for ext in self.asset_supported_exts:
-            path_= os.path.abspath(os.path.join(os.path.dirname(__file__), "assets\\books\\{}.{}".format(_id, ext)))
+            path_= os.path.abspath(os.path.join(os.path.dirname(__file__), "./assets/books/{}.{}".format(_id, ext)))
             print(path_)
             if os.path.exists(path_):
                 return(path_)

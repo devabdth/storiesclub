@@ -110,13 +110,18 @@ class AudiosHelper:
 			return -1
 
 	def get_audio_cover(self, _id):
-		for ext in self.cover_supported_exts:
-			if os.path.exists(os.path.join(os.path.dirname(__file__), "covers\\audios\\{}.{}".format(_id, ext))):
-				return(os.path.join(os.path.dirname(__file__), "covers\\audios\\{}.{}".format(_id, ext)))
-		return None
+        for ext in self.cover_supported_exts:
+            path_= os.path.abspath(os.path.join(os.path.dirname(__file__), "./covers/audios/{}.{}".format(_id, ext)))
+            print(path_)
+            if os.path.exists(path_):
+                return(path_)
+        return None
+
 
 	def get_audio_asset(self, _id):
-		for ext in self.asset_supported_exts:
-			if os.path.exists(os.path.join(os.path.dirname(__file__), "assets\\audios\\{}.{}".format(_id, ext))):
-				return(os.path.join(os.path.dirname(__file__), "assets\\audios\\{}.{}".format(_id, ext)))
-		return None
+        for ext in self.asset_supported_exts:
+            path_= os.path.abspath(os.path.join(os.path.dirname(__file__), "./assets/audios/{}.{}".format(_id, ext)))
+            print(path_)
+            if os.path.exists(path_):
+                return(path_)
+        return None
