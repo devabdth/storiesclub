@@ -111,17 +111,17 @@ class VideosHelper:
 			return -1
 
 	def get_video_cover(self, _id):
-        for ext in self.cover_supported_exts:
-            path_= os.path.abspath(os.path.join(os.path.dirname(__file__), "./covers/videos/{}.{}".format(_id, ext)))
-            print(path_)
-            if os.path.exists(path_):
-                return(path_)
-        return None
+		for ext in self.cover_supported_exts:
+			path_= os.path.abspath(os.path.join(os.path.dirname(__file__), "./covers/videos/{}.{}".format(_id, ext)))
+			print(path_)
+			if os.path.exists(path_):
+				return(path_)
+		return None
 
 	def get_video_asset(self, _id):
-        for ext in self.asset_supported_exts:
-            path_= os.path.abspath(os.path.join(os.path.dirname(__file__), "./assets/videos/{}.{}".format(_id, ext)))
-            print(path_)
-            if os.path.exists(path_):
-                return(path_)
-        return None
+		for ext in self.asset_supported_exts:
+			path_= os.path.abspath(os.path.join(os.path.dirname(__file__), "./assets/videos/{}.{}".format(_id, ext)))
+			print(path_)
+			if os.path.exists(path_):
+				return(path_)
+		return None
