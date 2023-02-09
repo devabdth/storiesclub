@@ -10,6 +10,9 @@
 }
 
 @media screen and (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
   #fragment {
     width: 100%;
     max-height: 50000vh;
@@ -388,7 +391,7 @@
   .posts-section > div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 2.5vw;
+    column-gap: 2.5%;
     min-height:  100vh;
     overflow-x: scroll;
     align-items: start !important;

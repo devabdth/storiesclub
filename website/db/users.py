@@ -99,6 +99,7 @@ class UsersHelper:
               "verified": False,
               "joinedIn": round(time.time() * 1000),
               "lastLogIn": round(time.time() * 1000),
+              "wallet": 0,
               "log": {},
               "__v": 0
             }

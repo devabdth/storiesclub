@@ -385,7 +385,7 @@
   .posts-section > div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 2.5vw;
+    column-gap: 2.5%;
     min-height:  100vh;
   }
 }

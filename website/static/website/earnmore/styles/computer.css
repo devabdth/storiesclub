@@ -11,7 +11,7 @@
 
 @media screen and (min-width: 999px) {
   #better-exp-tip {
-    width: 40vw;
+    width: 40%;
     max-height: 60vh;
     display: flex;
     flex-direction: column;
@@ -78,7 +78,7 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    padding: 5% 20vw;
+    padding: 5% 20%;
   }
 
   #logo {

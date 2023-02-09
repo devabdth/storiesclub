@@ -17,11 +17,11 @@
     min-height: 100vh;
     height: 100vh;
     max-height: 120vh;
-    padding-left: 5vw;
+    padding-left: 5%;
   }
 
   #entry-img {
-    width: 60vw;
+    width: 60%;
     height: 100%;
     display: flex;
     justify-content: start;

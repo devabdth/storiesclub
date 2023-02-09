@@ -160,11 +160,11 @@
         {% if lang == "ar" %}
           <div class="file-upload-container" id="books-cover-pick-container">
             <p id="books-picked-cover-name" class="picked-file-name" style="font-family: 'Cairo';" class="file-upload-file-name"></p>
-            <button style="font-family: 'Cairo';" class="main-button" id="books-upload-cover">{{content.publish[lang]["selectFile"]}}</button>
+            <button style="font-family: 'Cairo';" class="main-button" id="books-upload-cover" onclick="pickBookCover();">{{content.publish[lang]["selectFile"]}}</button>
           </div>
           <div class="file-upload-container" id="books-asset-pick-container">
             <p id="books-picked-asset-name" class="picked-file-name" style="font-family: 'Cairo';" class="file-upload-file-name"></p>
-            <button style="font-family: 'Cairo';" class="main-button" id="books-upload-cover">{{content.publish[lang]["selectFile"]}}</button>
+            <button style="font-family: 'Cairo';" class="main-button" id="books-upload-cover" onclick="pickBookAsset();">{{content.publish[lang]["selectFile"]}}</button>
           </div>
         {% else %}
           <div class="file-upload-container" id="books-cover-pick-container">
@@ -199,11 +199,11 @@
         {% if lang == "ar" %}
           <div class="file-upload-container" id="audios-cover-pick-container">
             <p id="audios-picked-cover-name" class="picked-file-name" style="font-family: 'Cairo';" class="file-upload-file-name"></p>
-            <button style="font-family: 'Cairo';" class="main-button" id="audios-upload-cover">{{content.publish[lang]["selectFile"]}}</button>
+            <button style="font-family: 'Cairo';" class="main-button" id="audios-upload-cover" onclick="pickAudioCover();">{{content.publish[lang]["selectFile"]}}</button>
           </div>
           <div class="file-upload-container" id="audios-asset-pick-container">
             <p id="audios-picked-asset-name" class="picked-file-name" style="font-family: 'Cairo';" class="file-upload-file-name"></p>
-            <button style="font-family: 'Cairo';" class="main-button" id="audios-upload-cover">{{content.publish[lang]["selectFile"]}}</button>
+            <button style="font-family: 'Cairo';" class="main-button" id="audios-upload-cover" onclick="pickAudioAsset();">{{content.publish[lang]["selectFile"]}}</button>
           </div>
         {% else %}
           <div class="file-upload-container" id="audios-cover-pick-container">
@@ -236,11 +236,11 @@
         {% if lang == "ar" %}
           <div class="file-upload-container" id="videos-cover-pick-container">
             <p id="videos-picked-cover-name" class="picked-file-name" style="font-family: 'Cairo';" class="file-upload-file-name"></p>
-            <button style="font-family: 'Cairo';" class="main-button" id="videos-upload-cover">{{content.publish[lang]["selectFile"]}}</button>
+            <button style="font-family: 'Cairo';" class="main-button" id="videos-upload-cover" onclick="pickVideoCover();" >{{content.publish[lang]["selectFile"]}}</button>
           </div>
           <div class="file-upload-container" id="videos-asset-pick-container">
             <p id="videos-picked-asset-name" class="picked-file-name" style="font-family: 'Cairo';" class="file-upload-file-name"></p>
-            <button style="font-family: 'Cairo';" class="main-button" id="videos-upload-cover">{{content.publish[lang]["selectFile"]}}</button>
+            <button style="font-family: 'Cairo';" class="main-button" id="videos-upload-cover" onclick="pickVideoAsset();">{{content.publish[lang]["selectFile"]}}</button>
           </div>
         {% else %}
           <div class="file-upload-container" id="videos-cover-pick-container">
@@ -421,12 +421,11 @@
         <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/signup/"
           >{{content.tabs[lang]["signup"]}}</a
         >
-        {% endif %} {% endif %}
-        {% if lang == 'en' %}
-         <button class="header-tab" onclick="changeLang('{{contact_info['url']}}', 'ar');" style="font-family: 'Cairo'" class="lang-btn" href="./?lang=ar">العربية</button>
-        {% else %}
-         <button class="header-tab" onclick="changeLang('{{contact_info['url']}}', 'en');" style="font-family: 'Poppins'" class="lang-btn" href="./?lang=en">English</button>
-        {% endif %}   
+        {% endif %} {% endif %}  {% if lang == 'ar' %}
+        <button class="header-tab" onclick="changeLang(`{{contact_info['url']}}`, 'en');" style="font-family: 'Poppins'" class="lang-btn">English</button>
+        {% endif %} {% if lang == 'en' %}
+        <button class="header-tab" onclick="changeLang(`{{contact_info['url']}}`, 'ar');" style="font-family: 'Poppins'" class="lang-btn">العربية</button>
+        {% endif %}
       </nav>
       <div
         style="
@@ -455,7 +454,8 @@
           id="drawer-instagram"
         ></a>
       </div>
-    </div>		<div id="toast">
+    </div>	
+    <div id="toast">
 			<p id="toast-text">This is a Toast</p>
 		</div>
 

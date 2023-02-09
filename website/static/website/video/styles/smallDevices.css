@@ -9,6 +9,12 @@
 }
 
 @media screen and (max-width: 999px) {
+  * {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+
   .shadow-button {
     border: none;
     background-color: transparent;

@@ -337,7 +337,7 @@
         <nav style="align-items: end">
       {% endif %}
         {% if lang == "en" %}
-        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/"
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab active-tab" href="/"
           >{{content.tabs[lang]["home"]}}</a
         >
         <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/about"
@@ -368,7 +368,7 @@
           >{{content.tabs[lang]["signup"]}}</a
         >
         {% endif %} {% endif %} {% if lang == "ar" %}
-        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/"
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab active-tab" href="/"
           >{{content.tabs[lang]["home"]}}</a
         >
         <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/about"
@@ -397,14 +397,10 @@
         <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/signup/"
           >{{content.tabs[lang]["signup"]}}</a
         >
-        {% endif %} {% endif %}  {% if lang == 'en' %}
-        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab"
-          >ar</a
-        >
-        {% endif %} {% if lang == 'ar' %}
-        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="./?lang=en"
-          >en</a
-        >
+        {% endif %} {% endif %}  {% if lang == 'ar' %}
+        <button class="header-tab" onclick="changeLang(`{{contact_info['url']}}`, 'en');" style="font-family: 'Poppins'" class="lang-btn">English</button>
+        {% endif %} {% if lang == 'en' %}
+        <button class="header-tab" onclick="changeLang(`{{contact_info['url']}}`, 'ar');" style="font-family: 'Poppins'" class="lang-btn">العربية</button>
         {% endif %}
       </nav>
       <div
@@ -506,6 +502,7 @@
         state.pdf = pdf
         setupReader(state);
       });
+      console.log(state);
     } catch (e) {
       console.log(e);
     }

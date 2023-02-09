@@ -562,12 +562,11 @@
         <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/signup/"
           >{{content.tabs[lang]["signup"]}}</a
         >
-        {% endif %} {% endif %}
-        {% if lang == 'en' %}
-         <button class="header-tab" onclick="changeLang('{{contact_info['url']}}', 'ar');" style="font-family: 'Cairo'" class="lang-btn" href="./?lang=ar">العربية</button>
-        {% else %}
-         <button class="header-tab" onclick="changeLang('{{contact_info['url']}}', 'en');" style="font-family: 'Poppins'" class="lang-btn" href="./?lang=en">English</button>
-        {% endif %}   
+        {% endif %} {% endif %}  {% if lang == 'ar' %}
+        <button class="header-tab" onclick="changeLang(`{{contact_info['url']}}`, 'en');" style="font-family: 'Poppins'" class="lang-btn">English</button>
+        {% endif %} {% if lang == 'en' %}
+        <button class="header-tab" onclick="changeLang(`{{contact_info['url']}}`, 'ar');" style="font-family: 'Poppins'" class="lang-btn">العربية</button>
+        {% endif %}
       </nav>
       <div
         style="
