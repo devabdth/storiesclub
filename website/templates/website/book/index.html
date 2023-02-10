@@ -173,7 +173,7 @@
     {% else %}
     <p style="font-family: 'Poppins';">{{content.books[lang]['wantToRead']}}</p>
     {% endif %}
-    <button class="main-white-button" onclick="read();">{{content.books[lang]['read']}}</button>
+    <button class="main-white-button" id="read-btn">{{content.global_[lang]['loading']}}...</button>
   </section>
   <div class="horizontal-ad">Ad Space</div>
 
@@ -501,6 +501,8 @@
       pdfjsLib.getDocument(`{{contact_info['url']}}/book/asset/{{book["_id"]}}`).then((pdf) => {
         state.pdf = pdf
         setupReader(state);
+        document.getElementById('read-btn').onclick= read;
+        document.getElementById('read-btn').innerHTML= "{{content.books[lang]['read']}}"
       });
       console.log(state);
     } catch (e) {
