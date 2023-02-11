@@ -22,6 +22,9 @@ class AudiosHelper:
 
 		self.audios = list(self.audios_collection.find())
 
+	def refresh(self):
+		self.audios = list(self.audios_collection.find())
+
 	def find_audios_on_condition(self, params) -> list:
 		return list(self.audios_collection.find({
 			"name": {
@@ -36,6 +39,7 @@ class AudiosHelper:
 
 	def get_all_audios(self, fetch_by_trending: bool = False):
 		try:
+			self.refresh()
 			if fetch_by_trending:
 				return sorted(self.audios, key= lambda d: d['views'], reverse= True)
 

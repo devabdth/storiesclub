@@ -21,6 +21,9 @@ class VideosHelper:
 		self.videos_collection = self.database["videos"]
 
 		self.videos = list(self.videos_collection.find())
+		
+	def refresh(self):
+		self.videos = list(self.videos_collection.find())
 
 	def find_videos_on_condition(self, params) -> list:
 		return list(self.videos_collection.find({
@@ -37,6 +40,7 @@ class VideosHelper:
 
 	def get_all_videos(self, fetch_by_trending: bool = False):
 		try:
+			self.refresh()
 			if fetch_by_trending:
 				return sorted(self.videos, key= lambda d: d['views'], reverse= True)
 

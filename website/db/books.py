@@ -22,6 +22,9 @@ class BooksHelper:
 
 		self.books = list(self.books_collection.find())
 
+	def refresh(self):
+		self.books = list(self.books_collection.find())
+
 
 	def find_books_on_condition(self, params) -> list:
 		return list(self.books_collection.find({
@@ -39,6 +42,7 @@ class BooksHelper:
 
 	def get_all_books(self, fetch_by_trending: bool = False):
 		try:
+			self.refresh()
 			if fetch_by_trending:
 				return sorted(self.books, key= lambda d: d['views'], reverse= True)
 

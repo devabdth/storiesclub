@@ -103,8 +103,10 @@ class UsersHelper:
               "log": {},
               "__v": 0
             }
+            print(user_)
 
             user_ = self.users_collection.insert_one(user_)
+            print(user_.inserted_id)
             return user_.inserted_id
 
         except Exception as e:
