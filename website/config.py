@@ -21,7 +21,7 @@ class Config():
         self.port = os.environ["PORT"] if "PORT" in os.environ else 3030
         self.mode = os.environ["MODE"] if "MODE" in os.environ else self.debug_mode_token
         self.auth_key = os.environ["AUTH_KEY"] if "AUTH_KEY" in os.environ else "1234567890"
-        self.url = os.environ["URL"] if "URL" in os.environ else "https://www.storiesclub.net"
+        self.url = os.environ["URL"] if "URL" in os.environ else "http://127.0.0.1:5000"
         self.db_url = os.environ["DB_URL"] if "DB_URL" in os.environ else "mongodb+srv://website:cqoS01gP7RzULu9v@storiesclub.twg2b.mongodb.net/storiesclub?retryWrites=true&w=majority"
         #self.db_url = os.environ["DB_URL"] if "DB_URL" in os.environ else "mongodb://localhost/storiesclub"
 

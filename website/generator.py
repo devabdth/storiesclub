@@ -177,12 +177,7 @@ def main():
             id="footer-social-instagram"
             target="_blank"
           ></a>
-          <a
-            href='{{contact_info["linkedin"]}}'
-            class="footer-social-icon"
-            id="footer-social-linkedin"
-            target="_blank"
-          ></a>
+          
         </div>
       </div>
       <div>
@@ -356,11 +351,7 @@ def main():
           href="{{contact_info['facebook']}}"
           id="drawer-facebook"
         ></a>
-        <a
-          class="social-media-icon"
-          href="{{contact_info['linkedin']}}"
-          id="drawer-linkedin"
-        ></a>
+        
         <a
           class="social-media-icon"
           href="{{contact_info['instagram']}}"

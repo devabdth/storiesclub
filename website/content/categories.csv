@@ -1,18 +1,9 @@
 id,englishName,arabicName,englishShortBio,arabicShortBio
-0,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-1,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-2,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-3,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-4,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-5,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-6,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-7,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-8,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-9,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-10,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-11,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-12,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-13,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-14,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-15,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
-16,Category,تصنيف, This is a bio for Category,هذا وصف تصنيف
+0,Romance,رومانسي, It was love at first sight, at last sight, at ever and ever sight,كان الحب من النظرة الأولى ، للوهلة الأخيرة ، في كل لحظة
+1,Social,إجتماعي, When you're socially awkward, you're isolated more than usual,عندما تكون محرجًا اجتماعيًا ، فأنت معزول أكثر من المعتاد
+2,Criminal,جريمة, There are two kinds of people who sit around all day thinking about killing people...mystery writers and serial killers,هناك نوعان من الناس يجلسون طوال اليوم يفكرون في قتل الناس ... كتاب الغموض والقتلة المتسلسلين
+3,Adventure,مغامرى, A journey of a thousand miles begins with a single step,رحلة الألف ميل تبدأ بخطوة واحدة
+4,Horror,رعب, Believe nothing you hear, and only one half that you see,لا تصدق أي شيء تسمعه ، ونصفك فقط تراه
+5,Mystery,غموض, Holy men tell us life is a mystery. They embrace that concept happily. ,يخبرنا الرجال القديسون أن الحياة لغز. إنهم يتبنون هذا المفهوم بسعادة.
+6,Historical,تاريخي, If we open our history books, we shall see that the laws, for all that they are or should be contracts amongst free men, have rarely been anything,إذا فتحنا كتب تاريخنا ، فسنرى أن القوانين ، على الرغم مما هي عليه أو ينبغي أن تكون عقودًا بين الرجال الأحرار ، نادرًا ما كانت شيئًا
+7,Literature,أدبي, There is some good in this world, and it's worth fighting for,هناك بعض الخير في هذا العالم ، وهو أمر يستحق القتال من أجله
