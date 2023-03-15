@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --main-color: #6b469c;
+  --accent-color: #eee7ce;
+  --main-color-variant: #6b469c92;
+  --main-bg-color: #fefbe3;
+}
+@media screen and (max-width: 999px) {
+  header {
+    position: absolute;
+    background-color: var(--main-bg-color);
+  }
+
+  header > div > a {
+    color: var(--main-color);
+  }
+
+  .header-tab {
+    color: var(--main-color);
+  }
+
+  #signup {
+    background-color: var(--main-bg-color);
+    width: 100%;
+    height: 230vh;
+    padding: 15% 5%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #form-container {
+    width: 90%;
+    height: 100vh;
+    padding: 5% 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    border-radius: 4px;
+  }
+
+  #form-container > h3 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--main-color);
+  }
+
+  #form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0;
+  }
+
+  #post-form {
+    width: 100%;
+    height: 20%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+
+  #post-form > div,
+  #form > div {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  div > a {
+    color: #999;
+    font-size: 0.75em;
+    font-weight: 300;
+  }
+
+  label {
+    color: #888;
+    font-size: 0.9em;
+    font-weight: 300;
+  }
+
+  #signup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    width: 90%;
+    height: 120vh;
+  }
+
+  #signup-content > h3 {
+    color: var(--main-color);
+    font-family: "Raleway";
+    font-weight: 500;
+    font-size: 2em;
+    letter-spacing: 2px;
+  }
+  #signup-content > p {
+    font-size: 0.9em;
+    font-weight: 300;
+    color: var(--main-color);
+  }
+}

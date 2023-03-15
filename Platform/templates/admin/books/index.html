@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>StoriesClub - Books</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='admin/global/styles/computer.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='admin/global/styles/smallDevices.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='admin/books/styles/computer.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='admin/books/styles/smallDevices.css')}}">
+
+	<script type="text/javascript" src="{{url_for('static', filename='admin/books/scripts/main.js')}}"></script>
+	<link rel="icon"  type="image/x-icon"  href="{{url_for('static', filename='./admin/global/styles/icons/logo-accent.ico')}}"/>
+
+</head>
+<body>
+
+	<header>
+		<h3>StoriesClub Admin <span style="font-size: 0.9em">(Alpha)</span></h3>
+		<nav>
+			<a href="{{config.url}}/webapp/adminstration/users/">Users</a>
+			<a href="{{config.url}}/webapp/adminstration/books/" class="active-tab">Books</a>
+			<a href="{{config.url}}/webapp/adminstration/audios/">Audios</a>
+			<a href="{{config.url}}/webapp/adminstration/videos/">Videos</a>
+			<a href="{{config.url}}/webapp/adminstration/logout/" style="color: red">Logout</a>
+		</nav>
+	</header>
+	<section id="books">
+		<h3><span style="font-family: 'Poppins'">{{books | length}}</span> Books</h3>
+		<div id="search-options">
+			<div class="search-container">
+				<input type="name" name="name" placeholder="Name" id="name-token" value="{{params['name']}}">
+			</div>
+			<div class="search-container">
+				<input type="name" name="id" placeholder="ID" id="id-token" value="{{params['id']}}">
+			</div>
+		</div>
+		<button onclick="toggleCategoriesDropdown('books')" id="books-dropbtn" class="dropbtn">{{content.publish['en']["pickCategory"]}}</button>
+		<div id="books-categories-dropdown" class="dropdown-content">
+		  <input type="text" placeholder="{{content.global_['en']['search']}}..." id="category-search" onkeyup="filter()">
+		  {% for category in categories.data.values() %}
+		  <button onclick="chooseCategory({{category}}, '{{en}}', 'books');">{{category['name']['en']}}</button>
+		  {% endfor %}
+		</div>
+
+
+		<div id="options">
+			<button class="main-white-button" onclick="clearFilteration();">Clear</button>
+			<button class="main-button" onclick="booksFiltration();">Apply</button>
+		</div>
+		<table id="table">
+			<tr id="table-header" class="table-row">
+				<th class="table-row-cell">Title</th>
+				<th class="table-row-cell">ID</th>
+				<th class="table-row-cell">Likes</th>
+				<th class="table-row-cell">Comments</th>
+				<th class="table-row-cell">Views</th>
+				<th class="table-row-cell">Category</th>
+				<th class="table-row-cell">Actions</th>
+			</tr>
+			{% for book in books %}
+			<tr class="table-row">
+				<td class="table-row-cell">{{book["title"]}}</td>
+				<td class="table-row-cell">{{str(book["_id"])[:10]}}...</td>
+				<td class="table-row-cell">{{book["likers"] | length}}</td>
+				<td class="table-row-cell">{{book["comments"] | length}}</td>
+				<td class="table-row-cell">{{book["views"]}}</td>
+				<td class="table-row-cell">{{book["category"]}}</td>
+				<td class="table-row-cell" id="options">
+					<button class="main-white-button" onclick="window.open('{{config.url}}/books/{{book._id}}');">Show</button>
+					<button class="main-white-button" style="color: red;" onclick="showDeleteDialog({{book | safe}},'{{config.url}}');">Delete</button>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</section>
+	<div id="delete-dialog-overlay"></div>
+	<div id="delete-dialog">
+		<h3>Confirmation</h3>
+		<p>Ary you sure you want to delete this book!</p>
+		<div>
+			<button id="confirm-delete" class="main-button">Delete</button>
+			<button id="cancel-delete" class="main-white-button" style="background-color: transparent;">Cancel</button>
+			<p id="delete-status"></p>
+		</div>
+	</div>
+	{% if "category" in params.keys() %}
+		<script type="text/javascript">
+			chooseCategory({{categories.data[params["category"]] | safe}}, '{{lang}}', 'books', false);
+		</script>
+	{% endif %}
+
+</body>
+</html>

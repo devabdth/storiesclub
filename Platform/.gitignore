@@ -1,0 +1,10 @@
+db/assets/
+venv/
+website/flask_session/
+flask_session
+flask_session/
+db/covers/
+assets/
+covers/
+website/venv/
+__pycache__

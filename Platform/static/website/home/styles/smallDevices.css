@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --main-color: #6b469c;
+  --accent-color: #eee7ce;
+  --main-bg-color: #fefbe3;
+}
+
+@media screen and (max-width: 999px) {
+  #entry {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+    max-height: 120vh;
+  }
+
+  #entry-img, #devices {
+    display: none;
+  }
+
+
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+  }
+
+  .content > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5vh 16px;
+  }
+
+  h2 {
+    color: var(--main-color);
+    font-size: 6em;
+    font-weight: 500;
+    font-family: "Raleway";
+  }
+
+  h2 > span {
+    opacity: 0.75;
+    font-size: 0.25em;
+    font-weight: 100;
+  }
+
+  #logged-entry {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    min-height: 75vh;
+    padding: 0 16px;
+    padding-top: 10vh;
+    padding-bottom: 8px;
+    gap: 8vh;
+  }
+
+  #logged-entry > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #logged-entry > div > h3 {
+    color: var(--main-color);
+    opacity: 0.75;
+    font-weight: 100;
+    font-size: 1em;
+    margin: 8px 0;
+  }
+
+  #logged-entry > div > h3 > span {
+    color: var(--main-color);
+    opacity: 1;
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+
+  #logged-entry > div > h4 {
+    color: var(--main-color);
+    opacity: 0.75;
+    font-weight: 500;
+    font-size: 2em;
+    font-family: "Raleway";
+  }
+
+  #logged-entry > div > h4 > span {
+    color: var(--main-color);
+    opacity: 1;
+    font-weight: 100;
+    font-size: 0.5em;
+    font-family: "Raleway";
+  }
+
+  #logged-entry > div > p {
+    color: var(--accent-color);
+    opacity: 1;
+    font-weight: 400;
+    font-size: 0.75em;
+    padding: 0 20% ;
+    text-align: center;
+  }
+
+  #progress {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #progress > p {
+    font-weight: 300;
+    font-size: 0.75em;
+    color: var(--main-color);
+    opacity: 0.5;
+  }
+
+  #messures {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  #messures > p {
+    font-size: 1.25em;
+    font-weight: 300;
+    font-family: "Raleway";
+    color: var(--main-color);
+    opacity: 0.75;
+  }
+
+  #progress-bar {
+    width: 50%;
+    height: 12px;
+    margin: 12px 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+
+  #progress-value {
+    height: 100%;
+    background-color: var(--main-color);
+    border-radius: 12px;
+  }
+
+  section#books {
+    background-color: var(--main-bg-color);
+    width: 100%;
+    height: 100vh;
+    padding: 2.5vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section#audios {
+    background-color: var(--main-bg-color);
+    width: 100%;
+    height: 100vh;
+    padding: 2.5vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section#videos {
+    background-color: var(--main-bg-color);
+    width: 100%;
+    height: 100vh;
+    padding: 2.5vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section > h3 {
+    color: var(--main-color);
+    font-weight: 500;
+    font-size: 1em;
+  }
+
+  section > p {
+    color: var(--main-color);
+    opacity: 0.75;
+    font-weight: 100;
+    font-size: 0.9em;
+  }
+
+  section > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .cards {
+    width: 100%;
+    max-height: 100%;
+    padding: 6px 12px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: row;
+    overflow-x: scroll;
+  }
+
+  #join, #earn-more-msg {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    flex-direction: column;
+  }
+
+  #join > p, #earn-more-msg > p {
+    font-size: 1.25em;
+    color: var(--main-bg-color);
+    font-weight: 100;
+    margin-bottom: 12px;
+  }
+}

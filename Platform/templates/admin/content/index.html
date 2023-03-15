@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>StoriesClub - Books</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='admin/global/styles/computer.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='admin/global/styles/smallDevices.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='admin/content/styles/computer.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='admin/content/styles/smallDevices.css')}}">
+
+	<script type="text/javascript" src="{{url_for('static', filename='admin/content/scripts/main.js')}}"></script>
+	<link rel="icon"  type="image/x-icon"  href="{{url_for('static', filename='./admin/global/styles/icons/logo-accent.ico')}}"/>
+
+</head>
+<body>
+
+	<header>
+		<h3>StoriesClub Admin <span style="font-size: 0.9em">(Alpha)</span></h3>
+		<nav>
+			<a href="{{config.url}}/webapp/adminstration/users/">Users</a>
+			<a href="{{config.url}}/webapp/adminstration/books/">Books</a>
+			<a href="{{config.url}}/webapp/adminstration/audios/">Audios</a>
+			<a href="{{config.url}}/webapp/adminstration/videos/">Videos</a>
+			<a href="{{config.url}}/webapp/adminstration/content/" class="active-tab">Content</a>
+			<a href="{{config.url}}/webapp/adminstration/settings/">Settings</a>
+		</nav>
+	</header>
+	<section id="content">
+		<h2>Content</h2>
+		<h3>Authintecation Brief</h3>
+		<div id="auth-content">
+			<label>English</label>
+			<input class="multi-line-field" type="text" name="auth-content-en" style="font-family: 'Raleway';" value="{{content.auth['en']['content']}}">
+			<label>Arabic</label>
+			<input class="multi-line-field" type="text" name="auth-content-ar" style="font-family: 'Cairo';" value="{{content.auth['ar']['content']}}">
+			<button class="main-button" id="save-auth-content" onclick="saveAuthContent();">Submit</button>
+		</div>
+		<h3>Info Content</h3>
+		<div id="info-content">
+			<div id="users">
+				<h4>Users</h4>
+				<label>English</label>
+				<input class="multi-line-field" type="text" name="auth-content-en" style="font-family: 'Raleway';" value="{{content.about['en']['usersDescription']}}">
+				<label>Arabic</label>
+				<input class="multi-line-field" type="text" name="auth-content-ar" style="font-family: 'Cairo';" value="{{content.about['ar']['usersDescription']}}">
+				<button class="main-button" id="save-auth-content" onclick="saveUsersInfoContent();">Submit</button>
+			</div>
+			<div id="publishers">
+				<h4>Publishers</h4>
+				<label>English</label>
+				<input class="multi-line-field" type="text" name="auth-content-en" style="font-family: 'Raleway';" value="{{content.about['en']['publishersDescription']}}">
+				<label>Arabic</label>
+				<input class="multi-line-field" type="text" name="auth-content-ar" style="font-family: 'Cairo';" value="{{content.about['ar']['publishersDescription']}}">
+				<button class="main-button" id="save-auth-content" onclick="savePublishersInfoContent();">Submit</button>
+			</div>
+			<div id="publishing-houses">
+				<h4>Publishing Houses</h4>
+				<label>English</label>
+				<input class="multi-line-field" type="text" name="auth-content-en" style="font-family: 'Raleway';" value="{{content.about['en']['publishingHousesDescription']}}">
+				<label>Arabic</label>
+				<input class="multi-line-field" type="text" name="auth-content-ar" style="font-family: 'Cairo';" value="{{content.about['ar']['publishingHousesDescription']}}">
+				<button class="main-button" id="save-auth-content" onclick="savePublishingHousesInfoContent();">Submit</button>
+			</div>
+			<div id="suppliers">
+				<h4>Suppliers</h4>
+				<label>English</label>
+				<input class="multi-line-field" type="text" name="auth-content-en" style="font-family: 'Raleway';" value="{{content.about['en']['suppliersDescription']}}">
+				<label>Arabic</label>
+				<input class="multi-line-field" type="text" name="auth-content-ar" style="font-family: 'Cairo';" value="{{content.about['ar']['suppliersDescription']}}">
+				<button class="main-button" id="save-auth-content" onclick="saveSuppliersInfoContent();">Submit</button>
+			</div>
+		</div>
+	</section>
+	<section id="categories">
+		<div id="header">
+			<h2>Categories</h2>
+			<button class="main-button" onclick="showAddDialog();">Add</button>
+		</div>
+		<table id="table">
+			<tr id="table-header" class="table-row">
+				<th class="table-row-cell">Index</th>
+				<th class="table-row-cell">Category Id</th>
+				<th class="table-row-cell">Category English Name</th>
+				<th class="table-row-cell">Category Arabic Name</th>
+				<th class="table-row-cell">Category English Desc</th>
+				<th class="table-row-cell">Category Arabic Desc</th>
+				<th class="table-row-cell">Actions</th>
+			</tr>
+			{% set cats = categories.data.values() | list %}
+			{% for category in cats %}
+			<tr class="table-row">
+				<td class="table-row-cell">{{cats.index(category) +1}}</td>
+				<td class="table-row-cell">{{category['id']}}</td>
+				<td class="table-row-cell">{{category['name']['en']}}</td>
+				<td class="table-row-cell">{{category['name']['ar']}}</td>
+				<td class="table-row-cell">{{category['shortBio']['en'][:35]}}...</td>
+				<td class="table-row-cell">{{category['shortBio']['ar'][:35]}}...</td>
+				<td class="table-row-cell" id="options">
+					<button style="color: red;" onclick="deleteCategory({{category | safe}});">Delete</button>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</section>
+
+	<div id="overlay" onclick="closeDialogs();"></div>
+	<div id="delete-dialog">
+		<h3>Delete</h3>
+		<p id="delete-dialog-msg">sdfsdfsdfds</p>
+		<div>
+			<button class="shadow-button" style="border: none; background-color: transparent;">Cancel</button>
+			<button class="main-button" id="delete-dialog-confirmation" style="background-color: red; border-color: red; color: var(--main-bg-color);">Delete</button>
+		</div>
+	</div>
+	<div id="add-dialog">
+		<h3>Add</h3>
+		<label>English Name</label>
+		<div class="field-container" id="en-name">
+			<input id="en-name-field" type="name" name="en-name" style="font-family: 'Raleway';" placeholder="English Name">
+		</div>
+		<label>Arabic Name</label>
+		<div class="field-container" id="ar-name">
+			<input id="ar-name-field" type="name" name="ar-name" style="font-family: 'Cairo';" placeholder="Arabic Name">
+		</div>
+		<label>English Bio</label>
+		<div class="field-container" id="en-desc">
+			<textarea id="en-desc-field" type="name" name="en-desc" style="font-family: 'Raleway';" placeholder="English Short Bio"></textarea>
+		</div>
+		<label>Arabic Bio</label>
+		<div class="field-container" id="ar-desc">
+			<textarea id="ar-desc-field" type="name" name="ar-desc" style="font-family: 'Cairo';" placeholder="Arabic Short Bio"></textarea>
+		</div>
+		<div id="file">
+			<p id="picked-file-name">Cover</p>
+			<button id="pick-cat-cover" class="main-button" onclick="pickCategoryCover();">Pick Cover</button>
+
+		</div>
+
+		<button class="main-button" id="publish-category" onclick="publishCategory();">Publish</button>
+		<p id="status">dsfsd</p>
+	</div>
+
+</body>
+</html>

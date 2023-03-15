@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+{% if lang == 'en' %}
+<html lang="en" dir="ltr">
+{% else %}
+<html lang="ar" dir="rtl">
+{% endif %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StoriesClub - Home</title>
+
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='website/global/styles/computer.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='website/global/styles/smallDevices.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='website/home/styles/computer.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='website/home/styles/smallDevices.css')}}"
+    />
+    <script src="{{url_for('static', filename='website/global/scripts/main.js')}}"></script>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{url_for('static', filename='./website/global/styles/images/logo-accent.ico')}}"
+    />
+    <meta name="description" content="{{header_desc}}" />
+    <meta name="keywords" content="{{keywords}}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160017708320181"
+     crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="/"><div id="logo-accent"></div></a>
+        <a href="/">StoriesClub</a>
+      </div>
+      <nav style="flex-direction: row">
+        {% if lang == "en" %}
+        <a style="font-family: 'Poppins'" class="header-tab active-tab" href="/"
+          >{{content.tabs[lang]["home"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="header-tab" href="/about"
+          >{{content.tabs[lang]["about"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="header-tab" href="/earnMore"
+          >{{content.tabs[lang]["earnMore"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="header-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="header-tab" href="/videos"
+          >{{content.tabs[lang]["videos"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="header-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
+        >
+        {% endif %} 
+        {% if lang == "ar" %}
+        <a style="font-family: 'Cairo'" class="header-tab active-tab" href="/"
+          >{{content.tabs[lang]["home"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="header-tab" href="/about"
+          >{{content.tabs[lang]["about"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="header-tab" href="/earnMore"
+          >{{content.tabs[lang]["earnMore"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="header-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="header-tab" href="/videos"
+          >{{content.tabs[lang]["videos"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="header-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
+        >
+        {% endif %}  
+        <div class="options">
+          <button class="options-btn">></button>
+          <div class="options-content">
+            {% if loggedin %}
+              {% if lang == "ar" %}
+              <a style="font-family: 'Cairo'" class="header-tab active-tab" href="/profile/">{{content.tabs[lang]["profile"]}}</a>
+              <a style="font-family: 'Cairo'" class="header-tab active-tab" href="/publish/">{{content.publish[lang]["publish"]}}</a>
+              <button onclick="logout('{{contact_info["url"]}}');" style="font-family: 'Cairo'; color: red;" class="lang-btn" href="./?lang=ar">{{content.auth[lang]["logout"]}}</button>
+              {% else %}
+              <a style="font-family: 'Poppins'" class="header-tab active-tab" href="/profile/">{{content.tabs[lang]["profile"]}}</a>
+              <a style="font-family: 'Poppins'" class="header-tab active-tab" href="/publish/">{{content.publish[lang]["publish"]}}</a>
+              <button onclick="logout('{{contact_info["url"]}}');" style="font-family: 'Poppins'; color: red;" class="lang-btn" href="./?lang=ar">{{content.auth[lang]["logout"]}}</button>
+              {% endif %}
+            {% else %}
+              <a style="font-family: 'Cairo'" class="header-tab" href="/login/">{{content.tabs[lang]["login"]}}</a>
+              <a style="font-family: 'Cairo'" class="header-tab" href="/signup/">{{content.tabs[lang]["signup"]}}</a>
+            {% endif %}
+            <div class="horizontal-divider"><div></div></div>
+            {% if lang == 'en' %}
+              <button onclick="changeLang('{{contact_info['url']}}', 'ar');" style="font-family: 'Cairo'" class="lang-btn" href="./?lang=ar">العربية</button>
+            {% else %}
+              <button onclick="changeLang('{{contact_info['url']}}', 'en');" style="font-family: 'Poppins'" class="lang-btn" href="./?lang=en">English</button>
+            {% endif %}            
+          </div>
+        </div>
+        
+      </nav>
+      <div id="drawer-btn" onclick="openDrawer();">=</div>
+    </header>
+	{% if loggedin %}
+      <section id="logged-entry">
+        {% if lang == 'ar' %}
+        <div style="align-items: end;">
+        {% else %}
+          <div style="align-items: start;">
+        {% endif %}
+      {% if lang == 'ar' %}
+      <h3 style="font-family: 'Cairo';">{{content.entry[lang]["welcome"]}}
+      {% else %}
+      <h3 style="font-family: 'Raleway';">{{content.entry[lang]["welcome"]}}
+      {% endif %}
+        <br><span>{{user["name"].split(' ')[0]}}..!</span>
+      </h3>
+      <div>
+        {% if lang == 'ar' %}
+        <a style="font-family: 'Cairo';" class="main-button" href="/publish">{{content.entry[lang]["publish"]}}</a>
+        <a style="font-family: 'Cairo';" class="shadow-button" href="/profile">{{content.tabs[lang]["profile"]}}</a>
+        {% else %}
+        <a style="font-family: 'Poppins';" class="main-button" href="/publish">{{content.entry[lang]["publish"]}}</a>
+        <a style="font-family: 'Poppins';" class="shadow-button" href="/profile">{{content.tabs[lang]["profile"]}}</a>
+        {% endif %}
+      </div>
+    </div>
+    <div>
+      <h4>{{user['wallet']}}</h4>
+      {% if lang == 'ar' %}
+      <h3 style="font-family: 'Cairo'; font-weight: 500">{{content.global_[lang]['wallet']}}</h3>
+      <p style="font-family: 'Cairo';">{{content.global_[lang]['walletMsg']}}</p>
+      {% else %}
+      <h3 style="font-family: 'Poppins'; font-weight: 500">{{content.global_[lang]['wallet']}}</h3>
+      <p style="font-family: 'Poppins';">{{content.global_[lang]['walletMsg']}}</p>
+      {% endif %}
+    </div>
+
+    <div>
+      <h4>{{user["loggingStreak"]}}<span>/ 30</span></h4>
+      <div id="progress">
+        <div id="messures">
+          <p>0</p>
+          <p>30</p>
+        </div>
+        <div id="progress-bar">
+          <div id="progress-value" style='width:{{(user["loggingStreak"] / 0.3)}}%'></div>
+        </div>
+        {% if lang == 'ar' %}
+        <p style="font-family: 'Cairo';">{{content.global_[lang]["loggingStreak"]}}</p>
+        <p style="font-family: 'Cairo';">{{content.global_[lang]['loginStreakMsg']}}</p>
+      {% else %}
+        <p style="font-family: 'Poppins';">{{content.global_[lang]["loggingStreak"]}}</p>
+        <p style="font-family: 'Poppins';">{{content.global_[lang]['loginStreakMsg']}}</p>
+      {% endif %}
+      </div>
+    </div>
+
+    
+	{% else %}
+		<section id="entry" dir="ltr">
+        <div class="content">
+          {% if lang == "ar" %}
+          <h2><span style="font-family: 'Cairo';" >{{content.entry[lang]["msg"]}}</span><br>Stories<br> C l u b</h2>
+          {% else %}
+          <h2><span style="font-family: 'Poppins';" >{{content.entry[lang]["msg"]}}</span><br>Stories<br> C l u b</h2>
+          {% endif %}
+          <div>
+            {% if lang == "ar" %}
+					<a style="font-family: 'Cairo';" class="main-button" href="/about">{{content.entry[lang]["main"]}}</a>
+					<a style="font-family: 'Cairo';" class="main-white-button" href="/signup">{{content.entry[lang]["second"]}}</a>
+				{% else %}
+          <a style="font-family: 'Poppins';" class="main-button" href="/about">{{content.entry[lang]["main"]}}</a>
+          <a style="font-family: 'Poppins';" class="main-white-button" href="/signup">{{content.entry[lang]["second"]}}</a>
+				{% endif %}
+			 </div>
+      </div>
+      <div id="entry-img">
+        <div id="devices"></div>
+      </div>
+    {% endif %}
+	</section>
+  {% if not loggedin %}
+    <section id="earn-more-msg">
+      {% if lang == 'ar' %}
+      <p style="font-family: 'Cairo';">{{content.entry[lang]["wannaDoubleUpProfitMsg"]}}</p>
+      <a href='/earnMore' style="font-family: 'Cairo';" class="main-white-button">{{content.entry[lang]["WannaDoubleUpProfit"]}}</a>
+      {% else %}
+      <p style="font-family: 'Cairo';">{{content.entry[lang]["wannaDoubleUpProfitMsg"]}}</p>
+      <a href='/earnMore' style="font-family: 'Cairo';" class="main-white-button">{{content.entry[lang]["WannaDoubleUpProfit"]}}</a>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  <div class="horizontal-ad">Ad Space</div>
+
+  <section id="books">
+    {% if lang == 'ar' %}
+    <h3 style="font-family: 'Cairo';">{{content.global_[lang]["trendingBooks"]}}</h3>
+    <p style="font-family: 'Cairo';">{{content.global_[lang]["trendingBooksMsg"]}}</p>
+    {% else %}
+    <h3 style="font-family: 'Raleway';">{{content.global_[lang]["trendingBooks"]}}</h3>
+    <p style="font-family: 'Poppins';">{{content.global_[lang]["trendingBooksMsg"]}}</p>
+    {% endif %}
+    <div>
+      <div class="side-ad">
+        <!-- TODO -->
+        Ad Space
+      </div>
+      <div class="cards" id="books-cards">
+        {% for book in trending_books[:3] %}
+        <a href="{{contact_info['url']}}/book/{{book['_id']}}">
+            <div class="book-card" style="background-image: url('{{contact_info["url"]}}/book/cover/{{book["_id"]}}');">
+              <div class="book-card-overlay">
+                  <div class="book-card-content">
+                    <div class="card-category">
+                      <div class="card-category-icon-white"></div>
+                    <!-- TODO -->
+                    <p>{{list(categories.data.values())[book["category"]]["name"][lang]}}</p>
+                    </div>
+                    {% if check_if_arabic(book["title"]) %}
+                      <h4 style="font-family: 'Cairo'; text-align: right;">{{book["title"]}}</h4>
+                      {% else %}
+                      <h4 style="font-family: 'Raleway'; text-align: left;">{{book["title"]}}</h4>
+                      {% endif %}
+                    
+                      {% if check_if_arabic(book["title"]) %}
+                      <p dir="rtl" style="font-family: 'Cairo'; direction: rtl; text-align: right;">{{book["desc"][:200]}}...</p>
+                    {% else %}
+                      <p dir="ltr" style="font-family: 'Poppins'; direction: ltr; text-align: left;">{{book["desc"][:200]}}...</p>
+                    {% endif %}
+                  <div class="card-adoption-detials">
+                    <div class="card-adoption-icon" id="views-icon-white"></div>
+                    <p class="card-adoption-detial">{{book["views"]}}</p> 
+                    | 
+                    <div class="card-adoption-icon" id="likes-icon-white"></div>
+                    <p class="card-adoption-detial">{{len(book["likes"])}}</p> 
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="side-ad">
+                <!-- TODO -->
+                Ad Space
+
+      </div>
+      
+    </div>
+  </section>
+  
+  <div class="horizontal-ad">Ad Space</div>
+  <section id="audios">
+    {% if lang == 'ar' %}
+    <h3 style="font-family: 'Cairo';">{{content.global_[lang]["trendingAudios"]}}</h3>
+    <p style="font-family: 'Cairo';">{{content.global_[lang]["trendingAudiosMsg"]}}</p>
+    {% else %}
+    <h3 style="font-family: 'Raleway';">{{content.global_[lang]["trendingAudios"]}}</h3>
+    <p style="font-family: 'Poppins';">{{content.global_[lang]["trendingAudiosMsg"]}}</p>
+    {% endif %}
+    <div>
+      <div class="side-ad">
+        <!-- TODO -->
+        Ad Space
+      </div>
+      <div class="cards" id="audios-cards">
+        {% for audio in trending_audios[:3] %}
+          <a href="{{contact_info['url']}}/audio/{{audio['_id']}}">
+            <div class="audio-card" style="background-image: url('{{contact_info["url"]}}/audio/cover/{{audio["_id"]}}');">
+              <div class="audio-card-overlay">
+                  <div class="audio-card-content">
+                    <div class="card-category">
+                      <div class="card-category-icon-white"></div>
+                    <!-- TODO -->
+                    <p>{{list(categories.data.values())[audio["category"]]["name"][lang]}}</p>
+                    </div>
+                    {% if check_if_arabic(audio["title"]) %}
+                      <h4 style="font-family: 'Cairo'; text-align: right;">{{audio["title"]}}</h4>
+                      {% else %}
+                      <h4 style="font-family: 'Raleway'; text-align: left;">{{audio["title"]}}</h4>
+                      {% endif %}
+                    
+                      {% if check_if_arabic(audio["title"]) %}
+                      <p dir="rtl" style="font-family: 'Cairo'; direction: rtl; text-align: right;">{{audio["desc"][:200]}}...</p>
+                    {% else %}
+                      <p dir="ltr" style="font-family: 'Poppins'; direction: ltr; text-align: left;">{{audio["desc"][:200]}}...</p>
+                    {% endif %}
+                  <div class="card-adoption-detials">
+                    <div class="card-adoption-icon" id="views-icon-white"></div>
+                    <p class="card-adoption-detial">{{audio["views"]}}</p> 
+                    | 
+                    <div class="card-adoption-icon" id="likes-icon-white"></div>
+                    <p class="card-adoption-detial">{{len(audio["likes"])}}</p> 
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="side-ad">
+                <!-- TODO -->
+                Ad Space
+
+      </div>
+      
+    </div>
+  </section>
+  {% if not loggedin %}
+  <div class="horizontal-ad">Ad Space</div>
+    <section id="join">
+      {% if lang == 'ar' %}
+      <p style="font-family: 'Cairo';">{{content.entry[lang]["wannaJoin"]}}</p>
+      <a style="font-family: 'Cairo';" class="main-white-button">{{content.entry[lang]["wannaJoinButton"]}}</a>
+      {% else %}
+      <p style="font-family: 'Cairo';">{{content.entry[lang]["wannaJoin"]}}</p>
+      <a style="font-family: 'Cairo';" class="main-white-button">{{content.entry[lang]["wannaJoinButton"]}}</a>
+      {% endif %}
+    </section>
+  {% endif %}
+  <div class="horizontal-ad">Ad Space</div>
+
+
+  <section id="videos">
+    {% if lang == 'ar' %}
+    <h3 style="font-family: 'Cairo';">{{content.global_[lang]["trendingVideos"]}}</h3>
+    <p style="font-family: 'Cairo';">{{content.global_[lang]["trendingVideosMsg"]}}</p>
+    {% else %}
+    <h3 style="font-family: 'Raleway';">{{content.global_[lang]["trendingVideos"]}}</h3>
+    <p style="font-family: 'Poppins';">{{content.global_[lang]["trendingVideosMsg"]}}</p>
+    {% endif %}
+    <div>
+      <div class="side-ad">
+        <!-- TODO -->
+        Ad Space
+      </div>
+      <div class="cards" id="videos-cards">
+        {% for video in trending_videos[:3] %}
+          <a href="{{contact_info['url']}}/video/{{video['_id']}}">
+            <div class="video-card" style="background-image: url('{{contact_info["url"]}}/video/cover/{{video["_id"]}}');">
+              <div class="video-card-overlay">
+                  <div class="video-card-content">
+                    <div class="card-category">
+                      <div class="card-category-icon-white"></div>
+                    <!-- TODO -->
+                    <p>{{list(categories.data.values())[video["category"]]["name"][lang]}}</p>
+                    </div>
+                    {% if check_if_arabic(video["title"]) %}
+                      <h4 style="font-family: 'Cairo'; text-align: right;">{{video["title"]}}</h4>
+                      {% else %}
+                      <h4 style="font-family: 'Raleway'; text-align: left;">{{video["title"]}}</h4>
+                      {% endif %}
+                    
+                      {% if check_if_arabic(video["title"]) %}
+                      <p dir="rtl" style="font-family: 'Cairo'; direction: rtl; text-align: right;">{{video["desc"][:200]}}...</p>
+                    {% else %}
+                      <p dir="ltr" style="font-family: 'Poppins'; direction: ltr; text-align: left;">{{video["desc"][:200]}}...</p>
+                    {% endif %}
+                  <div class="card-adoption-detials">
+                    <div class="card-adoption-icon" id="views-icon-white"></div>
+                    <p class="card-adoption-detial">{{video["views"]}}</p> 
+                    | 
+                    <div class="card-adoption-icon" id="likes-icon-white"></div>
+                    <p class="card-adoption-detial">{{len(video["likes"])}}</p> 
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="side-ad">
+                <!-- TODO -->
+                Ad Space
+
+      </div>
+      
+    </div>
+  </section>
+  <div class="horizontal-ad">Ad Space</div>
+  
+    <footer>
+      <div id="info">
+        <div id="footer-logo"></div>
+        <p class="footer-contact-info">{{contact_info["phone"]}}</p>
+        <p class="footer-contact-info">{{contact_info["email"]}}</p>
+        <p class="footer-contact-info">{{contact_info["address"]}}</p>
+        <div id="footer-social-media-icons">
+          <a
+            href='{{contact_info["facebook"]}}'
+            class="footer-social-icon"
+            id="footer-social-facebook"
+            target="_blank"
+          ></a>
+          <a
+            href='{{contact_info["instagram"]}}'
+            class="footer-social-icon"
+            id="footer-social-instagram"
+            target="_blank"
+          ></a>
+          
+        </div>
+      </div>
+      <div>
+        {% if lang == "en" %}
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/about"
+          >{{content.tabs[lang]["about"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/earnMore"
+          >{{content.tabs[lang]["earnMore"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/videos"
+          >{{content.tabs[lang]["videos"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
+        >
+        {% if loggedin %}
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/profile/"
+          >{{content.tabs[lang]["profile"]}}</a
+        >
+        {% else %}
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/login/"
+          >{{content.tabs[lang]["login"]}}</a
+        >
+        <a style="font-family: 'Poppins'" class="footer-tab" href="/signup/"
+          >{{content.tabs[lang]["signup"]}}</a
+        >
+        {% endif %} {% endif %} {% if lang == "ar" %}
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/about"
+          >{{content.tabs[lang]["about"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/earnMore"
+          >{{content.tabs[lang]["earnMore"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/videos"
+          >{{content.tabs[lang]["videos"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
+        >
+        {% if loggedin %}
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/profile/"
+          >{{content.tabs[lang]["profile"]}}</a
+        >
+        {% else %}
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/login/"
+          >{{content.tabs[lang]["login"]}}</a
+        >
+        <a style="font-family: 'Cairo'" class="footer-tab" href="/signup/"
+          >{{content.tabs[lang]["signup"]}}</a
+        >
+        {% endif %} {% endif %}
+      </div>
+      <div></div>
+    </footer>
+
+
+    <div id="drawer-overlay" onclick="closeDrawer()"></div>
+    <div id="drawer">
+      <div id="drawer-header">
+        <button id="drawer-icon" onclick="closeDrawer();">x</button>
+      </div>
+      <div id="footer-logo"></div>
+      {% if lang == "en" %}
+        <nav style="align-items: start">
+      {% else %}
+        <nav style="align-items: end">
+      {% endif %}
+        {% if lang == "en" %}
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab active-tab" href="/"
+          >{{content.tabs[lang]["home"]}}</a
+        >
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/about"
+          >{{content.tabs[lang]["about"]}}</a
+        >
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/earnMore"
+          >{{content.tabs[lang]["earnMore"]}}</a
+        >
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
+        >
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/videos"
+          >{{content.tabs[lang]["videos"]}}</a
+        >
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
+        >
+        <div class="vertical-divider"></div>
+        {% if loggedin %}
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/profile/"
+          >{{content.tabs[lang]["profile"]}}</a
+        >
+        {% else %}
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/login/"
+          >{{content.tabs[lang]["login"]}}</a
+        >
+        <a style="font-family: 'Poppins'; text-align: left;" class="header-tab" href="/signup/"
+          >{{content.tabs[lang]["signup"]}}</a
+        >
+        {% endif %} {% endif %} {% if lang == "ar" %}
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab active-tab" href="/"
+          >{{content.tabs[lang]["home"]}}</a
+        >
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/about"
+          >{{content.tabs[lang]["about"]}}</a
+        >
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/earnMore"
+          >{{content.tabs[lang]["earnMore"]}}</a
+        >
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/books"
+          >{{content.tabs[lang]["books"]}}</a
+        >
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/videos"
+          >{{content.tabs[lang]["videos"]}}</a
+        >
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/audios"
+          >{{content.tabs[lang]["audios"]}}</a
+        >
+        {% if loggedin %}
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/profile/"
+          >{{content.tabs[lang]["profile"]}}</a
+        >
+        {% else %}
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/login/"
+          >{{content.tabs[lang]["login"]}}</a
+        >
+        <a style="font-family: 'Cairo'; text-align: right;" class="header-tab" href="/signup/"
+          >{{content.tabs[lang]["signup"]}}</a
+        >
+        {% endif %} {% endif %}  {% if lang == 'ar' %}
+        <button class="header-tab" onclick="changeLang(`{{contact_info['url']}}`, 'en');" style="font-family: 'Poppins'" class="lang-btn">English</button>
+        {% endif %} {% if lang == 'en' %}
+        <button class="header-tab" onclick="changeLang(`{{contact_info['url']}}`, 'ar');" style="font-family: 'Poppins'" class="lang-btn">العربية</button>
+        {% endif %}
+      </nav>
+      <div
+        style="
+          justify-content: space-between;
+          width: 70%;
+          margin-top: 10%;
+          height: 64px;
+          flex-direction: row;
+          display: flex;
+          align-items: center;
+        "
+      >
+        <a
+          class="social-media-icon"
+          href="{{contact_info['facebook']}}"
+          id="drawer-facebook"
+        ></a>
+        
+        <a
+          class="social-media-icon"
+          href="{{contact_info['instagram']}}"
+          id="drawer-instagram"
+        ></a>
+      </div>
+    </div>
+		<div id="toast">
+			<p id="toast-text">This is a Toast</p>
+		</div>
+  </body>
+</html>
