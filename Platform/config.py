@@ -34,7 +34,7 @@ class Config():
 
         self.facebook = os.environ["FACEBOOK"] if "FACEBOOK" in os.environ else "https://facebook.com/storiesclub.net"
         self.linkedin = os.environ["LINKEDIN"] if "LINKEDIN" in os.environ else "https://linkedin.com/company/storiesclun.net"
-        self.instagram = os.environ["INSTAGTAM"] if "INSTAGTAM" in os.environ else "https://instagram.com/storiesclun.net"
+        self.instagram = os.environ["INSTAGTAM"] if "INSTAGTAM" in os.environ else "https://instagram.com/storiesclubplatform"
         self.email = os.environ["CONTACT_EMAIL"] if "CONTACT_EMAIL" in os.environ else "info@cubersio.com"
         self.phone = os.environ["CONTACT_PHONE"] if "CONTACT_PHONE" in os.environ else "+20 112 916 4522"
         self.address = os.environ["CONTACT_ADDRESS"] if "CONTACT_ADDRESS" in os.environ else ""
