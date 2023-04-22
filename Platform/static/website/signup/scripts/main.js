@@ -101,29 +101,29 @@ const formValidation = async (lang) => {
         const res = await fetch('./', {
             method: "POST",
             body: JSON.stringify(payload),
-                      mode: 'cors',
-              cache: 'no-cache',
-              credentials: 'same-origin' ,
-              headers: {
+            mode: 'cors',
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: {
                 'Content-Type': 'application/json',
                 "Access-Control-Allow-Origin": "*"
-              }
+            }
 
 
         }
         );
         // if status code == 201: return the home page;
         if (res.status === 201) {
-            window.open('../completeSignUp/', '_self');
+            window.open('/completeSignUp/', '_self');
             return;
         }
-        
+
         // if status code == 203: return user email exists;
         else if (res.status === 203) {
             email.style.color = "red";
             email.style.borderColor = "red";
             showToast({
-                msg: toastContent[lang]["userEmailExists"],
+                msg: toastContent[lang]["userExists"],
                 borderColor: "red",
                 toastColor: "red",
                 lang: lang,
@@ -136,7 +136,7 @@ const formValidation = async (lang) => {
             phone.style.color = "red";
             phone.style.borderColor = "red";
             showToast({
-                msg: toastContent[lang]["userPhoneExists"],
+                msg: toastContent[lang]["userExists"],
                 borderColor: "red",
                 toastColor: "red",
                 lang: lang,

@@ -417,7 +417,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2.5%;
-    min-height: 100vh;
+    min-height: 20vh;
   }
 
   .edit-action,
@@ -531,7 +531,7 @@
     flex-direction: row;
     align-items: start;
     justify-content: start;
-    width: 30vw;
+    width: 25vw;
     height: 15vw;
     display: flex;
     gap: 2vw;
@@ -571,6 +571,14 @@
     border: 2px var(--main-color) solid;
     color: var(--main-bg-color);
     font-weight: 500;
+  }
+
+  .dashboard-audio-card p,
+  .dashboard-book-card p,
+  .dashboard-video-card p {
+    color: var(--main-bg-color);
+    font-weight: 500;
+    font-size: 0.75em;
   }
 
   .dashboard-audio-card .reputation,

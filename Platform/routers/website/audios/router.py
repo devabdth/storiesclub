@@ -75,8 +75,11 @@ class AudiosRouter:
                         cover.filename.split('.')[-1]
                     )
 
+
                     save_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../db/covers/audios/'))
-                    print(os.path.exists(save_path))
+
+                    if not os.path.exists(save_path):                        
+                        os.mkdir(save_path)                    
                     try:
                         cover.save(os.path.join(save_path, cover.filename))
                         if os.path.exists(os.path.join(save_path, cover.filename)):
@@ -97,6 +100,8 @@ class AudiosRouter:
                     )
 
                     save_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../db/assets/audios/'))
+                    if not os.path.exists(save_path):                        
+                        os.mkdir(save_path)
                     try:
                         asset.save(os.path.join(save_path, asset.filename))
                         if os.path.exists(os.path.join(save_path, asset.filename)):

@@ -110,8 +110,7 @@ class SignUpProcessRouter:
             current_user_phoneNumber = session.get('currentUserPhoneNumber', None)
             current_user_password = session.get('currentUserPassword', None)
             current_user_id = session.get('currentUserId', None)
-
-            if not current_user_id is None:
+            if not (current_user_id is None):
                 return redirect('{}/'.format(self.config.url))
 
             if current_user_email is None or current_user_password is None or current_user_phoneNumber is None:

@@ -156,17 +156,17 @@ const copyToClipboard = () => {
 
 const changeLang = async (url, newLang) => {
     console.log("Clicked");
-    await fetch(`${url}/config/?lang=${newLang}`);
+    await fetch(`/config/?lang=${newLang}`);
     location.reload();
 }
 
 const logout = async (url) => {
-    const res = await fetch('../users/logout/', {
+    const res = await fetch('/users/logout/', {
         method: 'PATCH'
     });
 
     if(res.status === 200) {
-        window.open(`${url}/home/`, '_self');
+        window.open(`/home/`, '_self');
     }
 }
 
@@ -209,12 +209,22 @@ const toastContent = {
       "repasswordNotMatched": "كلمتي المرور غير متوافقين",
       "fieldEmpty": "هذا الحقل لا يجب أن يكون فارغاً",
       "tryAgainLater": "أعد المحاولة في وقت لاحق",
-      "notValidBookTitle": "",
-      "notValidBookDesc": "",
-      "notValidBookDepositNumber": "Number!",
-      "notValidBookISBN": "",
-      "notValidBookCategory": "",
-      "notValidBookCover": "",
-      "notValidBookAsset": ""
+      "userExists": "الحساب موجود بالفعل، جرب أن تسجل الدخول",
+      "tryLater": "من فضلك، أعد المحاولة لاحقاً",
+      "noFilesSelected": "لم يتم إختيار أي ملفات",
+      "fileSelcted": "تم إختيار الملف بنجاح", 
+      "notValidBookTitle": "من فضلك، أدخل اسم الكتاب الصحيح",
+      "notValidBookDesc": "أخبرنا المزيد عن الكتاب الذي تريد تنشره",
+      "notValidBookDepositNumber": "أدخل رقم التعريف المحلي (رقم الإيداع)",
+      "notValidBookISBN": "أدخل رقم التعريف الدولي",
+      "notValidBookCategory": "من فضلك أختر التنصيف المناسب!",
+      "notValidBookCover": "أختر الغلاف الذي تريد أن تنشره",
+      "notValidBookAsset": "أختر الكتاب الذي تريد تنشره",
+      "notValidName": "من فضلك، أدخل اسمك",
+      "notValidBio": "أخبرنا المزيد عن نفسك!",
+      "notValidPhoneNumber": "من فضلك، أدخل رقم هاتفك",
+      "notValidCity": "من فضلك، أختر مدينتك!",
+      "notValidGender": "من فضلك، أختر النوع!"
+
     }
 }

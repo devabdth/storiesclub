@@ -58,7 +58,7 @@ const StageOneSubmit = async () => {
 }
 
 const sendCodeAgain = async (lang) => {
-  const res = await fetch('//sendCodeAgain/', {
+  const res = await fetch('/sendCodeAgain/', {
     method: 'get', 
     headers: { 'Access-Control-Allow-Origin': '*' }
 
@@ -320,7 +320,7 @@ const compleProfileSubmit = async (lang) => {
       }
     }
 
-    coverXhr.open('POST', `//users/?mode=covers`)
+    coverXhr.open('POST', `/users/?mode=covers`)
     coverXhr.send(coverData);
 
 
@@ -344,7 +344,7 @@ const compleProfileSubmit = async (lang) => {
       }
       window.open('../', '_self');
     }
-    assetXhr.open('POST', `//users/?mode=assets`)
+    assetXhr.open('POST', `/users/?mode=assets`)
     assetXhr.send(assetData);
   });
 }

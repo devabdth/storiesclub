@@ -128,7 +128,7 @@
       </nav>
       <div id="drawer-btn" onclick="openDrawer();">=</div>
     </header>
-    <section id="entry">
+    <section id="entry" dir="ltr">
       <div class="content">
           {% if lang == "ar" %}
           <h2 style="font-family: 'Cairo';"><span>{{content.about[lang]["aboutEntry"]}}<br></span>{{content.about[lang]["about"]}}</h2>
@@ -145,37 +145,37 @@
     <section class="about-section" id="users" onclick="toggleUsersSection()">
       {% if lang == 'ar' %}
         <h3 style="font-family: 'Cairo';">Users</h3>
-        <p style="font-family: 'Cairo';" id="users-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p style="font-family: 'Cairo';" id="users-p">{{content.about[lang]['usersDescription']}}</p>
       {% else %}
         <h3 style="font-family: 'Raleway';">Users</h3>
-        <p style="font-family: 'Poppins';" id="users-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p style="font-family: 'Poppins';" id="users-p">{{content.about[lang]['usersDescription']}}</p>
       {% endif %}
     </section>    
     <section class="about-section" id="creators" onclick="toggleCreatorsSection()">
       {% if lang == 'ar' %}
         <h3 style="font-family: 'Cairo';">Creators</h3>
-        <p style="font-family: 'Cairo';" id="creators-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p style="font-family: 'Cairo';" id="creators-p">{{content.about[lang]['publishersDescription']}}</p>
       {% else %}
         <h3 style="font-family: 'Raleway';">Creators</h3>
-        <p style="font-family: 'Poppins';" id="creators-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p style="font-family: 'Poppins';" id="creators-p">{{content.about[lang]['publishersDescription']}}</p>
       {% endif %}
     </section>    
     <section class="about-section" id="publish-houses" onclick="togglePublishingHousesSection()">
       {% if lang == 'ar' %}
         <h3 style="font-family: 'Cairo';">Publishing Houses</h3>
-        <p style="font-family: 'Cairo';" id="publish-houses-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p style="font-family: 'Cairo';" id="publish-houses-p">{{content.about[lang]['publishingHousesDescription']}}</p>
       {% else %}
         <h3 style="font-family: 'Raleway';">Publishing Houses</h3>
-        <p style="font-family: 'Poppins';" id="publish-houses-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p style="font-family: 'Poppins';" id="publish-houses-p">{{content.about[lang]['publishingHousesDescription']}}</p>
       {% endif %}
     </section>    
     <section class="about-section" id="suppliers" onclick="toggleSuppliersSection()">
       {% if lang == 'ar' %}
         <h3 style="font-family: 'Cairo';">Suppliers</h3>
-        <p style="font-family: 'Cairo';" id="suppliers-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p style="font-family: 'Cairo';" id="suppliers-p">{{content.about[lang]['suppliersDescription']}}</p>
       {% else %}
         <h3 style="font-family: 'Raleway';">Suppliers</h3>
-        <p style="font-family: 'Raleway';" id="suppliers-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p style="font-family: 'Raleway';" id="suppliers-p">{{content.about[lang]['suppliersDescription']}}</p>
       {% endif %}
     </section>
     <footer>

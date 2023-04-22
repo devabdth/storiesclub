@@ -718,7 +718,7 @@ const uploadBook = async (props) => {
 					uploadDialogStage.innerHTML = "Uploading Book";
 
 				}
-				coverXhr.open("POST", `//books/?mode=covers&book=${currentBookId}`);
+				coverXhr.open("POST", `/books/?mode=covers&book=${currentBookId}`);
 				coverXhr.send(coverData);
 
 				var assetData = new FormData()
@@ -751,7 +751,7 @@ const uploadBook = async (props) => {
 
 
 				}
-				assetXhr.open("POST", `//books/?mode=assets&book=${currentBookId}`);
+				assetXhr.open("POST", `/books/?mode=assets&book=${currentBookId}`);
 				assetXhr.send(assetData);
 		});
 
@@ -851,7 +851,7 @@ const uploadAudio = async (props) => {
 					uploadDialogStage.innerHTML = "Uploading Book";
 
 				}
-				coverXhr.open("POST", `//audios/?mode=covers&audio=${currentAudioId}`);
+				coverXhr.open("POST", `/audios/?mode=covers&audio=${currentAudioId}`);
 				coverXhr.send(coverData);
 
 				var assetData = new FormData()
@@ -884,7 +884,7 @@ const uploadAudio = async (props) => {
 
 
 				}
-				assetXhr.open("POST", `//audios/?mode=assets&audio=${currentAudioId}`);
+				assetXhr.open("POST", `/audios/?mode=assets&audio=${currentAudioId}`);
 				assetXhr.send(assetData);
 		});
 
@@ -983,7 +983,7 @@ const uploadVideo = async (props) => {
 					uploadDialogStage.innerHTML = "Uploading Book";
 
 				}
-				coverXhr.open("POST", `//videos/?mode=covers&video=${currentVideoId}`);
+				coverXhr.open("POST", `/videos/?mode=covers&video=${currentVideoId}`);
 				coverXhr.send(coverData);
 
 				var assetData = new FormData()
@@ -1016,7 +1016,7 @@ const uploadVideo = async (props) => {
 
 
 				}
-				assetXhr.open("POST", `//videos/?mode=assets&video=${currentVideoId}`);
+				assetXhr.open("POST", `/videos/?mode=assets&video=${currentVideoId}`);
 				assetXhr.send(assetData);
 		});
 

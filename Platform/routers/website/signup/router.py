@@ -21,9 +21,10 @@ class SignUpRouter:
                     return self.app.response_class(status=500)
 
                 emailUnique = self.config.db.users.get_user_by_email(payload['email']) == None
-                phoneUnique = self.config.db.users.get_user_by_phone(payload['phone']) == None
                 if not emailUnique:
                     return self.app.response_class(status=203)
+                
+                phoneUnique = self.config.db.users.get_user_by_phone(payload['phone']) == None
                 if not phoneUnique:
                     return self.app.response_class(status=204)
                 if emailUnique and phoneUnique:

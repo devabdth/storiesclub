@@ -41,12 +41,12 @@ class UsersRouter:
                         cover.filename.split('.')[-1]
                     )
 
-                    if not os.path.exists(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../db/covers/users/'))):
-                        os.makedirs(os.path.abspath(os.path.join(
-                            os.path.dirname(__file__), '../../../db/covers/users/')))
 
                     save_path = os.path.abspath(os.path.join(
                         os.path.dirname(__file__), '../../../db/covers/users/'))
+                    if not os.path.exists(save_path):                        
+                        os.mkdir(save_path)
+
                     try:
                         cover.save(os.path.join(save_path, cover.filename))
                         if os.path.exists(os.path.join(save_path, cover.filename)):
@@ -65,12 +65,10 @@ class UsersRouter:
                         asset.filename.split('.')[-1]
                     )
 
-                    if not os.path.exists(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../db/assets/users/'))):
-                        os.makedirs(os.path.abspath(os.path.join(
-                            os.path.dirname(__file__), '../../../db/assets/users/')))
-
                     save_path = os.path.abspath(os.path.join(
                         os.path.dirname(__file__), '../../../db/assets/users/'))
+                    if not os.path.exists(save_path):                        
+                        os.mkdir(save_path)
                     try:
                         asset.save(os.path.join(save_path, asset.filename))
                         if os.path.exists(os.path.join(save_path, asset.filename)):

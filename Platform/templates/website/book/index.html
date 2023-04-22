@@ -106,7 +106,7 @@
           <button class="options-btn">></button>
           <div class="options-content">
             {% if loggedin %}
-{% if lang == "ar" %}
+              {% if lang == "ar" %}
               <a style="font-family: 'Cairo'" class="header-tab active-tab" href="/profile/">{{content.tabs[lang]["profile"]}}</a>
               <a style="font-family: 'Cairo'" class="header-tab active-tab" href="/publish/">{{content.publish[lang]["publish"]}}</a>
               <button onclick="logout('{{contact_info["url"]}}');" style="font-family: 'Cairo'; color: red;" class="lang-btn" href="./?lang=ar">{{content.auth[lang]["logout"]}}</button>
@@ -114,7 +114,8 @@
               <a style="font-family: 'Poppins'" class="header-tab active-tab" href="/profile/">{{content.tabs[lang]["profile"]}}</a>
               <a style="font-family: 'Poppins'" class="header-tab active-tab" href="/publish/">{{content.publish[lang]["publish"]}}</a>
               <button onclick="logout('{{contact_info["url"]}}');" style="font-family: 'Poppins'; color: red;" class="lang-btn" href="./?lang=ar">{{content.auth[lang]["logout"]}}</button>
-              {% endif %}            {% else %}
+              {% endif %}
+            {% else %}
               <a style="font-family: 'Cairo'" class="header-tab" href="/login/">{{content.tabs[lang]["login"]}}</a>
               <a style="font-family: 'Cairo'" class="header-tab" href="/signup/">{{content.tabs[lang]["signup"]}}</a>
             {% endif %}

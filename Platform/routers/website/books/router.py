@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect
 import json
 import time
 import os
@@ -61,7 +61,8 @@ class BooksRouter:
                     )
 
                     save_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../db/covers/books/'))
-                    print(os.path.exists(save_path))
+                    if not os.path.exists(save_path):                        
+                        os.mkdir(save_path)
                     try:
                         cover.save(os.path.join(save_path, cover.filename))
                         if os.path.exists(os.path.join(save_path, cover.filename)):
@@ -82,6 +83,8 @@ class BooksRouter:
                     )
 
                     save_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../db/assets/books/'))
+                    if not os.path.exists(save_path):                        
+                        os.mkdir(save_path)                    
                     try:
                         asset.save(os.path.join(save_path, asset.filename))
                         if os.path.exists(os.path.join(save_path, asset.filename)):

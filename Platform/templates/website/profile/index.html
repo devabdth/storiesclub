@@ -195,11 +195,11 @@
               </div>
               <div class="actions">
                 {% if lang == 'en' %}
-                <button style="font-family: 'Raleway';" class='edit-action' onclick="openEditDialog({title: '{{post.title}}', desc: '{{post.desc}}', id: '{{post._id | string}}', category: ({{categories.data[post.category | string] }})}, '{{lang}}', 'books')">{{content.global_[lang]['edit']}}</button>
-                <button style="font-family: 'Raleway';" class='show-action' onclick="window.open('/book/{{post._id}}/', '_self')">{{content.global_[lang]['show']}}</button>
+                <button style="font-family: 'Raleway';" class='edit-action' onclick="openEditDialog({title: '{{post.title | safe}}', desc: `{{post.desc | safe}}`, id: '{{post._id | string}}', category: ({{categories.data[post.category | string] }})}, '{{lang}}', 'books')">{{content.global_[lang]['edit']}}</button>
+                <button style="font-family: 'Raleway';" class='show-action' onclick="window.open('/book/{{post._id}}', '_self')">{{content.global_[lang]['show']}}</button>
                 {% else %}
-                <button style="font-family: 'Cairo';" class='edit-action' onclick="openEditDialog({title: '{{post.title}}', desc: '{{post.desc}}', id: '{{post._id | string}}', category: ({{categories.data[post.category | string] }})}, '{{lang}}', 'books')">{{content.global_[lang]['edit']}}</button>
-                <button style="font-family: 'Cairo';" class='show-action' onclick="window.open('/book/{{post._id}}/', '_self')">{{content.global_[lang]['show']}}</button>
+                <button style="font-family: 'Cairo';" class='edit-action' onclick="openEditDialog({title: '{{post.title | safe}}', desc: `{{post.desc | safe}}`, id: '{{post._id | string}}', category: ({{categories.data[post.category | string] }})}, '{{lang}}', 'books')">{{content.global_[lang]['edit']}}</button>
+                <button style="font-family: 'Cairo';" class='show-action' onclick="window.open('/book/{{post._id}}', '_self')">{{content.global_[lang]['show']}}</button>
                 {% endif %}    
               </div>
             </div>
@@ -235,11 +235,11 @@
               </div>
               <div class="actions">
                 {% if lang == 'en' %}
-                <button style="font-family: 'Raleway';" class='edit-action' onclick="openEditDialog({title: '{{post.title}}', desc: '{{post.desc}}', id: '{{post._id | string}}', category: ({{categories.data[post.category | string] }})}, '{{lang}}', 'videos')">{{content.global_[lang]['edit']}}</button>
-                <button style="font-family: 'Raleway';" class='show-action' onclick="window.open('/video/{{post._id}}/', '_self')">{{content.global_[lang]['show']}}</button>
+                <button style="font-family: 'Raleway';" class='edit-action' onclick="openEditDialog({title: '{{post.title | safe}}', desc: `{{post.desc | safe}}`, id: '{{post._id | string}}', category: ({{categories.data[post.category | string] }})}, '{{lang}}', 'videos')">{{content.global_[lang]['edit']}}</button>
+                <button style="font-family: 'Raleway';" class='show-action' onclick="window.open('/video/{{post._id}}', '_self')">{{content.global_[lang]['show']}}</button>
                 {% else %}
-                <button style="font-family: 'Cairo';" class='edit-action' onclick="openEditDialog({title: '{{post.title}}', desc: '{{post.desc}}', id: '{{post._id | string}}', category: ({{categories.data[post.category | string] }})}, '{{lang}}', 'videos')">{{content.global_[lang]['edit']}}</button>
-                <button style="font-family: 'Cairo';" class='show-action' onclick="window.open('/video/{{post._id}}/', '_self')">{{content.global_[lang]['show']}}</button>
+                <button style="font-family: 'Cairo';" class='edit-action' onclick="openEditDialog({title: '{{post.title | safe}}', desc: `{{post.desc | safe}}`, id: '{{post._id | string}}', category: ({{categories.data[post.category | string] }})}, '{{lang}}', 'videos')">{{content.global_[lang]['edit']}}</button>
+                <button style="font-family: 'Cairo';" class='show-action' onclick="window.open('/video/{{post._id}}', '_self')">{{content.global_[lang]['show']}}</button>
                 {% endif %}    
               </div>
             </div>
@@ -276,11 +276,11 @@
               </div>
               <div class="actions">
                 {% if lang == 'en' %}
-                <button style="font-family: 'Raleway';" class='edit-action' onclick="openEditDialog({title: '{{post.title}}', desc: '{{post.desc}}', id: '{{post._id | string}}', category: ({{categories.data[post.category | string] }})}, '{{lang}}', 'audios')">{{content.global_[lang]['edit']}}</button>
-                <button style="font-family: 'Raleway';" class='show-action' onclick="window.open('/audio/{{post._id}}/', '_self')">{{content.global_[lang]['show']}}</button>
+                <button style="font-family: 'Raleway';" class='edit-action' onclick="openEditDialog({title: '{{post.title | safe}}', desc: `{{post.desc | safe}}`, id: '{{post._id | string}}', category: ({{categories.data[post.category | string] }})}, '{{lang}}', 'audios')">{{content.global_[lang]['edit']}}</button>
+                <button style="font-family: 'Raleway';" class='show-action' onclick="window.open('/audio/{{post._id}}', '_self')">{{content.global_[lang]['show']}}</button>
                 {% else %}
-                <button style="font-family: 'Cairo';" class='edit-action' onclick="openEditDialog({title: '{{post.title}}', desc: '{{post.desc}}', id: '{{post._id | string}}', category: ({{categories.data[post.category | string] }})}, '{{lang}}', 'audios')">{{content.global_[lang]['edit']}}</button>
-                <button style="font-family: 'Cairo';" class='show-action' onclick="window.open('/audio/{{post._id}}/', '_self')">{{content.global_[lang]['show']}}</button>
+                <button style="font-family: 'Cairo';" class='edit-action' onclick="openEditDialog({title: '{{post.title | safe}}', desc: `{{post.desc | safe}}`, id: '{{post._id | string}}', category: ({{categories.data[post.category | string] }})}, '{{lang}}', 'audios')">{{content.global_[lang]['edit']}}</button>
+                <button style="font-family: 'Cairo';" class='show-action' onclick="window.open('/audio/{{post._id}}', '_self')">{{content.global_[lang]['show']}}</button>
                 {% endif %}    
               </div>
             </div>

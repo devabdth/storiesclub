@@ -94,7 +94,6 @@ let readerState;
 
 const setupReader = (state) => {
 	readerState = state;
-	console.log(readerState);
 }
 
 const read = () => {
@@ -174,14 +173,14 @@ const perviousTenPagesListener = (pageField) => {
 
 const zoomInLisenter = () => {
 	if (readerState.zoom == 2) return;
-	readerState.zoom += 0.5;
+	readerState.zoom += 0.25;
 	render();
 }
 
 
 const zoomOutLisenter = () => {
 	if (readerState.zoom == 0) return;
-	readerState.zoom -= 0.5;
+	readerState.zoom -= 0.25;
 	render();
 }
 
