@@ -11,14 +11,14 @@ const follow = async (lang, userId) => {
 		{
 			method: "PATCH",
 			body: JSON.stringify({}),
-	      mode: 'cors',
-		      cache: 'no-cache',
-		      credentials: 'same-origin' ,
-		      headers: {
-		      	'Content-Type': 'application/json',
-		      	"Access-Control-Allow-Origin": "*"
-		      }
-			
+			mode: 'cors',
+			cache: 'no-cache',
+			credentials: 'same-origin',
+			headers: {
+				'Content-Type': 'application/json',
+				"Access-Control-Allow-Origin": "*"
+			}
+
 		}
 	);
 
@@ -38,7 +38,7 @@ const follow = async (lang, userId) => {
 		return;
 	}
 
-		window.open(window.location.href, '_self');
+	window.open(window.location.href, '_self');
 }
 
 const unfollow = async (lang, userId) => {
@@ -54,14 +54,14 @@ const unfollow = async (lang, userId) => {
 		{
 			method: "PATCH",
 			body: JSON.stringify({}),
-	      mode: 'cors',
-		      cache: 'no-cache',
-		      credentials: 'same-origin' ,
-		      headers: {
-		      	'Content-Type': 'application/json',
-		      	"Access-Control-Allow-Origin": "*"
-		      }
-			
+			mode: 'cors',
+			cache: 'no-cache',
+			credentials: 'same-origin',
+			headers: {
+				'Content-Type': 'application/json',
+				"Access-Control-Allow-Origin": "*"
+			}
+
 		}
 	);
 
@@ -81,7 +81,7 @@ const unfollow = async (lang, userId) => {
 		return;
 	}
 
-		window.open(window.location.href, '_self');
+	window.open(window.location.href, '_self');
 }
 const closeRead = () => {
 	const dialog = document.getElementById('read');
@@ -99,32 +99,32 @@ const setupReader = (state) => {
 const read = () => {
 	const bookContainer = document.getElementById('book-container');
 	const pageField = document.getElementById('go-to-page');
-	pageField.value = readerState.page;
-	pageField.onchange = () => { searchPage(pageField); }
+	// pageField.value = readerState.page;
+	// pageField.onchange = () => { searchPage(pageField); }
 
-	const nextPage = document.getElementById('book-action-next-page');
-	nextPage.onclick = () => { nextPageListener(pageField); }
+	// const nextPage = document.getElementById('book-action-next-page');
+	// nextPage.onclick = () => { nextPageListener(pageField); }
 
-	const nextTenPage = document.getElementById('book-action-next-ten-pages');
-	nextTenPage.onclick = () => { nextTenPagesListener(pageField); }
+	// const nextTenPage = document.getElementById('book-action-next-ten-pages');
+	// nextTenPage.onclick = () => { nextTenPagesListener(pageField); }
 
-	const perviousPage = document.getElementById('book-action-pervious-page');
-	perviousPage.onclick = () => { perviousPageListener(pageField); }
+	// const perviousPage = document.getElementById('book-action-pervious-page');
+	// perviousPage.onclick = () => { perviousPageListener(pageField); }
 
-	const perviousTenPage = document.getElementById('book-action-pervious-ten-pages');
-	perviousTenPage.onclick = () => { perviousTenPagesListener(pageField); }
+	// const perviousTenPage = document.getElementById('book-action-pervious-ten-pages');
+	// perviousTenPage.onclick = () => { perviousTenPagesListener(pageField); }
 
-	const zoomIn = document.getElementById('book-action-zoom-in');
-	zoomIn.onclick = () => { zoomInLisenter(); }
+	// const zoomIn = document.getElementById('book-action-zoom-in');
+	// zoomIn.onclick = () => { zoomInLisenter(); }
 
-	const zoomOut = document.getElementById('book-action-zoom-out');
-	zoomOut.onclick = () => { zoomOutLisenter(); }
+	// const zoomOut = document.getElementById('book-action-zoom-out');
+	// zoomOut.onclick = () => { zoomOutLisenter(); }
 
 
 	const dialog = document.getElementById('read');
 	const dialogOverlay = document.getElementById('read-overlay');
 
-	render();
+	// render();
 	dialog.style.display = 'flex';
 	dialogOverlay.style.display = 'flex';
 
@@ -132,15 +132,15 @@ const read = () => {
 
 
 const nextPageListener = (pageField) => {
-	if(readerState.page == readerState.pdf._pdfInfo.numPages) return;
+	if (readerState.page == readerState.pdf._pdfInfo.numPages) return;
 	readerState.page += 1;
 	pageField.value = readerState.page;
 	render();
 }
 const nextTenPagesListener = (pageField) => {
-	if(readerState.page == readerState.pdf._pdfInfo.numPages) return;
+	if (readerState.page == readerState.pdf._pdfInfo.numPages) return;
 
-	if ((readerState.page + 10) >= readerState.pdf._pdfInfo.numPages){
+	if ((readerState.page + 10) >= readerState.pdf._pdfInfo.numPages) {
 		readerState.page = readerState.pdf._pdfInfo.numPages;
 	} else {
 		readerState.page += 10;
@@ -151,7 +151,7 @@ const nextTenPagesListener = (pageField) => {
 }
 
 const perviousPageListener = (pageField) => {
-	if(readerState.page == 1) return;
+	if (readerState.page == 1) return;
 	readerState.page -= 1;
 	pageField.value = readerState.page;
 	render();
@@ -159,9 +159,9 @@ const perviousPageListener = (pageField) => {
 }
 
 const perviousTenPagesListener = (pageField) => {
-	if(readerState.page == 1) return;
+	if (readerState.page == 1) return;
 
-	if ((readerState.page - 10) <= 1){
+	if ((readerState.page - 10) <= 1) {
 		readerState.page = 1;
 	} else {
 		readerState.page -= 10;
@@ -185,18 +185,18 @@ const zoomOutLisenter = () => {
 }
 
 const searchPage = (searchField) => {
-	if( Number.parseInt(searchField.value.trim()) > 0 && Number.parseInt(searchField.value.trim()) < readerState.pdf._pdfInfo.numPages) {
+	if (Number.parseInt(searchField.value.trim()) > 0 && Number.parseInt(searchField.value.trim()) < readerState.pdf._pdfInfo.numPages) {
 		readerState.page = Number.parseInt(searchField.value.trim());
 		render();
 	}
 
-	if ( Number.parseInt(searchField.value.trim()) <= 1 ) {
+	if (Number.parseInt(searchField.value.trim()) <= 1) {
 		readerState.page = 1;
 		searchField.value = `${1}`
 		render();
 	}
 
-	if ( Number.parseInt(searchField.value.trim()) >= readerState.pdf._pdfInfo.numPages ) {
+	if (Number.parseInt(searchField.value.trim()) >= readerState.pdf._pdfInfo.numPages) {
 		readerState.page = readerState.pdf._pdfInfo.numPages;
 		searchField.value = `${readerState.pdf._pdfInfo.numPages}`
 		render();
@@ -206,19 +206,25 @@ const searchPage = (searchField) => {
 
 
 const render = () => {
-    readerState.pdf.getPage(readerState.page).then((page) => {
-    var canvas = document.getElementById("book-render");
-    var ctx = canvas.getContext('2d');
+	readerState.pdf.getPage(readerState.page).then((page) => {
+		var canvas = document.getElementById("book-render");
+		var ctx = canvas.getContext('2d');
+		const outputScale = window.devicePixelRatio || 1;
 
-    var viewport = page.getViewport(readerState.zoom);
+		var viewport = page.getViewport({ scale: readerState.zoom });
 
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
+		canvas.width = Math.floor(viewport.width * outputScale);
+		canvas.height = Math.floor(viewport.height * outputScale);
+		var transform = outputScale !== 1
+			? [outputScale, 0, 0, outputScale, 0, 0]
+			: null;
 
-    page.render({
-        canvasContext: ctx,
-        viewport: viewport
-    });
-});
+
+		page.render({
+			canvasContext: ctx,
+			viewport: viewport,
+			transform: transform
+		});
+	});
 }
 

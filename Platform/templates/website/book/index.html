@@ -29,8 +29,11 @@
     />
     <script src="{{url_for('static', filename='website/global/scripts/main.js')}}"></script>
     <script src="{{url_for('static', filename='website/book/scripts/main.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.min.js" integrity="sha512-BagCUdQjQ2Ncd42n5GGuXQn1qwkHL2jCSkxN5+ot9076d5wAI8bcciSooQaI3OG3YLj6L97dKAFaRvhSXVO0/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.sandbox.min.js" integrity="sha512-7PFYtBvamWIUzp0OoCQMmM0sqoVspyNxNl/G4ZUj/5d1sRHjw6k00tV9q9I9+xdkJ1BZ1rnIHpCy0/rv4Qcmyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.worker.min.js" integrity="sha512-6UHd2tcWIvg5hIYHXb3lnNO61tWfriGen6KddwGYTSUUazWGYESTHDDxJFEQkCy1cSL//yXKc1gcL+51/DTLFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf_viewer.min.css" integrity="sha512-Jf9DLkegLgARLR151csVkPvcVt4cOUhslrSZwiTAe9mqFL/BbYRDmxCOioCtbHifEgjsBFbrVhOMQ3mYPDLrqQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf_viewer.min.js" integrity="sha512-tYEGuMBQkCfSlBKJ3dNgS06wbb/MNE6nO2poZ1Y5brix8NajGcDcfEvuL38wJDOTkq0j5ojASNmrzv/8/wgGHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link
       rel="icon"
       type="image/x-icon"
@@ -470,7 +473,7 @@
       </div>
       <div id="close-read" onclick="closeRead();">x</div>
     </div>
-    <div id="book-actions">
+    <!-- <div id="book-actions">
       <div class="book-action" id="book-action-pervious-ten-pages"></div>
       <div class="book-action" id="book-action-pervious-page"></div>
       <div class="book-action" id="book-action-zoom-out"></div>
@@ -478,9 +481,10 @@
       <div class="book-action" id="book-action-zoom-in"></div>
       <div class="book-action" id="book-action-next-page"></div>
       <div class="book-action" id="book-action-next-ten-pages"></div>
-    </div>
+    </div> -->
     <div id="book-container" style="overflow: auto; display: flex; align-items: start; justify-content: center;">
-      <canvas id="book-render" ></canvas>
+      <!-- <canvas id="book-render" ></canvas> -->
+      <iframe width="100%" height="100%" src='/book/asset/{{book["_id"]}}#toolbar=0' frameborder="0"></iframe>
       
     </div>
   </div>
@@ -490,12 +494,14 @@
     var state = {
       pdf: null,
       page: 1,
-      zoom: 1
+      zoom: 1,
+      pageRendering: false,
+      pageNumPending: null
     };
 
     try {
-
-      pdfjsLib.getDocument(`{{contact_info['url']}}/book/asset/{{book["_id"]}}`).then((pdf) => {
+      console.log(pdfjsLib.getDocument)
+      pdfjsLib.getDocument(`/book/asset/{{book["_id"]}}`).promise.then((pdf) => {
         state.pdf = pdf
         setupReader(state);
         document.getElementById('read-btn').onclick= read;
