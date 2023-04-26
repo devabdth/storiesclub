@@ -50,6 +50,7 @@ class Setup:
         self.website.config["SESSION_PERMANENT"] = False
         self.website.config["SESSION_TYPE"] = "filesystem"
         self.website.config['CORS_HEADERS'] = 'Content-Type'
+        self.website.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024
         CORS(self.website, resources={r"/foo": {"origins": "*"}})
 
         Session(self.website)
