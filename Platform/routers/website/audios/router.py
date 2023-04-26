@@ -88,7 +88,7 @@ class AudiosRouter:
                             print(e)
                     return self.app.response_class(status=500)
                 except Exception as e:
-                    print(e)
+                    print(f"Issue: {e}")
                     return self.app.response_class(status=500)
                     
 
