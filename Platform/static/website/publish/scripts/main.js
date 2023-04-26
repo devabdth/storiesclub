@@ -848,7 +848,7 @@ const uploadAudio = async (props) => {
 
 					uploadProgressValue.style.width = "67%"
 					uploadDialogStageNumber.innerHTML = "3<span>/3</span>";
-					uploadDialogStage.innerHTML = "Uploading Book";
+					uploadDialogStage.innerHTML = "Uploading Audio";
 
 				}
 				coverXhr.open("POST", `/audios/?mode=covers&audio=${currentAudioId}`);
@@ -980,7 +980,7 @@ const uploadVideo = async (props) => {
 
 					uploadProgressValue.style.width = "67%"
 					uploadDialogStageNumber.innerHTML = "3<span>/3</span>";
-					uploadDialogStage.innerHTML = "Uploading Book";
+					uploadDialogStage.innerHTML = "Uploading Video";
 
 				}
 				coverXhr.open("POST", `/videos/?mode=covers&video=${currentVideoId}`);
