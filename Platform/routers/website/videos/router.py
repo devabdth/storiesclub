@@ -62,7 +62,7 @@ class VideosRouter:
 
                     save_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../db/covers/videos/'))
                     if not os.path.exists(save_path):                        
-                        os.mkdir(save_path)                    
+                        os.mkdir(save_path)
                     try:
                         cover.save(os.path.join(save_path, cover.filename))
                         if os.path.exists(os.path.join(save_path, cover.filename)):
@@ -71,7 +71,6 @@ class VideosRouter:
                     except Exception as e:
                         print(e)
                 return self.app.response_class(status=500)
-
             if mode == 2:
                 if 'asset' in request.files.keys() and 'video' in params :
                     video_id = params['video']
