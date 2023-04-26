@@ -133,7 +133,7 @@
       {% else %}
       <h3 style="font-family: 'Raleway';">{{content.entry[lang]["welcome"]}}
       {% endif %}
-        <br><span>{{user["name"][:8]}}..!</span>
+        <br><span>{{user["name"].split(' ')[0]}}..!</span>
       </h3>
       <div>
         {% if lang == 'ar' %}
@@ -168,9 +168,11 @@
         </div>
         {% if lang == 'ar' %}
         <p style="font-family: 'Cairo';">{{content.global_[lang]["loggingStreak"]}}</p>
-        {% else %}
+        <p style="font-family: 'Cairo';">{{content.global_[lang]['loginStreakMsg']}}</p>
+      {% else %}
         <p style="font-family: 'Poppins';">{{content.global_[lang]["loggingStreak"]}}</p>
-        {% endif %}
+        <p style="font-family: 'Poppins';">{{content.global_[lang]['loginStreakMsg']}}</p>
+      {% endif %}
       </div>
     </div>
 

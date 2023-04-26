@@ -8,6 +8,11 @@
   --main-bg-color: #eee7ce;
 }
 @media screen and (min-width: 999px) {
+  html {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -112,61 +117,61 @@
     opacity: 1;
   }
 
-.options-btn {
-  color: var(--main-color);
-  background-color: transparent;
-  padding: 12px;
-  font-size: 0.9em;
-  border: none;
-  cursor: pointer;
-  transform: rotate(90deg);
-  box-shadow: none;
-}
+  .options-btn {
+    color: var(--main-color);
+    background-color: transparent;
+    padding: 12px;
+    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+    transform: rotate(90deg);
+    box-shadow: none;
+  }
 
-.options {
-  position: relative;
-  display: inline-block;
-}
+  .options {
+    position: relative;
+    display: inline-block;
+  }
 
-.options-content {
-  display: none;
-  position: absolute;
-  background-color: var(--main-bg-color);
-  border: none;
-  box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border-radius: 12px;
-}
+  .options-content {
+    display: none;
+    position: absolute;
+    background-color: var(--main-bg-color);
+    border: none;
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 12px;
+  }
 
-.options-content a, .options-content button {
-  color: black;
-  padding: 12px 12px;
-  text-decoration: none;
-  display: block;
-  width:  15vh;
-  border-radius: 12px;
-  text-align:  start;
-  color: var(--main-color);
-  font-size: 0.9em;
+  .options-content a,
+  .options-content button {
+    color: black;
+    padding: 12px 12px;
+    text-decoration: none;
+    display: block;
+    width: 15vh;
+    border-radius: 12px;
+    text-align: start;
+    color: var(--main-color);
+    font-size: 0.9em;
+  }
 
-}
+  .options-content a:hover,
+  .options-content button:hover {
+    background-color: #f1f1f1;
+  }
 
-.options-content a:hover, .options-content button:hover {
-  background-color: #f1f1f1
-}
+  .options:hover .options-content {
+    display: block;
+  }
 
-.options:hover .options-content {
-  display: block;
-}
+  .options:hover .dropbtn {
+    background-color: var(--main-bg-color);
+  }
 
-.options:hover .dropbtn {
-  background-color: var(--main-bg-color);
-}
-
-header #drawer-btn {
-  display: none;
-}
-
+  header #drawer-btn {
+    display: none;
+  }
 
   footer {
     background-color: var(--main-color);
@@ -848,7 +853,6 @@ header #drawer-btn {
     font-weight: 200;
   }
 
-
   #delete-actions {
     flex-direction: row;
     display: flex;
@@ -868,7 +872,7 @@ header #drawer-btn {
 
   #cancel-delete:hover {
     background-color: transparent;
-    color:  red;
+    color: red;
   }
 
   #edit-overlay {
@@ -882,8 +886,6 @@ header #drawer-btn {
     transition: 500ms ease;
     display: none;
   }
-
-
 
   #edit {
     z-index: 999;
@@ -929,7 +931,6 @@ header #drawer-btn {
     font-weight: 200;
   }
 
-
   #edit-actions {
     flex-direction: row;
     display: flex;
@@ -949,38 +950,38 @@ header #drawer-btn {
 
   #cancel-edit:hover {
     background-color: transparent;
-    color:  red;
+    color: red;
   }
 
-
   .publish-single-line-field {
-    width:  100%;
-    height:  10vh;
-    display:  flex;
+    width: 100%;
+    height: 10vh;
+    display: flex;
     border: 2px #888 solid;
-    padding:  4px 6px;
+    padding: 4px 6px;
     margin: 24px 0;
     border-radius: 12px;
     outline: none;
     transition: 500ms ease;
     font-size: 1.25em;
     font-weight: 500;
-    font-family: 'Cairo';
-    color:  var(--main-color);
+    font-family: "Cairo";
+    color: var(--main-color);
     background-color: transparent;
   }
 
-  .publish-single-line-field:active, .publish-single-line-field:focus {
+  .publish-single-line-field:active,
+  .publish-single-line-field:focus {
     border: 4px var(--main-color) solid;
   }
 
   .publish-multi-line-field {
-    width:  100%;
-    max-height:  80vh;
+    width: 100%;
+    max-height: 80vh;
     min-height: 15vh;
-    display:  flex;
+    display: flex;
     border: 2px #888 solid;
-    padding:  12px 6px;
+    padding: 12px 6px;
     margin: 24px 0;
     border-radius: 12px;
     outline: none;
@@ -988,8 +989,8 @@ header #drawer-btn {
     resize: vertical;
     font-size: 1.25em;
     font-weight: 500;
-    font-family: 'Cairo';
-    color:  var(--main-color);
+    font-family: "Cairo";
+    color: var(--main-color);
     background-color: transparent;
   }
 
@@ -1001,80 +1002,78 @@ header #drawer-btn {
     cursor: pointer;
     box-shadow: 0px 0px 30px 1px #999;
     border-radius: 12px;
-    width:  100%;
-    height:  8vh;
+    width: 100%;
+    height: 8vh;
     justify-content: start;
     align-items: center;
     display: flex;
     transition: 500ms ease;
   }
 
-
-#category-search {
-    width:  100%;
-    height:  7vh;
-    display:  flex;
-    padding:  4px 6px;
+  #category-search {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    padding: 4px 6px;
     outline: none;
     border: none;
     transition: 500ms ease;
     font-size: 1.25em;
     font-weight: 500;
-    font-family: 'Cairo';
-    color:  var(--main-color);
+    font-family: "Cairo";
+    color: var(--main-color);
     background-color: transparent;
-}
+  }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: var(--main-bg-color);
-  min-width: 70%;
-  max-height: 50vh;
-  overflow: auto;
-  border: 1px solid var(--main-color);
-  z-index: 1;
-  box-shadow: 0 0 30px 1px #999;
-  border-radius: 4px;
-}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--main-bg-color);
+    min-width: 70%;
+    max-height: 50vh;
+    overflow: auto;
+    border: 1px solid var(--main-color);
+    z-index: 1;
+    box-shadow: 0 0 30px 1px #999;
+    border-radius: 4px;
+  }
 
-.dropdown-content button {
-  color: var(--main-color);
-  padding: 12px 12px;
-  display: flex;
-  width: 100%;
-  justify-content: start;
-  align-items: center;
-  background-color: transparent;
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
+  .dropdown-content button {
+    color: var(--main-color);
+    padding: 12px 12px;
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
 
-.dropdown-content button:hover {
-  background-color: var(--main-color-variant);
-}
+  .dropdown-content button:hover {
+    background-color: var(--main-color-variant);
+  }
 
-  .horizontal-divider{
-    margin:  12px 0;
+  .horizontal-divider {
+    margin: 12px 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .horizontal-divider > div{
+  .horizontal-divider > div {
     background-color: #111;
     opacity: 0.25;
     padding: 0 12px;
     width: 80%;
     height: 0.5px;
     border-radius: 12px;
-
   }
 
   #listen-overlay {
@@ -1093,7 +1092,7 @@ header #drawer-btn {
     padding: 6px 12px;
     backdrop-filter: blur(4px);
     background-color: rgba(0, 0, 0, 0.5);
-    height: 100%; 
+    height: 100%;
     width: 100%;
     border-radius: 12px;
     justify-content: space-between;
@@ -1125,11 +1124,11 @@ header #drawer-btn {
     align-items: center;
     justify-content: end;
   }
-  
+
   #listen-header > div {
     font-size: 3em;
     color: white;
-    font-family: 'Raleway';
+    font-family: "Raleway";
     background-color: transparent;
     outline: none;
     border: none;
@@ -1148,10 +1147,10 @@ header #drawer-btn {
   }
 
   #audio-player-controllers {
-    width:  100%;
+    width: 100%;
     height: 32px;
     margin: 12px 0;
-    padding:  10%;
+    padding: 10%;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
@@ -1188,15 +1187,15 @@ header #drawer-btn {
   }
 
   #audio-player-pause {
-    width:  46px;
-    height:  46px;
+    width: 46px;
+    height: 46px;
     display: none;
     background-image: url(./icons/pause.png);
   }
 
   #audio-player-play {
-    width:  46px;
-    height:  46px; 
+    width: 46px;
+    height: 46px;
     background-image: url(./icons/play.png);
   }
 
@@ -1205,14 +1204,14 @@ header #drawer-btn {
     height: 6px;
     background-color: var(--accent-color);
     margin: 20px 0;
-    border-radius:  12px;
+    border-radius: 12px;
   }
- 
+
   #audio-time {
     width: 0px;
     height: 100%;
-    border-radius:  12px;
-    background-color: var(--main-color)
+    border-radius: 12px;
+    background-color: var(--main-color);
   }
 
   #audio-track-progress {
@@ -1227,7 +1226,7 @@ header #drawer-btn {
     font-size: 0.9em;
     color: var(--main-color);
     opacity: 0.75;
-    font-family: 'Poppins';
+    font-family: "Poppins";
   }
 
   #watch-overlay {
@@ -1286,11 +1285,11 @@ header #drawer-btn {
     border-radius: 12px 12px 0 0;
     opacity: 0;
   }
-  
+
   #watch-close {
     font-size: 3em;
     color: white;
-    font-family: 'Raleway';
+    font-family: "Raleway";
     background-color: transparent;
     outline: none;
     border: none;
@@ -1299,7 +1298,7 @@ header #drawer-btn {
   }
 
   #video-player-controllers {
-    width:  100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1312,7 +1311,7 @@ header #drawer-btn {
   }
 
   #controllers {
-    width:  100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1353,40 +1352,39 @@ header #drawer-btn {
   }
 
   #video-player-pause {
-    width:  46px;
-    height:  46px;
+    width: 46px;
+    height: 46px;
     display: none;
     background-image: url(./icons/pause.png);
   }
 
   #video-player-play {
-    width:  46px;
-    height:  46px; 
+    width: 46px;
+    height: 46px;
     background-image: url(./icons/play.png);
   }
 
   #durations {
-    width:  100%;
+    width: 100%;
     padding: 6px 12px;
     bottom: 10%;
     display: flex;
     flex-direction: column;
   }
 
-
   #video-track {
     width: 100%;
     height: 6px;
     background-color: var(--accent-color);
     margin: 20px 0;
-    border-radius:  12px;
+    border-radius: 12px;
   }
- 
+
   #video-time {
     width: 0px;
     height: 100%;
-    border-radius:  12px;
-    background-color: var(--main-color)
+    border-radius: 12px;
+    background-color: var(--main-color);
   }
 
   #video-track-progress {
@@ -1401,9 +1399,8 @@ header #drawer-btn {
     font-size: 0.9em;
     color: var(--main-color);
     opacity: 0.75;
-    font-family: 'Poppins';
+    font-family: "Poppins";
   }
-
 
   #read-overlay {
     background-color: rgba(0, 0, 0, 0.5);
@@ -1435,7 +1432,6 @@ header #drawer-btn {
     padding: 12px 24px;
   }
 
-
   #read-header {
     width: 100%;
     height: 10%;
@@ -1445,19 +1441,17 @@ header #drawer-btn {
     justify-content: space-between;
     border-radius: 12px 12px 0 0;
   }
-  
 
   #close-read {
     font-size: 3em;
     color: #888;
-    font-family: 'Raleway';
+    font-family: "Raleway";
     background-color: transparent;
     outline: none;
     border: none;
     padding: 0 12px;
     cursor: pointer;
   }
-
 
   #read-info {
     width: 100%;
@@ -1470,13 +1464,13 @@ header #drawer-btn {
 
   #read-title {
     font-size: 0.9em;
-    font-family: 'Raleway';
+    font-family: "Raleway";
     font-weight: 900;
   }
 
   #read-info > #user-name {
     font-size: 0.75em;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-weight: 500;
   }
 
@@ -1496,7 +1490,7 @@ header #drawer-btn {
   }
 
   .book-action {
-    width:  32px;
+    width: 32px;
     height: 32px;
     display: flex;
     margin: 0 12px;
@@ -1507,7 +1501,7 @@ header #drawer-btn {
   }
 
   #go-to-page {
-    width:  10vw;
+    width: 10vw;
     height: 32px;
     border-radius: 12px;
     border: 1px #333 solid;
@@ -1515,7 +1509,8 @@ header #drawer-btn {
     padding: 0 12px;
   }
 
-  #go-to-page:focus, #go-to-page:active {
+  #go-to-page:focus,
+  #go-to-page:active {
     border: 1px #111 solid;
   }
 

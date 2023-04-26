@@ -80,7 +80,7 @@ const showDeleteDialog= (video, url)=> {
       const res = await fetch(
         `${url}/videos/?id=${video['_id']}`,
         {
-          method: "delete"
+          method: "DELETE"
         }
       );
 

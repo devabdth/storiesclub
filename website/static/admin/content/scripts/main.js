@@ -102,8 +102,8 @@ const uploadCategory = async (props) => {
 	status.style.display="flex";
 	try {
 		let currentCategoryId;
-		const res = fetch("https://storiesclub.net/webapp/adminstration/categories/?mode=0", {
-			method: "post",
+		const res = fetch("//webapp/adminstration/categories/?mode=0", {
+			method: "POST",
 			body: JSON.stringify(props.payload),
 			headers: { "Content-Type": "application/json" },
 			}
@@ -132,7 +132,7 @@ const uploadCategory = async (props) => {
 					}
 				}
 
-				coverXhr.open('post', `https://storiesclub.net/webapp/adminstration/categories/?mode=1&category=${currentCategoryId}`);
+				coverXhr.open('post', `//webapp/adminstration/categories/?mode=1&category=${currentCategoryId}`);
 				coverXhr.send(coverData);
 			}
 		);

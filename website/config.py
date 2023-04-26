@@ -21,9 +21,9 @@ class Config():
         self.port = os.environ["PORT"] if "PORT" in os.environ else 3030
         self.mode = os.environ["MODE"] if "MODE" in os.environ else self.debug_mode_token
         self.auth_key = os.environ["AUTH_KEY"] if "AUTH_KEY" in os.environ else "1234567890"
-        self.url = os.environ["URL"] if "URL" in os.environ else "https://storiesclub.net"
-        self.db_url = os.environ["DB_URL"] if "DB_URL" in os.environ else "mongodb+srv://website:cqoS01gP7RzULu9v@storiesclub.twg2b.mongodb.net/storiesclub?retryWrites=true&w=majority"
-        #self.db_url = os.environ["DB_URL"] if "DB_URL" in os.environ else "mongodb://localhost/storiesclub"
+        self.url = os.environ["URL"] if "URL" in os.environ else "http://127.0.0.1:5000"
+        # self.db_url = os.environ["DB_URL"] if "DB_URL" in os.environ else "mongodb+srv://website:cqoS01gP7RzULu9v@storiesclub.twg2b.mongodb.net/storiesclub?retryWrites=true&w=majority"
+        self.db_url = os.environ["DB_URL"] if "DB_URL" in os.environ else "mongodb://localhost/storiesclub"
 
         self.email_model_email = os.environ["EMAIL_MODEL_EMAIL"] if "EMAIL_MODEL_EMAIL" in os.environ else "no.reply@storiesclub.net"
         self.email_model_access_key = os.environ["EMAIL_MODEL_ACCESS_KEY"] if "EMAIL_MODEL_ACCESS_KEY" in os.environ else "2892022-CUBERS-MAILING-AUTH-KEY@StroiesClub.Password@Cubers IO Inc."

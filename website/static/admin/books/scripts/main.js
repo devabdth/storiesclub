@@ -80,7 +80,7 @@ const showDeleteDialog= (book, url)=> {
       const res = await fetch(
         `${url}/books/?id=${book['_id']}`,
         {
-          method: "delete"
+          method: "DELETE"
         }
       );
 

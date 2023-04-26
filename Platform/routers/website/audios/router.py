@@ -66,26 +66,31 @@ class AudiosRouter:
                     return self.app.response_class(status=500)
 
             if mode == 1:
-                if 'cover' in request.files.keys() and 'audio' in params :
-                    audio_id = params['audio']
+                try:
+                    if 'cover' in request.files.keys() and 'audio' in params :
+                        audio_id = params['audio']
 
-                    cover = request.files['cover']
-                    cover.filename = "{}.{}".format(
-                        audio_id,
-                        cover.filename.split('.')[-1]
-                    )
+                        cover = request.files['cover']
+                        cover.filename = "{}.{}".format(
+                            audio_id,
+                            cover.filename.split('.')[-1]
+                        )
 
-                    save_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../db/covers/audios/'))
-                    if not os.path.exists(save_path):                        
-                        os.mkdir(save_path)
-                    try:
-                        cover.save(os.path.join(save_path, cover.filename))
-                        if os.path.exists(os.path.join(save_path, cover.filename)):
-                            return self.app.response_class(status=201)
+                        save_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../db/covers/audios/'))
+                        if not os.path.exists(save_path):                        
+                            os.mkdir(save_path)
+                        try:
+                            cover.save(os.path.join(save_path, cover.filename))
+                            if os.path.exists(os.path.join(save_path, cover.filename)):
+                                return self.app.response_class(status=201)
 
-                    except Exception as e:
-                        print(e)
-                return self.app.response_class(status=500)
+                        except Exception as e:
+                            print(e)
+                    return self.app.response_class(status=500)
+                except Exception as e:
+                    print(e)
+                    return self.app.response_class(status=500)
+                    
 
             if mode == 2:
                 if 'asset' in request.files.keys() and 'audio' in params :

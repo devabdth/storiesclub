@@ -80,7 +80,7 @@ const showDeleteDialog= (audio, url)=> {
       const res = await fetch(
         `${url}/audios/?id=${audio['_id']}`,
         {
-          method: "delete"
+          method: "DELETE"
         }
       );
 
